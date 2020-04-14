@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="level_00" type="Node2D"]
+
+[node name="TileMapFloor" type="TileMap" parent="."]
+mode = 1
+format = 1
+
+[node name="TileMapWalls" type="TileMap" parent="."]
+mode = 1
+format = 1
