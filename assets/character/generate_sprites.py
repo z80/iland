@@ -32,7 +32,7 @@ def renderSprites():
         setView( angle )
         # Do all actions
         setAction('Idle')
-        prefix = "{}_{:03d}".format( actions[0], angle )
+        prefix = "{}_{:03d}".format( 'Idle', angle )
         frames = [1, 30, 60, 90, 120]
         for i, frame in enumerate( frames ):
             fname = "{}_{:01d}.png".format(prefix, i)
@@ -40,7 +40,7 @@ def renderSprites():
             renderImage( fname )
 
         setAction('Walk')
-        prefix = "{}_{:03d}".format( actions[0], angle )
+        prefix = "{}_{:03d}".format( 'Walk', angle )
         frames = [1, 15, 30, 45, 60]
         for i, frame in enumerate( frames ):
             fname = "{}_{:01d}.png".format(prefix, i)
@@ -48,7 +48,7 @@ def renderSprites():
             renderImage( fname )
             
         setAction('Fire')
-        prefix = "{}_{:03d}".format( actions[0], angle )
+        prefix = "{}_{:03d}".format( 'Fire', angle )
         frames = [1, 30, 60]
         for i, frame in enumerate( frames ):
             fname = "{}_{:01d}.png".format(prefix, i)
