@@ -14,7 +14,7 @@ def setAction( action ):
     bpy.data.objects['MuzzleFlash'].animation_data.action = bpy.data.actions[action]
 
 def renderImage( fname ):
-    base_path = 'C:/Users/sbashkirov/projects/iland.git/assets/character/'
+    base_path = 'C:/Users/sbashkirov/projects/iland.git/assets/character/sprites/'
     full_name = base_path + fname
     print( "Save file {}".format( full_name ) )
     bpy.data.scenes['Scene'].render.filepath = full_name
@@ -28,33 +28,23 @@ def renderSprites():
     print( "Rendering sprites" )
     angles = [0, 45, 90, 135, 180, 225, 270, 315]
     #angles = [0]
-    actions = ['Idle', 'Walk', 'Fire']
+    actions = [{'name': 'Idle', 'frames': [1, 30, 60, 90, 120]}, \
+               {'name': 'Walk', 'frames': [1, 15, 30, 45, 60]}, \
+               {'name': 'Fire', 'frames': [30, 60]} ]
     for angle in angles:
         setView( angle )
         # Do all actions
-        setAction('Idle')
-        prefix = "{}_{:03d}".format( actions[0], angle )
-        frames = [1, 30, 60, 90, 120]
-        for i, frame in enumerate( frames ):
-            fname = "{}_{:01d}.png".format(prefix, i)
-            setFrame( frame )
-            renderImage( fname )
+        for action in actions:
+            act_name = action['name']
+            act_frames = action['frames']
 
-        setAction('Walk')
-        prefix = "{}_{:03d}".format( actions[0], angle )
-        frames = [1, 15, 30, 45, 60]
-        for i, frame in enumerate( frames ):
-            fname = "{}_{:01d}.png".format(prefix, i)
-            setFrame( frame )
-            renderImage( fname )
-            
-        setAction('Fire')
-        prefix = "{}_{:03d}".format( actions[0], angle )
-        frames = [1, 30, 60]
-        for i, frame in enumerate( frames ):
-            fname = "{}_{:01d}.png".format(prefix, i)
-            setFrame( frame )
-            renderImage( fname )
+            setAction( act_name )
+            prefix = "{}_{:03d}".format( act_name, angle )
+            for i, frame in enumerate( act_frames ):
+                fname = "{}_{:01d}.png".format(prefix, i)
+                setFrame( frame )
+                renderImage( fname )
+
     print( "All done" )
 
 
