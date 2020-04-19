@@ -23,6 +23,7 @@ def renderImage( fname ):
     
 def renderSprites():
     # Make transparent packground
+    bpy.data.scenes['Scene'].render.image_settings.color_mode = 'RGBA'
     bpy.data.scenes['Scene'].cycles.film_transparent = True
     print( "Rendering sprites" )
     angles = [0, 45, 90, 135, 180, 225, 270, 315]
@@ -32,7 +33,7 @@ def renderSprites():
         setView( angle )
         # Do all actions
         setAction('Idle')
-        prefix = "{}_{:03d}".format( 'Idle', angle )
+        prefix = "{}_{:03d}".format( actions[0], angle )
         frames = [1, 30, 60, 90, 120]
         for i, frame in enumerate( frames ):
             fname = "{}_{:01d}.png".format(prefix, i)
@@ -40,7 +41,7 @@ def renderSprites():
             renderImage( fname )
 
         setAction('Walk')
-        prefix = "{}_{:03d}".format( 'Walk', angle )
+        prefix = "{}_{:03d}".format( actions[0], angle )
         frames = [1, 15, 30, 45, 60]
         for i, frame in enumerate( frames ):
             fname = "{}_{:01d}.png".format(prefix, i)
@@ -48,7 +49,7 @@ def renderSprites():
             renderImage( fname )
             
         setAction('Fire')
-        prefix = "{}_{:03d}".format( 'Fire', angle )
+        prefix = "{}_{:03d}".format( actions[0], angle )
         frames = [1, 30, 60]
         for i, frame in enumerate( frames ):
             fname = "{}_{:01d}.png".format(prefix, i)
