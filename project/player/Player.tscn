@@ -51,7 +51,7 @@ smoothing_enabled = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "Idle_000"
-frame = 2
+frame = 1
 playing = true
 offset = Vector2( 0, -100 )
 
