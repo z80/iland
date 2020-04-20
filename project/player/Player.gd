@@ -14,6 +14,10 @@ var Crosshair = preload( "res://crosshair/Crosshair.tscn" )
 var crosshair = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# Make camera 2d current.
+	$Camera2D.make_current()
+	
+	# Create Crosshair.
 	var vp = get_tree().get_root()
 	crosshair = Crosshair.instance()
 	vp.add_child( crosshair )

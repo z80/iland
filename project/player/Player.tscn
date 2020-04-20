@@ -15,29 +15,29 @@
 [ext_resource path="res://player/sprites/Walk_000_4.png" type="Texture" id=13]
 [ext_resource path="res://player/sprites/Fire_000_1.png" type="Texture" id=14]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "Walk_000",
 "speed": 7.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "Idle_000",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 10 ), ExtResource( 14 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "Fire_000",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Idle_000",
+"speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 37.3436
 height = 109.797
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=3]
 radius = 58.8822
 
 [node name="Player" type="KinematicBody2D"]
@@ -49,9 +49,9 @@ script = ExtResource( 1 )
 smoothing_enabled = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "Idle_000"
-frame = 3
+frame = 2
 playing = true
 offset = Vector2( 0, -100 )
 
@@ -59,7 +59,7 @@ offset = Vector2( 0, -100 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 5.83179, -93.3081 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 3 )
