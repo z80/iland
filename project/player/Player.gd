@@ -39,15 +39,59 @@ func _physics_process(delta):
 		new_anim = ANIM_WALK
 	else:
 		new_anim = ANIM_IDLE
-	if ( anim != new_anim ):
+	var update_animation = false
+	var new_dir = _compute_dir()
+	if ( dir != new_dir ):
+		update_animation = true
+		dir = new_dir
+	if ( update_animation or (anim != new_anim) ):
 		anim = new_anim
+		var dir_stri = null
+		if ( dir == DIR_000 ):
+			dir_stri = '_000'
+		elif ( dir == DIR_045 ):
+			dir_stri = '_045'
+		elif ( dir == DIR_090 ):
+			dir_stri = '_090'
+		elif ( dir == DIR_135 ):
+			dir_stri = '_135'
+		elif ( dir == DIR_180 ):
+			dir_stri = '_180'
+		elif ( dir == DIR_225 ):
+			dir_stri = '_225'
+		elif ( dir == DIR_270 ):
+			dir_stri = '_270'
+		elif ( dir == DIR_315 ):
+			dir_stri = '_315'
+		else:
+			new_dir = _compute_dir()
 		if ( anim == ANIM_WALK ):
-			$AnimatedSprite.animation = 'Walk_000'
+			$AnimatedSprite.animation = 'Walk' + dir_stri
 		elif ( anim == ANIM_IDLE ):
-			$AnimatedSprite.animation = 'Idle_000'
+			$AnimatedSprite.animation = 'Idle' + dir_stri
 	#$AnimatedSprite.play()
 	v.y *= 0.5
 	v *= move_speed
 	print( "v: ", v )
 	move_and_slide( v )
 	
+	
+func _compute_dir():
+	var c_at = crosshair.position
+	var p_at = position
+	var a = c_at - p_at
+	var angle = atan2( a.y, a.x )
+	var _pi_4 = PI*0.25
+	var d = int(round( angle / _pi_4 ))
+	if ( d < 0 ):
+		d += 8
+	return d
+	
+
+
+
+
+
+
+
+
