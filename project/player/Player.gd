@@ -72,7 +72,7 @@ func _physics_process(delta):
 	#$AnimatedSprite.play()
 	v.y *= 0.5
 	v *= move_speed
-	print( "v: ", v )
+	#print( "v: ", v )
 	move_and_slide( v )
 	
 	

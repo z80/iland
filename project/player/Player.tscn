@@ -240,7 +240,7 @@ smoothing_enabled = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "Walk_315"
-frame = 3
+frame = 4
 playing = true
 offset = Vector2( 0, -100 )
 
