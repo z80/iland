@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=2]
+[gd_scene load_steps=173 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://player/sprites/Walk_000_0.png" type="Texture" id=2]
@@ -97,6 +97,78 @@
 [ext_resource path="res://player/sprites/Idle_090_3.png" type="Texture" id=95]
 [ext_resource path="res://player/sprites/Idle_090_4.png" type="Texture" id=96]
 [ext_resource path="res://player/sprites/Idle_180_1.png" type="Texture" id=97]
+[ext_resource path="res://player/sprites/Death_000_4.png" type="Texture" id=98]
+[ext_resource path="res://player/sprites/Death_000_8.png" type="Texture" id=99]
+[ext_resource path="res://player/sprites/Death_000_3.png" type="Texture" id=100]
+[ext_resource path="res://player/sprites/Death_045_1.png" type="Texture" id=101]
+[ext_resource path="res://player/sprites/Death_000_0.png" type="Texture" id=102]
+[ext_resource path="res://player/sprites/Death_000_1.png" type="Texture" id=103]
+[ext_resource path="res://player/sprites/Death_000_2.png" type="Texture" id=104]
+[ext_resource path="res://player/sprites/Death_000_5.png" type="Texture" id=105]
+[ext_resource path="res://player/sprites/Death_000_7.png" type="Texture" id=106]
+[ext_resource path="res://player/sprites/Death_045_0.png" type="Texture" id=107]
+[ext_resource path="res://player/sprites/Death_045_2.png" type="Texture" id=108]
+[ext_resource path="res://player/sprites/Death_000_6.png" type="Texture" id=109]
+[ext_resource path="res://player/sprites/Death_045_3.png" type="Texture" id=110]
+[ext_resource path="res://player/sprites/Death_090_8.png" type="Texture" id=111]
+[ext_resource path="res://player/sprites/Death_135_1.png" type="Texture" id=112]
+[ext_resource path="res://player/sprites/Death_180_7.png" type="Texture" id=113]
+[ext_resource path="res://player/sprites/Death_180_8.png" type="Texture" id=114]
+[ext_resource path="res://player/sprites/Death_090_3.png" type="Texture" id=115]
+[ext_resource path="res://player/sprites/Death_135_3.png" type="Texture" id=116]
+[ext_resource path="res://player/sprites/Death_045_6.png" type="Texture" id=117]
+[ext_resource path="res://player/sprites/Death_180_2.png" type="Texture" id=118]
+[ext_resource path="res://player/sprites/Death_090_0.png" type="Texture" id=119]
+[ext_resource path="res://player/sprites/Death_045_7.png" type="Texture" id=120]
+[ext_resource path="res://player/sprites/Death_090_2.png" type="Texture" id=121]
+[ext_resource path="res://player/sprites/Death_135_6.png" type="Texture" id=122]
+[ext_resource path="res://player/sprites/Death_135_7.png" type="Texture" id=123]
+[ext_resource path="res://player/sprites/Death_045_4.png" type="Texture" id=124]
+[ext_resource path="res://player/sprites/Death_045_5.png" type="Texture" id=125]
+[ext_resource path="res://player/sprites/Death_135_5.png" type="Texture" id=126]
+[ext_resource path="res://player/sprites/Death_180_1.png" type="Texture" id=127]
+[ext_resource path="res://player/sprites/Death_090_6.png" type="Texture" id=128]
+[ext_resource path="res://player/sprites/Death_090_4.png" type="Texture" id=129]
+[ext_resource path="res://player/sprites/Death_090_7.png" type="Texture" id=130]
+[ext_resource path="res://player/sprites/Death_135_2.png" type="Texture" id=131]
+[ext_resource path="res://player/sprites/Death_180_3.png" type="Texture" id=132]
+[ext_resource path="res://player/sprites/Death_180_5.png" type="Texture" id=133]
+[ext_resource path="res://player/sprites/Death_135_0.png" type="Texture" id=134]
+[ext_resource path="res://player/sprites/Death_180_4.png" type="Texture" id=135]
+[ext_resource path="res://player/sprites/Death_180_6.png" type="Texture" id=136]
+[ext_resource path="res://player/sprites/Death_135_8.png" type="Texture" id=137]
+[ext_resource path="res://player/sprites/Death_090_5.png" type="Texture" id=138]
+[ext_resource path="res://player/sprites/Death_090_1.png" type="Texture" id=139]
+[ext_resource path="res://player/sprites/Death_045_8.png" type="Texture" id=140]
+[ext_resource path="res://player/sprites/Death_135_4.png" type="Texture" id=141]
+[ext_resource path="res://player/sprites/Death_180_0.png" type="Texture" id=142]
+[ext_resource path="res://player/sprites/Death_225_5.png" type="Texture" id=143]
+[ext_resource path="res://player/sprites/Death_225_8.png" type="Texture" id=144]
+[ext_resource path="res://player/sprites/Death_225_3.png" type="Texture" id=145]
+[ext_resource path="res://player/sprites/Death_225_7.png" type="Texture" id=146]
+[ext_resource path="res://player/sprites/Death_270_0.png" type="Texture" id=147]
+[ext_resource path="res://player/sprites/Death_225_1.png" type="Texture" id=148]
+[ext_resource path="res://player/sprites/Death_225_2.png" type="Texture" id=149]
+[ext_resource path="res://player/sprites/Death_225_6.png" type="Texture" id=150]
+[ext_resource path="res://player/sprites/Death_225_4.png" type="Texture" id=151]
+[ext_resource path="res://player/sprites/Death_270_1.png" type="Texture" id=152]
+[ext_resource path="res://player/sprites/Death_225_0.png" type="Texture" id=153]
+[ext_resource path="res://player/sprites/Death_270_2.png" type="Texture" id=154]
+[ext_resource path="res://player/sprites/Death_270_3.png" type="Texture" id=155]
+[ext_resource path="res://player/sprites/Death_315_1.png" type="Texture" id=156]
+[ext_resource path="res://player/sprites/Death_315_4.png" type="Texture" id=157]
+[ext_resource path="res://player/sprites/Death_270_6.png" type="Texture" id=158]
+[ext_resource path="res://player/sprites/Death_315_6.png" type="Texture" id=159]
+[ext_resource path="res://player/sprites/Death_270_8.png" type="Texture" id=160]
+[ext_resource path="res://player/sprites/Death_315_3.png" type="Texture" id=161]
+[ext_resource path="res://player/sprites/Death_270_4.png" type="Texture" id=162]
+[ext_resource path="res://player/sprites/Death_270_7.png" type="Texture" id=163]
+[ext_resource path="res://player/sprites/Death_315_5.png" type="Texture" id=164]
+[ext_resource path="res://player/sprites/Death_315_0.png" type="Texture" id=165]
+[ext_resource path="res://player/sprites/Death_315_2.png" type="Texture" id=166]
+[ext_resource path="res://player/sprites/Death_315_7.png" type="Texture" id=167]
+[ext_resource path="res://player/sprites/Death_315_8.png" type="Texture" id=168]
+[ext_resource path="res://player/sprites/Death_270_5.png" type="Texture" id=169]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -105,19 +177,69 @@ animations = [ {
 "name": "Walk_000",
 "speed": 7.0
 }, {
+"frames": [ ExtResource( 20 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "Fire_270",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 10 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "Fire_000",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "Idle_000",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 23 ), ExtResource( 24 ) ],
 "loop": true,
 "name": "Fire_225",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "Fire_315",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "Fire_090",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 94 ), ExtResource( 92 ), ExtResource( 91 ), ExtResource( 93 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "Idle_135",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "Fire_045",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 97 ), ExtResource( 59 ), ExtResource( 50 ), ExtResource( 64 ) ],
+"loop": true,
+"name": "Idle_180",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 49 ), ExtResource( 57 ), ExtResource( 60 ), ExtResource( 63 ), ExtResource( 69 ) ],
+"loop": true,
+"name": "Walk_045",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 65 ), ExtResource( 54 ), ExtResource( 58 ), ExtResource( 42 ), ExtResource( 43 ) ],
+"loop": true,
+"name": "Walk_090",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 83 ), ExtResource( 89 ), ExtResource( 79 ), ExtResource( 87 ), ExtResource( 73 ) ],
+"loop": true,
+"name": "Walk_225",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 31 ), ExtResource( 33 ), ExtResource( 36 ), ExtResource( 34 ), ExtResource( 37 ) ],
+"loop": true,
+"name": "Idle_045",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 61 ), ExtResource( 80 ) ],
+"loop": true,
+"name": "Walk_135",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 51 ), ExtResource( 38 ), ExtResource( 52 ), ExtResource( 56 ), ExtResource( 67 ) ],
@@ -140,59 +262,14 @@ animations = [ {
 "name": "Fire_180",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Idle_000",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 86 ), ExtResource( 88 ), ExtResource( 78 ), ExtResource( 85 ), ExtResource( 90 ) ],
 "loop": true,
 "name": "Walk_270",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 83 ), ExtResource( 89 ), ExtResource( 79 ), ExtResource( 87 ), ExtResource( 73 ) ],
-"loop": true,
-"name": "Walk_225",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 61 ), ExtResource( 80 ) ],
-"loop": true,
-"name": "Walk_135",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 25 ), ExtResource( 26 ) ],
-"loop": true,
-"name": "Fire_315",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 20 ), ExtResource( 29 ) ],
-"loop": true,
-"name": "Fire_270",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 18 ), ExtResource( 28 ) ],
-"loop": true,
-"name": "Fire_090",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 31 ), ExtResource( 33 ), ExtResource( 36 ), ExtResource( 34 ), ExtResource( 37 ) ],
-"loop": true,
-"name": "Idle_045",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 94 ), ExtResource( 92 ), ExtResource( 91 ), ExtResource( 93 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "Idle_135",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 21 ) ],
-"loop": true,
-"name": "Fire_045",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 35 ), ExtResource( 32 ), ExtResource( 16 ), ExtResource( 95 ), ExtResource( 96 ) ],
-"loop": true,
-"name": "Idle_090",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 97 ), ExtResource( 59 ), ExtResource( 50 ), ExtResource( 64 ) ],
-"loop": true,
-"name": "Idle_180",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 55 ), ExtResource( 53 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 48 ) ],
@@ -210,14 +287,49 @@ animations = [ {
 "name": "Fire_135",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 49 ), ExtResource( 57 ), ExtResource( 60 ), ExtResource( 63 ), ExtResource( 69 ) ],
+"frames": [ ExtResource( 35 ), ExtResource( 32 ), ExtResource( 16 ), ExtResource( 95 ), ExtResource( 96 ) ],
 "loop": true,
-"name": "Walk_045",
+"name": "Idle_090",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 65 ), ExtResource( 54 ), ExtResource( 58 ), ExtResource( 42 ), ExtResource( 43 ) ],
+"frames": [ ExtResource( 102 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 100 ), ExtResource( 98 ), ExtResource( 105 ), ExtResource( 109 ), ExtResource( 106 ), ExtResource( 99 ) ],
 "loop": true,
-"name": "Walk_090",
+"name": "Death_000",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 107 ), ExtResource( 101 ), ExtResource( 108 ), ExtResource( 110 ), ExtResource( 124 ), ExtResource( 125 ), ExtResource( 117 ), ExtResource( 120 ), ExtResource( 140 ) ],
+"loop": true,
+"name": "Death_045",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 119 ), ExtResource( 139 ), ExtResource( 121 ), ExtResource( 115 ), ExtResource( 129 ), ExtResource( 138 ), ExtResource( 128 ), ExtResource( 130 ), ExtResource( 111 ) ],
+"loop": true,
+"name": "Death_090",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 134 ), ExtResource( 112 ), ExtResource( 131 ), ExtResource( 116 ), ExtResource( 141 ), ExtResource( 126 ), ExtResource( 122 ), ExtResource( 123 ), ExtResource( 137 ) ],
+"loop": true,
+"name": "Death_135",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 153 ), ExtResource( 148 ), ExtResource( 149 ), ExtResource( 145 ), ExtResource( 151 ), ExtResource( 143 ), ExtResource( 150 ), ExtResource( 146 ), ExtResource( 144 ) ],
+"loop": true,
+"name": "Death_225",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 147 ), ExtResource( 152 ), ExtResource( 154 ), ExtResource( 155 ), ExtResource( 162 ), ExtResource( 169 ), ExtResource( 158 ), ExtResource( 163 ), ExtResource( 160 ) ],
+"loop": true,
+"name": "Death_270",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 142 ), ExtResource( 127 ), ExtResource( 118 ), ExtResource( 132 ), ExtResource( 135 ), ExtResource( 133 ), ExtResource( 136 ), ExtResource( 113 ), ExtResource( 114 ) ],
+"loop": true,
+"name": "Death_180",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 165 ), ExtResource( 156 ), ExtResource( 166 ), ExtResource( 161 ), ExtResource( 157 ), ExtResource( 164 ), ExtResource( 159 ), ExtResource( 167 ), ExtResource( 168 ) ],
+"loop": true,
+"name": "Death_315",
 "speed": 5.0
 } ]
 
@@ -239,7 +351,7 @@ smoothing_enabled = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "Walk_315"
+animation = "Death_315"
 frame = 1
 offset = Vector2( 0, -100 )
 
