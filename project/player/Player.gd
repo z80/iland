@@ -17,6 +17,9 @@ func _ready():
 	# Make camera 2d current.
 	$Camera2D.make_current()
 	
+	# Make it play animation all the time.
+	$AnimatedSprite.playing = true
+	
 	# Create Crosshair.
 	var vp = get_tree().get_root()
 	crosshair = Crosshair.instance()
