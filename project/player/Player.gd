@@ -14,8 +14,10 @@ var Crosshair = preload( "res://crosshair/Crosshair.tscn" )
 var crosshair = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var vp = get_tree().get_root()
 	crosshair = Crosshair.instance()
-	pass # Replace with function body.
+	vp.add_child( crosshair )
+	crosshair.visible = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,13 +30,18 @@ func _physics_process(delta):
 	v.x += 1 if Input.is_action_pressed( "ui_right" ) else 0
 	v.y -= 1 if Input.is_action_pressed( "ui_up" ) else 0
 	v.y += 1 if Input.is_action_pressed( "ui_down" ) else 0
-	var anim = null
-	if ( v.x != 0 ) and ( v.y != 0 ):
-		anim = 'Idle_000'
+	var new_anim = null
+	if ( v.x != 0 ) or ( v.y != 0 ):
+		new_anim = ANIM_WALK
 	else:
-		anim = 'Walk_000'
-	$AnimatedSprite.animation = anim
-	$AnimatedSprite.play()
+		new_anim = ANIM_IDLE
+	if ( anim != new_anim ):
+		anim = new_anim
+		if ( anim == ANIM_WALK ):
+			$AnimatedSprite.animation = 'Walk_000'
+		elif ( anim == ANIM_IDLE ):
+			$AnimatedSprite.animation = 'Idle_000'
+	#$AnimatedSprite.play()
 	v.y *= 0.5
 	v *= move_speed
 	print( "v: ", v )
