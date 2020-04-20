@@ -18,3 +18,5 @@ texture = ExtResource( 2 )
 
 [node name="SpriteRed" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+[connection signal="area_entered" from="." to="." method="_on_Crosshair_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_Crosshair_area_exited"]
