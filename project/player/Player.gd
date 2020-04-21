@@ -76,12 +76,11 @@ func _physics_process(delta):
 	v.y *= 0.707107
 	v *= move_speed
 	var actual_v = move_and_slide( v )
-	for i in get_slide_count():
-		var collision = get_slide_collision(i)
-		print("Collided with: ", collision.collider.name)
-
-	var p = position
-	print( "v: ", v, ", p: ", p )
+	#for i in get_slide_count():
+	#	var collision = get_slide_collision(i)
+	#	print("Collided with: ", collision.collider.name)
+	#var p = position
+	#print( "v: ", v, ", p: ", p )
 	
 	
 func _compute_dir():
