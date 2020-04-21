@@ -7,8 +7,21 @@ export(int) var move_speed = 500
 enum {ANIM_IDLE=0, ANIM_WALK=1, ANIM_FIRE=2}
 enum {DIR_000=0, DIR_045=1, DIR_090=2, DIR_135=3, DIR_180=4, DIR_225=5, DIR_270=6, DIR_315=7}
 
-export(int) var anim = ANIM_IDLE
-export(int) var dir  = DIR_000
+export(int)  var anim = ANIM_IDLE
+export(int)  var anim_fire_prev = ANIM_IDLE
+export(bool) var anim_fire_continuous = false
+export(int)  var dir  = DIR_000
+
+# Signals player emits.
+# Gun objects receive and process these.
+signal gun_activate
+signal gun_shoot_start
+signal gun_shoot_end
+signal gun_switch
+
+# Receives a signal from a gun to start fire animation.
+# gun_animation_start( continuous, speed_Scale )
+# gun_fire_animation_stop() - this ne only is called when gun fire is continuous.
 
 var Crosshair = preload( "res://crosshair/Crosshair.tscn" )
 var crosshair = null
@@ -95,10 +108,22 @@ func _compute_dir():
 	return d
 	
 
+func _on_gun_animation_start( continuous := false, speed := 1.0 ):
+	anim_fire_prev = anim
+	anim = ANIM_FIRE
+	anim_fire_continuous = continuous
+	if ( continuous ):
+		$AnimatedSprite.speed_scale = speed
 
+func _on_gun_animation_stop():
+	anim = ANIM_FIRE
+	anim_fire_continuous = false
+	# Later on it will stop when animation finishes.
 
-
-
-
-
-
+func _on_AnimatedSprite_animation_finished():
+	if ( anim != ANIM_FIRE ):
+		return
+	if ( !anim_fire_continuous ):
+		return
+	anim = anim_fire_prev
+	$AnimatedSprite.speed_scale = 1.0
