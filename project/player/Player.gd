@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export(int) var move_speed = 100
+export(int) var move_speed = 500
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -73,10 +73,15 @@ func _physics_process(delta):
 		elif ( anim == ANIM_IDLE ):
 			$AnimatedSprite.animation = 'Idle' + dir_stri
 	#$AnimatedSprite.play()
-	v.y *= 0.5
+	v.y *= 0.707107
 	v *= move_speed
-	#print( "v: ", v )
-	move_and_slide( v )
+	var actual_v = move_and_slide( v )
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		print("Collided with: ", collision.collider.name)
+
+	var p = position
+	print( "v: ", v, ", p: ", p )
 	
 	
 func _compute_dir():
