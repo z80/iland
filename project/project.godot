@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "Gun",
 "language": "GDScript",
-"path": "res://player/Gun.gd"
+"path": "res://gun/Gun.gd"
 } ]
 _global_script_class_icons={
 "Gun": ""
@@ -20,7 +20,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="proj_2d"
+config/name="_my_isometric"
 run/main_scene="res://menus/2d_menu.tscn"
 config/icon="res://icon.png"
 

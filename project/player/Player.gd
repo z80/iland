@@ -20,11 +20,18 @@ signal gun_shoot_end
 signal gun_switch
 
 # Receives a signal from a gun to start fire animation.
-# gun_animation_start( continuous, speed_Scale )
+# gun_animation_start( speed_scale )
 # gun_fire_animation_stop() - this ne only is called when gun fire is continuous.
 
 var Crosshair = preload( "res://crosshair/Crosshair.tscn" )
 var crosshair = null
+
+var Hud = preload( "res://hud/Hud.tscn" )
+var hud = null
+
+# Create all the guns
+var guns = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Make camera 2d current.
@@ -39,6 +46,13 @@ func _ready():
 	vp.add_child( crosshair )
 	crosshair.visible = true
 
+	hud = Hud.instance()
+	vp.add_child( hud )
+	hud.visible = true
+	
+	_create_guns()
+	
+	connect( "gun_animation_start", self, self._on_gun_animation_start )
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -107,18 +121,24 @@ func _compute_dir():
 		d += 8
 	return d
 	
+func _create_guns():
+	var Gun = preload( "res://gun/Gun.gd" )
+	var gun = Gun.instance()
+	guns.append( gun )
+	gun.player = self
+	gun.active = true
+	
 
-func _on_gun_animation_start( continuous := false, speed := 1.0 ):
+func _on_gun_animation_start( speed := 1.0 ):
 	anim_fire_prev = anim
 	anim = ANIM_FIRE
-	anim_fire_continuous = continuous
-	if ( continuous ):
-		$AnimatedSprite.speed_scale = speed
-
-func _on_gun_animation_stop():
-	anim = ANIM_FIRE
 	anim_fire_continuous = false
-	# Later on it will stop when animation finishes.
+	$AnimatedSprite.speed_scale = speed
+
+#func _on_gun_animation_stop():
+#	anim = ANIM_FIRE
+#	anim_fire_continuous = false
+#	# Later on it will stop when animation finishes.
 
 func _on_AnimatedSprite_animation_finished():
 	if ( anim != ANIM_FIRE ):
