@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fonts/SourceCodePro-BoldIt.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/SourceCodePro-Black.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://fonts/SourceCodePro-Bold.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 128
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 100
+font_data = ExtResource( 2 )
+
+[node name="Hud" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GunIcon" type="TextureRect" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -159.883
+margin_right = 160.0
+margin_bottom = 0.117065
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ammo" type="RichTextLabel" parent="."]
+anchor_left = 0.2
+anchor_top = 1.0
+anchor_right = 0.2
+anchor_bottom = 1.0
+margin_left = 1.2
+margin_top = -162.0
+margin_right = 186.2
+margin_bottom = -6.0
+custom_fonts/italics_font = SubResource( 1 )
+custom_fonts/bold_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
+visible_characters = 2
+tab_size = 0
+text = "00"
