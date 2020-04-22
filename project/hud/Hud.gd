@@ -18,9 +18,9 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func _on_hud_gun_icon( resource ):
+func set_gun_icon( resource ):
 	$HBoxContainer/GunIcon.texture = resource
 	
-func _on_hud_ammo_qty( qty ):
+func set_ammo_qty( qty ):
 	var stri = "{:02d}".format( qty )
 	$HBoxContainer/Ammo.text = stri
