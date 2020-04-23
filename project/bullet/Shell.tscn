@@ -1,0 +1,342 @@
+[gd_scene load_steps=203 format=2]
+
+[ext_resource path="res://bullet/Shell.gd" type="Script" id=1]
+[ext_resource path="res://bullet/shell/Shell_00_090_13.png" type="Texture" id=2]
+[ext_resource path="res://bullet/shell/Shell_00_000_6.png" type="Texture" id=3]
+[ext_resource path="res://bullet/shell/Shell_00_000_5.png" type="Texture" id=4]
+[ext_resource path="res://bullet/shell/Shell_00_000_2.png" type="Texture" id=5]
+[ext_resource path="res://bullet/shell/Shell_00_000_9.png" type="Texture" id=6]
+[ext_resource path="res://bullet/shell/Shell_00_000_12.png" type="Texture" id=7]
+[ext_resource path="res://bullet/shell/Shell_00_000_15.png" type="Texture" id=8]
+[ext_resource path="res://bullet/shell/Shell_00_000_16.png" type="Texture" id=9]
+[ext_resource path="res://bullet/shell/Shell_00_000_17.png" type="Texture" id=10]
+[ext_resource path="res://bullet/shell/Shell_00_000_13.png" type="Texture" id=11]
+[ext_resource path="res://bullet/shell/Shell_00_000_0.png" type="Texture" id=12]
+[ext_resource path="res://bullet/shell/Shell_00_000_14.png" type="Texture" id=13]
+[ext_resource path="res://bullet/shell/Shell_00_000_1.png" type="Texture" id=14]
+[ext_resource path="res://bullet/shell/Shell_00_000_3.png" type="Texture" id=15]
+[ext_resource path="res://bullet/shell/Shell_00_000_4.png" type="Texture" id=16]
+[ext_resource path="res://bullet/shell/Shell_00_000_8.png" type="Texture" id=17]
+[ext_resource path="res://bullet/shell/Shell_00_000_7.png" type="Texture" id=18]
+[ext_resource path="res://bullet/shell/Shell_00_000_10.png" type="Texture" id=19]
+[ext_resource path="res://bullet/shell/Shell_00_000_11.png" type="Texture" id=20]
+[ext_resource path="res://bullet/shell/Shell_00_045_22.png" type="Texture" id=21]
+[ext_resource path="res://bullet/shell/Shell_00_000_18.png" type="Texture" id=22]
+[ext_resource path="res://bullet/shell/Shell_00_000_20.png" type="Texture" id=23]
+[ext_resource path="res://bullet/shell/Shell_00_045_8.png" type="Texture" id=24]
+[ext_resource path="res://bullet/shell/Shell_00_045_20.png" type="Texture" id=25]
+[ext_resource path="res://bullet/shell/Shell_00_045_9.png" type="Texture" id=26]
+[ext_resource path="res://bullet/shell/Shell_00_000_24.png" type="Texture" id=27]
+[ext_resource path="res://bullet/shell/Shell_00_045_1.png" type="Texture" id=28]
+[ext_resource path="res://bullet/shell/Shell_00_045_14.png" type="Texture" id=29]
+[ext_resource path="res://bullet/shell/Shell_00_045_15.png" type="Texture" id=30]
+[ext_resource path="res://bullet/shell/Shell_00_045_16.png" type="Texture" id=31]
+[ext_resource path="res://bullet/shell/Shell_00_045_17.png" type="Texture" id=32]
+[ext_resource path="res://bullet/shell/Shell_00_045_23.png" type="Texture" id=33]
+[ext_resource path="res://bullet/shell/Shell_00_000_21.png" type="Texture" id=34]
+[ext_resource path="res://bullet/shell/Shell_00_000_22.png" type="Texture" id=35]
+[ext_resource path="res://bullet/shell/Shell_00_045_11.png" type="Texture" id=36]
+[ext_resource path="res://bullet/shell/Shell_00_045_2.png" type="Texture" id=37]
+[ext_resource path="res://bullet/shell/Shell_00_000_19.png" type="Texture" id=38]
+[ext_resource path="res://bullet/shell/Shell_00_000_23.png" type="Texture" id=39]
+[ext_resource path="res://bullet/shell/Shell_00_045_3.png" type="Texture" id=40]
+[ext_resource path="res://bullet/shell/Shell_00_045_4.png" type="Texture" id=41]
+[ext_resource path="res://bullet/shell/Shell_00_045_5.png" type="Texture" id=42]
+[ext_resource path="res://bullet/shell/Shell_00_045_12.png" type="Texture" id=43]
+[ext_resource path="res://bullet/shell/Shell_00_045_13.png" type="Texture" id=44]
+[ext_resource path="res://bullet/shell/Shell_00_045_7.png" type="Texture" id=45]
+[ext_resource path="res://bullet/shell/Shell_00_045_24.png" type="Texture" id=46]
+[ext_resource path="res://bullet/shell/Shell_00_045_10.png" type="Texture" id=47]
+[ext_resource path="res://bullet/shell/Shell_00_045_19.png" type="Texture" id=48]
+[ext_resource path="res://bullet/shell/Shell_00_045_21.png" type="Texture" id=49]
+[ext_resource path="res://bullet/shell/Shell_00_045_18.png" type="Texture" id=50]
+[ext_resource path="res://bullet/shell/Shell_00_045_0.png" type="Texture" id=51]
+[ext_resource path="res://bullet/shell/Shell_00_045_6.png" type="Texture" id=52]
+[ext_resource path="res://bullet/shell/Shell_00_090_10.png" type="Texture" id=53]
+[ext_resource path="res://bullet/shell/Shell_00_090_11.png" type="Texture" id=54]
+[ext_resource path="res://bullet/shell/Shell_00_090_1.png" type="Texture" id=55]
+[ext_resource path="res://bullet/shell/Shell_00_090_4.png" type="Texture" id=56]
+[ext_resource path="res://bullet/shell/Shell_00_090_2.png" type="Texture" id=57]
+[ext_resource path="res://bullet/shell/Shell_00_090_5.png" type="Texture" id=58]
+[ext_resource path="res://bullet/shell/Shell_00_090_12.png" type="Texture" id=59]
+[ext_resource path="res://bullet/shell/Shell_00_090_3.png" type="Texture" id=60]
+[ext_resource path="res://bullet/shell/Shell_00_090_9.png" type="Texture" id=61]
+[ext_resource path="res://bullet/shell/Shell_00_090_6.png" type="Texture" id=62]
+[ext_resource path="res://bullet/shell/Shell_00_090_8.png" type="Texture" id=63]
+[ext_resource path="res://bullet/shell/Shell_00_090_0.png" type="Texture" id=64]
+[ext_resource path="res://bullet/shell/Shell_00_090_7.png" type="Texture" id=65]
+[ext_resource path="res://bullet/shell/Shell_00_090_20.png" type="Texture" id=66]
+[ext_resource path="res://bullet/shell/Shell_00_090_23.png" type="Texture" id=67]
+[ext_resource path="res://bullet/shell/Shell_00_135_15.png" type="Texture" id=68]
+[ext_resource path="res://bullet/shell/Shell_00_090_19.png" type="Texture" id=69]
+[ext_resource path="res://bullet/shell/Shell_00_135_3.png" type="Texture" id=70]
+[ext_resource path="res://bullet/shell/Shell_00_135_14.png" type="Texture" id=71]
+[ext_resource path="res://bullet/shell/Shell_00_135_16.png" type="Texture" id=72]
+[ext_resource path="res://bullet/shell/Shell_00_135_10.png" type="Texture" id=73]
+[ext_resource path="res://bullet/shell/Shell_00_135_12.png" type="Texture" id=74]
+[ext_resource path="res://bullet/shell/Shell_00_135_11.png" type="Texture" id=75]
+[ext_resource path="res://bullet/shell/Shell_00_090_22.png" type="Texture" id=76]
+[ext_resource path="res://bullet/shell/Shell_00_135_17.png" type="Texture" id=77]
+[ext_resource path="res://bullet/shell/Shell_00_135_19.png" type="Texture" id=78]
+[ext_resource path="res://bullet/shell/Shell_00_090_16.png" type="Texture" id=79]
+[ext_resource path="res://bullet/shell/Shell_00_090_18.png" type="Texture" id=80]
+[ext_resource path="res://bullet/shell/Shell_00_090_17.png" type="Texture" id=81]
+[ext_resource path="res://bullet/shell/Shell_00_135_13.png" type="Texture" id=82]
+[ext_resource path="res://bullet/shell/Shell_00_090_24.png" type="Texture" id=83]
+[ext_resource path="res://bullet/shell/Shell_00_135_1.png" type="Texture" id=84]
+[ext_resource path="res://bullet/shell/Shell_00_135_2.png" type="Texture" id=85]
+[ext_resource path="res://bullet/shell/Shell_00_090_14.png" type="Texture" id=86]
+[ext_resource path="res://bullet/shell/Shell_00_135_4.png" type="Texture" id=87]
+[ext_resource path="res://bullet/shell/Shell_00_090_15.png" type="Texture" id=88]
+[ext_resource path="res://bullet/shell/Shell_00_090_21.png" type="Texture" id=89]
+[ext_resource path="res://bullet/shell/Shell_00_135_5.png" type="Texture" id=90]
+[ext_resource path="res://bullet/shell/Shell_00_135_6.png" type="Texture" id=91]
+[ext_resource path="res://bullet/shell/Shell_00_135_7.png" type="Texture" id=92]
+[ext_resource path="res://bullet/shell/Shell_00_135_9.png" type="Texture" id=93]
+[ext_resource path="res://bullet/shell/Shell_00_135_18.png" type="Texture" id=94]
+[ext_resource path="res://bullet/shell/Shell_00_135_8.png" type="Texture" id=95]
+[ext_resource path="res://bullet/shell/Shell_00_135_20.png" type="Texture" id=96]
+[ext_resource path="res://bullet/shell/Shell_00_135_0.png" type="Texture" id=97]
+[ext_resource path="res://bullet/shell/Shell_00_180_6.png" type="Texture" id=98]
+[ext_resource path="res://bullet/shell/Shell_00_180_3.png" type="Texture" id=99]
+[ext_resource path="res://bullet/shell/Shell_00_135_23.png" type="Texture" id=100]
+[ext_resource path="res://bullet/shell/Shell_00_180_4.png" type="Texture" id=101]
+[ext_resource path="res://bullet/shell/Shell_00_180_9.png" type="Texture" id=102]
+[ext_resource path="res://bullet/shell/Shell_00_180_12.png" type="Texture" id=103]
+[ext_resource path="res://bullet/shell/Shell_00_180_11.png" type="Texture" id=104]
+[ext_resource path="res://bullet/shell/Shell_00_180_22.png" type="Texture" id=105]
+[ext_resource path="res://bullet/shell/Shell_00_225_0.png" type="Texture" id=106]
+[ext_resource path="res://bullet/shell/Shell_00_180_18.png" type="Texture" id=107]
+[ext_resource path="res://bullet/shell/Shell_00_180_17.png" type="Texture" id=108]
+[ext_resource path="res://bullet/shell/Shell_00_180_23.png" type="Texture" id=109]
+[ext_resource path="res://bullet/shell/Shell_00_135_22.png" type="Texture" id=110]
+[ext_resource path="res://bullet/shell/Shell_00_135_24.png" type="Texture" id=111]
+[ext_resource path="res://bullet/shell/Shell_00_225_1.png" type="Texture" id=112]
+[ext_resource path="res://bullet/shell/Shell_00_180_13.png" type="Texture" id=113]
+[ext_resource path="res://bullet/shell/Shell_00_180_7.png" type="Texture" id=114]
+[ext_resource path="res://bullet/shell/Shell_00_180_21.png" type="Texture" id=115]
+[ext_resource path="res://bullet/shell/Shell_00_225_2.png" type="Texture" id=116]
+[ext_resource path="res://bullet/shell/Shell_00_180_15.png" type="Texture" id=117]
+[ext_resource path="res://bullet/shell/Shell_00_180_16.png" type="Texture" id=118]
+[ext_resource path="res://bullet/shell/Shell_00_180_8.png" type="Texture" id=119]
+[ext_resource path="res://bullet/shell/Shell_00_180_0.png" type="Texture" id=120]
+[ext_resource path="res://bullet/shell/Shell_00_180_2.png" type="Texture" id=121]
+[ext_resource path="res://bullet/shell/Shell_00_135_21.png" type="Texture" id=122]
+[ext_resource path="res://bullet/shell/Shell_00_180_5.png" type="Texture" id=123]
+[ext_resource path="res://bullet/shell/Shell_00_180_10.png" type="Texture" id=124]
+[ext_resource path="res://bullet/shell/Shell_00_180_14.png" type="Texture" id=125]
+[ext_resource path="res://bullet/shell/Shell_00_180_1.png" type="Texture" id=126]
+[ext_resource path="res://bullet/shell/Shell_00_180_19.png" type="Texture" id=127]
+[ext_resource path="res://bullet/shell/Shell_00_180_20.png" type="Texture" id=128]
+[ext_resource path="res://bullet/shell/Shell_00_180_24.png" type="Texture" id=129]
+[ext_resource path="res://bullet/shell/Shell_00_270_5.png" type="Texture" id=130]
+[ext_resource path="res://bullet/shell/Shell_00_270_7.png" type="Texture" id=131]
+[ext_resource path="res://bullet/shell/Shell_00_225_21.png" type="Texture" id=132]
+[ext_resource path="res://bullet/shell/Shell_00_225_7.png" type="Texture" id=133]
+[ext_resource path="res://bullet/shell/Shell_00_270_8.png" type="Texture" id=134]
+[ext_resource path="res://bullet/shell/Shell_00_225_16.png" type="Texture" id=135]
+[ext_resource path="res://bullet/shell/Shell_00_225_10.png" type="Texture" id=136]
+[ext_resource path="res://bullet/shell/Shell_00_270_9.png" type="Texture" id=137]
+[ext_resource path="res://bullet/shell/Shell_00_225_11.png" type="Texture" id=138]
+[ext_resource path="res://bullet/shell/Shell_00_225_14.png" type="Texture" id=139]
+[ext_resource path="res://bullet/shell/Shell_00_225_8.png" type="Texture" id=140]
+[ext_resource path="res://bullet/shell/Shell_00_225_12.png" type="Texture" id=141]
+[ext_resource path="res://bullet/shell/Shell_00_225_18.png" type="Texture" id=142]
+[ext_resource path="res://bullet/shell/Shell_00_225_20.png" type="Texture" id=143]
+[ext_resource path="res://bullet/shell/Shell_00_225_9.png" type="Texture" id=144]
+[ext_resource path="res://bullet/shell/Shell_00_225_19.png" type="Texture" id=145]
+[ext_resource path="res://bullet/shell/Shell_00_225_23.png" type="Texture" id=146]
+[ext_resource path="res://bullet/shell/Shell_00_225_24.png" type="Texture" id=147]
+[ext_resource path="res://bullet/shell/Shell_00_270_1.png" type="Texture" id=148]
+[ext_resource path="res://bullet/shell/Shell_00_225_17.png" type="Texture" id=149]
+[ext_resource path="res://bullet/shell/Shell_00_225_3.png" type="Texture" id=150]
+[ext_resource path="res://bullet/shell/Shell_00_225_5.png" type="Texture" id=151]
+[ext_resource path="res://bullet/shell/Shell_00_270_4.png" type="Texture" id=152]
+[ext_resource path="res://bullet/shell/Shell_00_270_6.png" type="Texture" id=153]
+[ext_resource path="res://bullet/shell/Shell_00_225_15.png" type="Texture" id=154]
+[ext_resource path="res://bullet/shell/Shell_00_225_4.png" type="Texture" id=155]
+[ext_resource path="res://bullet/shell/Shell_00_225_6.png" type="Texture" id=156]
+[ext_resource path="res://bullet/shell/Shell_00_225_22.png" type="Texture" id=157]
+[ext_resource path="res://bullet/shell/Shell_00_270_0.png" type="Texture" id=158]
+[ext_resource path="res://bullet/shell/Shell_00_270_3.png" type="Texture" id=159]
+[ext_resource path="res://bullet/shell/Shell_00_225_13.png" type="Texture" id=160]
+[ext_resource path="res://bullet/shell/Shell_00_270_2.png" type="Texture" id=161]
+[ext_resource path="res://bullet/shell/Shell_00_270_12.png" type="Texture" id=162]
+[ext_resource path="res://bullet/shell/Shell_00_270_10.png" type="Texture" id=163]
+[ext_resource path="res://bullet/shell/Shell_00_270_22.png" type="Texture" id=164]
+[ext_resource path="res://bullet/shell/Shell_00_270_11.png" type="Texture" id=165]
+[ext_resource path="res://bullet/shell/Shell_00_270_15.png" type="Texture" id=166]
+[ext_resource path="res://bullet/shell/Shell_00_270_19.png" type="Texture" id=167]
+[ext_resource path="res://bullet/shell/Shell_00_270_18.png" type="Texture" id=168]
+[ext_resource path="res://bullet/shell/Shell_00_270_17.png" type="Texture" id=169]
+[ext_resource path="res://bullet/shell/Shell_00_270_16.png" type="Texture" id=170]
+[ext_resource path="res://bullet/shell/Shell_00_270_24.png" type="Texture" id=171]
+[ext_resource path="res://bullet/shell/Shell_00_270_20.png" type="Texture" id=172]
+[ext_resource path="res://bullet/shell/Shell_00_270_14.png" type="Texture" id=173]
+[ext_resource path="res://bullet/shell/Shell_00_270_21.png" type="Texture" id=174]
+[ext_resource path="res://bullet/shell/Shell_00_270_13.png" type="Texture" id=175]
+[ext_resource path="res://bullet/shell/Shell_00_270_23.png" type="Texture" id=176]
+[ext_resource path="res://bullet/shell/Shell_00_315_10.png" type="Texture" id=177]
+[ext_resource path="res://bullet/shell/Shell_00_315_11.png" type="Texture" id=178]
+[ext_resource path="res://bullet/shell/Shell_00_315_4.png" type="Texture" id=179]
+[ext_resource path="res://bullet/shell/Shell_00_315_7.png" type="Texture" id=180]
+[ext_resource path="res://bullet/shell/Shell_00_315_0.png" type="Texture" id=181]
+[ext_resource path="res://bullet/shell/Shell_00_315_2.png" type="Texture" id=182]
+[ext_resource path="res://bullet/shell/Shell_00_315_3.png" type="Texture" id=183]
+[ext_resource path="res://bullet/shell/Shell_00_315_5.png" type="Texture" id=184]
+[ext_resource path="res://bullet/shell/Shell_00_315_6.png" type="Texture" id=185]
+[ext_resource path="res://bullet/shell/Shell_00_315_1.png" type="Texture" id=186]
+[ext_resource path="res://bullet/shell/Shell_00_315_8.png" type="Texture" id=187]
+[ext_resource path="res://bullet/shell/Shell_00_315_9.png" type="Texture" id=188]
+[ext_resource path="res://bullet/shell/Shell_00_315_13.png" type="Texture" id=189]
+[ext_resource path="res://bullet/shell/Shell_00_315_22.png" type="Texture" id=190]
+[ext_resource path="res://bullet/shell/Shell_00_315_14.png" type="Texture" id=191]
+[ext_resource path="res://bullet/shell/Shell_00_315_23.png" type="Texture" id=192]
+[ext_resource path="res://bullet/shell/Shell_00_315_15.png" type="Texture" id=193]
+[ext_resource path="res://bullet/shell/Shell_00_315_17.png" type="Texture" id=194]
+[ext_resource path="res://bullet/shell/Shell_00_315_21.png" type="Texture" id=195]
+[ext_resource path="res://bullet/shell/Shell_00_315_16.png" type="Texture" id=196]
+[ext_resource path="res://bullet/shell/Shell_00_315_24.png" type="Texture" id=197]
+[ext_resource path="res://bullet/shell/Shell_00_315_18.png" type="Texture" id=198]
+[ext_resource path="res://bullet/shell/Shell_00_315_19.png" type="Texture" id=199]
+[ext_resource path="res://bullet/shell/Shell_00_315_12.png" type="Texture" id=200]
+[ext_resource path="res://bullet/shell/Shell_00_315_20.png" type="Texture" id=201]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 181 ), ExtResource( 186 ), ExtResource( 182 ), ExtResource( 183 ), ExtResource( 179 ), ExtResource( 184 ), ExtResource( 185 ), ExtResource( 180 ), ExtResource( 187 ), ExtResource( 188 ), ExtResource( 177 ), ExtResource( 178 ), ExtResource( 200 ), ExtResource( 189 ), ExtResource( 191 ), ExtResource( 193 ), ExtResource( 196 ), ExtResource( 194 ), ExtResource( 198 ), ExtResource( 199 ), ExtResource( 201 ), ExtResource( 195 ), ExtResource( 190 ), ExtResource( 192 ), ExtResource( 197 ) ],
+"loop": true,
+"name": "Shell_00_315",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 64 ), ExtResource( 55 ), ExtResource( 57 ), ExtResource( 60 ), ExtResource( 56 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 61 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 59 ), ExtResource( 2 ), ExtResource( 86 ), ExtResource( 88 ), ExtResource( 79 ), ExtResource( 81 ), ExtResource( 80 ), ExtResource( 69 ), ExtResource( 66 ), ExtResource( 89 ), ExtResource( 76 ), ExtResource( 67 ), ExtResource( 83 ) ],
+"loop": true,
+"name": "Shell_00_090",
+"speed": 20.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Shell_01_225",
+"speed": 20.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Shell_02_090",
+"speed": 20.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Shell_02_000",
+"speed": 20.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Shell_01_180",
+"speed": 20.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Shell_01_270",
+"speed": 20.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Shell_02_180",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 158 ), ExtResource( 148 ), ExtResource( 161 ), ExtResource( 159 ), ExtResource( 152 ), ExtResource( 130 ), ExtResource( 153 ), ExtResource( 131 ), ExtResource( 134 ), ExtResource( 137 ), ExtResource( 163 ), ExtResource( 165 ), ExtResource( 162 ), ExtResource( 175 ), ExtResource( 173 ), ExtResource( 166 ), ExtResource( 170 ), ExtResource( 169 ), ExtResource( 168 ), ExtResource( 167 ), ExtResource( 172 ), ExtResource( 174 ), ExtResource( 164 ), ExtResource( 176 ), ExtResource( 171 ) ],
+"loop": true,
+"name": "Shell_00_270",
+"speed": 20.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Shell_01_135",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 106 ), ExtResource( 112 ), ExtResource( 116 ), ExtResource( 150 ), ExtResource( 155 ), ExtResource( 151 ), ExtResource( 156 ), ExtResource( 133 ), ExtResource( 140 ), ExtResource( 144 ), ExtResource( 136 ), ExtResource( 138 ), ExtResource( 141 ), ExtResource( 160 ), ExtResource( 139 ), ExtResource( 154 ), ExtResource( 135 ), ExtResource( 149 ), ExtResource( 142 ), ExtResource( 145 ), ExtResource( 143 ), ExtResource( 132 ), ExtResource( 157 ), ExtResource( 146 ), ExtResource( 147 ) ],
+"loop": true,
+"name": "Shell_00_225",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 97 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 70 ), ExtResource( 87 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 95 ), ExtResource( 93 ), ExtResource( 73 ), ExtResource( 75 ), ExtResource( 74 ), ExtResource( 82 ), ExtResource( 71 ), ExtResource( 68 ), ExtResource( 72 ), ExtResource( 77 ), ExtResource( 94 ), ExtResource( 78 ), ExtResource( 96 ), ExtResource( 122 ), ExtResource( 110 ), ExtResource( 100 ), ExtResource( 111 ) ],
+"loop": true,
+"name": "Shell_00_135",
+"speed": 20.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Shell_01_315",
+"speed": 20.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Shell_01_045",
+"speed": 20.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Shell_02_270",
+"speed": 20.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Shell_01_000",
+"speed": 20.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Shell_02_315",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 51 ), ExtResource( 28 ), ExtResource( 37 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 52 ), ExtResource( 45 ), ExtResource( 24 ), ExtResource( 26 ), ExtResource( 47 ), ExtResource( 36 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 50 ), ExtResource( 48 ), ExtResource( 25 ), ExtResource( 49 ), ExtResource( 21 ), ExtResource( 33 ), ExtResource( 46 ) ],
+"loop": true,
+"name": "Shell_00_045",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 14 ), ExtResource( 5 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 6 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 22 ), ExtResource( 38 ), ExtResource( 23 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 39 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "Shell_00_000",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 120 ), ExtResource( 126 ), ExtResource( 121 ), ExtResource( 99 ), ExtResource( 101 ), ExtResource( 123 ), ExtResource( 98 ), ExtResource( 114 ), ExtResource( 119 ), ExtResource( 102 ), ExtResource( 124 ), ExtResource( 104 ), ExtResource( 103 ), ExtResource( 113 ), ExtResource( 125 ), ExtResource( 117 ), ExtResource( 118 ), ExtResource( 108 ), ExtResource( 107 ), ExtResource( 127 ), ExtResource( 128 ), ExtResource( 115 ), ExtResource( 105 ), ExtResource( 109 ), ExtResource( 129 ) ],
+"loop": true,
+"name": "Shell_00_180",
+"speed": 20.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Shell_02_225",
+"speed": 20.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Shell_02_135",
+"speed": 20.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Shell_01_090",
+"speed": 20.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Shell_02_045",
+"speed": 20.0
+} ]
+
+[node name="Shell" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "Shell_00_315"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]

@@ -95,27 +95,32 @@ func _process_moving():
 		$AnimatedSprite.animation = stri
 	return v
 	
-func _animation_name( animation, dir ):
+func _animation_dir_name( direction ):
 	var dir_stri: String
-	if ( dir == DIR_000 ):
+	if ( direction == DIR_000 ):
 		dir_stri = '_000'
-	elif ( dir == DIR_045 ):
+	elif ( direction == DIR_045 ):
 		dir_stri = '_045'
-	elif ( dir == DIR_090 ):
+	elif ( direction == DIR_090 ):
 		dir_stri = '_090'
-	elif ( dir == DIR_135 ):
+	elif ( direction == DIR_135 ):
 		dir_stri = '_135'
-	elif ( dir == DIR_180 ):
+	elif ( direction == DIR_180 ):
 		dir_stri = '_180'
-	elif ( dir == DIR_225 ):
+	elif ( direction == DIR_225 ):
 		dir_stri = '_225'
-	elif ( dir == DIR_270 ):
+	elif ( direction == DIR_270 ):
 		dir_stri = '_270'
-	elif ( dir == DIR_315 ):
+	elif ( direction == DIR_315 ):
 		dir_stri = '_315'
 	else:
 		dir_stri = '_000'
+		
+	return dir_stri	
 	
+	
+func _animation_name( animation, dir ):
+	var dir_stri: String = _animation_dir_name( dir )
 	var anim_stri: String
 	if ( animation == ANIM_WALK ):
 		anim_stri = 'Walk'

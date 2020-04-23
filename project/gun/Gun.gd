@@ -5,6 +5,7 @@ extends Node
 
 signal gun_animation_start( speed_scale )
 
+var Shell = preload( "res://bullet/Shell.tscn" )
 
 # Reference to the player
 var player
@@ -40,6 +41,7 @@ func _physics_process( delta ):
 		# Create bullet here. And send command to play shoot animation.
 		var speed_scale = 1.0 / shoot_interval
 		player.gun_animation_start( speed_scale )
+		_create_shell()
 		shoot_elapsed -= shoot_interval
 		
 		# Stop shooting if it is not a machine gun.
@@ -77,6 +79,14 @@ func gun_shoot_stop():
 	# Stops shooting in the case of automatic machine gun fire.
 	shooting = false
 	player.gun_animation_stop()
+	
+func _create_shell():
+	var dir_stri: String = player._animation_dir_name( player.dir )
+	var shell = Shell.instance()
+	var vp = get_tree().get_root()
+	vp.add_child( shell )
+	shell.sample( dir_stri )
+	shell.position = player.position
 
 #func _on_gun_switch():
 #	pass
