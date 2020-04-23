@@ -15,10 +15,11 @@ func sample( direction_string: String ):
 		stri = "Shell_01"
 	else:
 		stri = "Shell_02"
-	stri = "Shell_00"
+	#stri = "Shell_02"
 	stri = stri + direction_string
 	$AnimatedSprite.animation = stri
 	$AnimatedSprite.playing = true
+	$AnimatedSprite.z_index = 2
 
 
 func _on_Timer_timeout():
@@ -27,6 +28,8 @@ func _on_Timer_timeout():
 
 func _on_AnimatedSprite_animation_finished():
 	$AnimatedSprite.playing = false
+	$AnimatedSprite.frame = 24
+	$AnimatedSprite.z_index = 0
 	$Timer.start()
 
 
