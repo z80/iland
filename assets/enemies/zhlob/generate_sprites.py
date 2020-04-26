@@ -27,7 +27,8 @@ def renderSprites():
     bpy.data.scenes['Scene'].cycles.film_transparent = True
     print( "Rendering sprites" )
     angles = [0, 45, 90, 135, 180, 225, 270, 315]
-    action = {'name': 'Walk', 'frames': [1, 10, 20, 30, 40, 50, 60, 80, 90, 100, 110, 120]}
+    #action = {'name': 'Walk', 'frames': [1, 10, 20, 30, 40, 50, 60, 80, 90, 100, 110, 120]}
+    action = {'name': 'Idle', 'frames': [1, 10, 20, 30, 40, 50, 60, 80, 90, 100, 110, 120]}
     for angle in angles:
         setView( angle )
         # Do all actions
