@@ -14,7 +14,7 @@ def setAction( action ):
     bpy.data.objects['MuzzleFlash'].animation_data.action = bpy.data.actions[action]
 
 def renderImage( fname ):
-    base_path = 'C:/Users/sbashkirov/projects/iland.git/assets/character/sprites/'
+    base_path = 'C:/Users/sbashkirov/projects/iland.git/assets/enemies/zhlob/sprites/'
     full_name = base_path + fname
     print( "Save file {}".format( full_name ) )
     bpy.data.scenes['Scene'].render.filepath = full_name
@@ -27,25 +27,19 @@ def renderSprites():
     bpy.data.scenes['Scene'].cycles.film_transparent = True
     print( "Rendering sprites" )
     angles = [0, 45, 90, 135, 180, 225, 270, 315]
-    #angles = [0]
-    actions = [{'name': 'Idle', 'frames': [1, 30, 60, 90, 120]}, \
-               {'name': 'Walk', 'frames': [1, 15, 30, 45, 60]}, \
-               {'name': 'Fire', 'frames': [30, 60]}, \
-               {'name': 'Death', 'frames': [1, 10, 20, 30, 40, 50, 60, 80, 120]}]
-    actions = [{'name': 'Death', 'frames': [1, 10, 20, 30, 40, 50, 60, 80, 120]}]
+    action = {'name': 'Walk', 'frames': [1, 10, 20, 30, 40, 50, 60, 80, 90, 100, 110, 120]}
     for angle in angles:
         setView( angle )
         # Do all actions
-        for action in actions:
-            act_name = action['name']
-            act_frames = action['frames']
+        act_name = action['name']
+        act_frames = action['frames']
 
-            setAction( act_name )
-            prefix = "{}_{:03d}".format( act_name, angle )
-            for i, frame in enumerate( act_frames ):
-                fname = "{}_{:01d}.png".format(prefix, i)
-                setFrame( frame )
-                renderImage( fname )
+        #setAction( act_name )
+        prefix = "{}_{:03d}".format( act_name, angle )
+        for i, frame in enumerate( act_frames ):
+            fname = "{}_{:01d}.png".format(prefix, i)
+            setFrame( frame )
+            renderImage( fname )
 
     print( "All done" )
 
