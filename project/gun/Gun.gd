@@ -19,18 +19,22 @@ var available: bool  = false setget set_available, get_available
 var active: bool = false setget set_active, get_active
 
 var icon: Texture  = null
-var sound: Resource = null
+# Shot sound
+var shot_sound: Resource = preload( "res://gun/sounds/m4.ogg" )
 var shoot_interval = 0.3
 var shoot_elapsed  = 0.3
 #var shoot_sound: Sound = null
 var shooting: bool = false
 var automatic: bool = false
 
+
 func _init():
 	player = null
 	hud = null
 	print( "End of Gun.gd::_init()" )
-	
+
+func _ready():
+	shot_sound.set_loop( false )
 	
 func _physics_process( delta ):
 	if ( shoot_elapsed < shoot_interval ):
@@ -62,7 +66,7 @@ func set_active( en: bool ):
 	active = en
 	if en and player:
 		hud.set_gun_icon( icon )
-		player.set_gun_sound( sound )
+		player.set_gun_sound( shot_sound )
 	
 func get_active() -> bool:
 	var en = active
@@ -87,6 +91,6 @@ func _create_shell():
 	vp.add_child( shell )
 	shell.sample( dir_stri )
 	shell.position = player.position
-
+	
 #func _on_gun_switch():
 #	pass

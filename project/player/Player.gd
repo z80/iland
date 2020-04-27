@@ -189,3 +189,8 @@ func gun_animation_stop():
 	$AnimatedSprite.speed_scale = 1.0
 	$AnimatedSprite.animation = stri
 	print( "restored scale" )
+
+
+func _on_AudioStreamPlayer_finished():
+	$AudioStreamPlayer.playing = false
+	print( "player sound finished" )

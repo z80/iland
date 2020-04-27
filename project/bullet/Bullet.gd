@@ -12,7 +12,7 @@ var timer_interval: float = 0.3
 var player = null
 var has_hit_target: bool = false
 
-var hit_sound: Resource = null
+var hit_sound: Resource = preload( "res://bullet/sounds/hit.ogg" )
 
 func _init( start: Vector2, dir: Vector2 ):
 	position = start
@@ -20,6 +20,7 @@ func _init( start: Vector2, dir: Vector2 ):
 		velocity = dir.normalized() * speed
 	else:
 		velocity = dir.normalized() * max_distance
+	
 	
 func _ready():
 	$RayCast2D.collide_with_areas  = true
@@ -43,6 +44,10 @@ func _physics_process( delta ):
 	if ( not collides ):
 		return
 	var obj: Object = $RayCast2D.get_collider()
+	
+	# Play the hit sound
+	$AudioStreamPlayer.stream = hit_sound
+	$AudioStreamPlayer.play()
 	#var correct_type: bool = obj is Enemy
 	#if correct_type:
 	#	_hit_target( obj as Enemy )

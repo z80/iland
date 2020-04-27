@@ -1,9 +1,13 @@
 
 extends Node2D
 
+var sound = preload( "res://bullet/sounds/shell.ogg" )
+
 func __init():
 	pass
 
+func _ready():
+	sound.set_loop( false )
 
 func sample( direction_string: String ):
 	# Pick random animation And play it till the very end
@@ -30,6 +34,10 @@ func _on_AnimatedSprite_animation_finished():
 	$AnimatedSprite.playing = false
 	$AnimatedSprite.frame = 24
 	$AnimatedSprite.z_index = 0
+	
+	$AudioStreamPlayer.stream = sound
+	$AudioStreamPlayer.play()
+	
 	$Timer.start()
 
 

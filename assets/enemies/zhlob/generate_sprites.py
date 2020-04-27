@@ -27,12 +27,19 @@ def renderSprites():
     bpy.data.scenes['Scene'].cycles.film_transparent = True
     print( "Rendering sprites" )
     angles = [0, 45, 90, 135, 180, 225, 270, 315]
-    #action = {'name': 'Walk', 'frames': [1, 10, 20, 30, 40, 50, 60, 80, 90, 100, 110, 120]}
-    #action = {'name': 'Idle', 'frames': [1, 10, 20, 30, 40, 50, 60, 80, 90, 100, 110, 120]}
-    action = {'name': 'Death_0', \
-              'frames': [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, \
-                         65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, \
-                         125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180]}
+    #action = {'name': 'Walk', 'frames': [1, 20, 40, 60, 80, 100, 120]}
+    #action = {'name': 'Idle', 'frames': [1, 20, 40, 60, 80, 100, 120]}
+    #action = {'name': 'Death_0', \
+    #          'frames': [1, 10, 20, 30, 40, 50, 60, \
+    #                     70, 80, 90, 100, 110, 120, \
+    #                     130, 140, 150, 160, 170, 180]}
+    #action = {'name': 'Hit_0', \
+    #          'frames': [1, 5, 10, 15, 20]}
+    #action = {'name': 'Hit_1', \
+    #          'frames': [21, 25, 30, 35, 40]}
+    action = {'name': 'Hit_2', \
+              'frames': [41, 45, 50, 55, 60]}
+    #action = {'name': 'Fire', 'frames': [1, 20, 40, 60, 80, 100, 120]}
     for angle in angles:
         setView( angle )
         # Do all actions

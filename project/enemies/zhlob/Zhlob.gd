@@ -1,64 +1,140 @@
 extends KinematicBody2D
 
-export(int) var move_speed = 500
+export(int)   var move_speed = 500
+export(float) var fire_period   = 2.0
+export(float) var fire_distance = 256.0
+export(float) var sight_distance = 10000.0
+export(int)   var health = 100
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-enum {ANIM_IDLE=0, ANIM_WALK=1, ANIM_FIRE=2}
+enum {ANIM_IDLE=0, ANIM_WALK=1, ANIM_FIRE=2, ANIM_HIT=3, ANIM_DEATH=4}
 enum {DIR_000=0, DIR_045=1, DIR_090=2, DIR_135=3, DIR_180=4, DIR_225=5, DIR_270=6, DIR_315=7}
+enum {STATE_IDLE=0, STATE_WALK=1, STATE_HIT=2, STATE_FIRE=3, STATE_DYING=4, STATE_DEAD=5}
 
 export(int)  var anim = ANIM_IDLE
-export(int)  var anim_fire_prev = ANIM_IDLE
+export(int)  var anim_prev = ANIM_IDLE
 #export(bool) var anim_fire_continuous = false
-export(int)  var dir  = DIR_000
+export(int)  var anim_dir  = DIR_000
 
-# Signals player emits.
-# Gun objects receive and process these.
-signal gun_activate( sound )
-signal gun_shoot_start
-signal gun_shoot_end
-signal gun_switch
-
-# Receives a signal from a gun to start fire animation.
-# gun_animation_start( speed_scale )
-# gun_fire_animation_stop() - this ne only is called when gun fire is continuous.
-
-var Crosshair = preload( "res://crosshair/Crosshair.tscn" )
-var crosshair = null
-
-var Hud = preload( "res://hud/Hud.tscn" )
-var hud = null
-
-# Create all the guns
-var guns = []
-var gun = null
-var gun_category = 0
-var gun_index = 0
+var state: int = STATE_IDLE
+var state_prev: int = STATE_IDLE
+var target: KinematicBody2D = null
+var line_of_sight: Vector2 = Vector2()
+var finished_animation: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# Make camera 2d current.
-	$Camera2D.make_current()
+	target = null
 	
-	# Make it play animation all the time.
-	$AnimatedSprite.playing = true
+func _process_state():
+	var new_state = state
+	if ( state == STATE_IDLE ):
+		new_state = _process_idle()
+	elif ( state == STATE_WALK ):
+		new_state = _process_walk()
+	elif ( state == STATE_HIT ):
+		new_state = _process_hit()
+	elif ( state == STATE_FIRE ):
+		new_state = _process_fire()
+	elif ( state == STATE_DYING ):
+		new_state = _process_dying()
+	elif ( state == STATE_DEAD ):
+		new_state = _process_dead()
+		
+	if ( new_state == state ):
+		return
 	
-	# Create Crosshair.
-	var vp = get_tree().get_root()
-	crosshair = Crosshair.instance()
-	vp.add_child( crosshair )
-	crosshair.visible = true
+	state = new_state
+	if ( state == STATE_IDLE ):
+		new_state = _to_idle()
+	elif ( state == STATE_WALK ):
+		new_state = _to_walk()
+	elif ( state == STATE_HIT ):
+		new_state = _to_hit()
+	elif ( state == STATE_FIRE ):
+		new_state = _to_fire()
+	elif ( state == STATE_DYING ):
+		new_state = _to_dying()
+	elif ( state == STATE_DEAD ):
+		new_state = _to_dead()
+		
+func _process_idle():
+	var d = _target_dist()
+	if d <= sight_distance:
+		if d > fire_distance:
+			var target_at = target.global_position
+			var own_at = global_position
+			var dv = target_at - own_at
+			line_of_sight = dv
+			return STATE_WALK
+		else:
+			return STATE_HIT
+	
+func _process_walk():
+	if not target:
+		return STATE_IDLE
+		
+	var target_at = target.global_position
+	var own_at = global_position
+	var dv = target_at - own_at
+	line_of_sight = dv
+	var d = dv.abs()
+	if ( d <= fire_distance ):
+		return STATE_FIRE
+		
+	return STATE_WALK
+	
+	
+func _process_hit():
+	if finished_animation:
+		return state_prev
+	return STATE_HIT
 
-	hud = Hud.instance()
-	vp.add_child( hud )
-	hud.visible = true
+func _process_fire():
+	if finished_animation:
+		var d = _target_dist()
+		if ( d <= fire_distance ):
+			target.hit()
+		return state_prev
+		
+	return STATE_FIRE
 	
-	_create_guns()
+func _process_dying():
+	if finished_animation:
+		return STATE_DEAD
+	return STATE_DYING
 	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process_dead():
+	return STATE_DEAD
+	
+func _to_idle():
+	pass
+	
+func _to_walk():
+	pass
+	
+func _to_hit():
+	pass
+	
+func _to_fire():
+	pass
+	
+func _to_dying():
+	pass
+	
+func _to_dead():
+	pass
+	
+	
+func _target_dist():
+	if not target:
+		return fire_distance * 10
+	var target_at = target.global_position
+	var own_at = global_position
+	var dv = target_at - own_at
+	var d = dv.abs()
+	return d
 
 func _physics_process(delta):
 	# Process moving
@@ -66,9 +142,7 @@ func _physics_process(delta):
 	v.y *= 0.707107
 	v *= move_speed
 	var actual_v = move_and_slide( v )
-	
-	# Process firing
-	_process_firing()
+
 
 
 func _process_moving():
@@ -86,12 +160,12 @@ func _process_moving():
 			new_anim = ANIM_IDLE
 	var update_animation = false
 	var new_dir = _compute_dir()
-	if ( dir != new_dir ):
+	if ( anim_dir != new_dir ):
 		update_animation = true
-		dir = new_dir
+		anim_dir = new_dir
 	if ( update_animation or (anim != new_anim) ):
 		anim = new_anim
-		var stri: String = _animation_name( anim, dir )
+		var stri: String = _animation_name( anim, anim_dir )
 		$AnimatedSprite.animation = stri
 	return v
 	
@@ -131,22 +205,8 @@ func _animation_name( animation, dir ):
 	var stri: String = anim_stri + dir_stri
 	return stri
 	
-func _process_firing():
-	var just_pressed = Input.is_action_just_pressed( "ui_fire" )
-	if just_pressed:
-		if gun:
-			gun.gun_shoot_start()
-		print( "Player emit_signal( \'gun_shoot_start\' )" )
-	else:
-		var just_released = Input.is_action_just_released( "ui_fire" )
-		if just_released and gun:
-			gun.gun_shoot_stop()
-	
-	
 func _compute_dir():
-	var c_at = crosshair.position
-	var p_at = position
-	var a = c_at - p_at
+	var a = line_of_sight
 	var angle = atan2( a.y, a.x )
 	var _pi_4 = PI*0.25
 	var d = int(round( angle / _pi_4 ))
@@ -154,38 +214,16 @@ func _compute_dir():
 		d += 8
 	return d
 	
-func _create_guns():
-	var Pistol = load( "res://gun/Pistol.gd" )
-	var g = Pistol.new()
-	guns.append( [ g ] )
-	g.player = self
-	g.hud    = hud
-	g.active = true
-	self.add_child( g )
-	gun = g
-	
 
-func gun_animation_start( speed := 1.0 ):
-	anim_fire_prev = anim
-	anim = ANIM_FIRE
-	var stri: String = _animation_name( anim, dir )
-	#anim_fire_continuous = false
-	$AnimatedSprite.speed_scale = speed
-	$AnimatedSprite.animation = stri
-	$AudioStreamPlayer.play()
-	
-	print( "gun animation: ", stri )
+func hit( damage=10 ):
+	health -= damage
+	if health > 0:
+		state = STATE_HIT
+		_to_hit()
+	else:
+		state = STATE_DYING
+		_to_dying()
 
-func set_gun_sound( sound ):
-	$AudioStreamPlayer.stream = sound
-#func _on_gun_animation_stop():
-#	anim = ANIM_FIRE
-#	anim_fire_continuous = false
-#	# Later on it will stop when animation finishes.
 
-func gun_animation_stop():
-	anim = anim_fire_prev
-	var stri: String = _animation_name( anim, dir )
-	$AnimatedSprite.speed_scale = 1.0
-	$AnimatedSprite.animation = stri
-	print( "restored scale" )
+func _on_AnimatedSprite_animation_finished():
+	finished_animation = true
