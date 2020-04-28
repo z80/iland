@@ -1,3 +1,4 @@
+
 extends "res://state_machine/state.gd"
 
 # Initialize the state. E.g. change the animation.
@@ -6,5 +7,5 @@ func enter():
 	owner.get_node("AnimationPlayer").play("die")
 
 
-func _on_animation_finished(_anim_name):
+func on_animation_finished(_anim_name):
 	emit_signal("finished", "dead")
