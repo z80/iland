@@ -17,6 +17,8 @@ var states_stack = []
 var current_state = null
 var _active = false setget set_active
 
+var character = null
+
 func _init_states_map( sm ):
 	pass
 
@@ -26,6 +28,8 @@ func _ready():
 	
 	# Connect signals.
 	for child in get_children():
+		child.character     = character
+		child.state_machine = self
 		child.connect( "finished", self, "_change_state" )
 		states_map[child.name] = child
 	

@@ -381,9 +381,19 @@ animations = [ {
 "name": "Death_315",
 "speed": 10.0
 }, {
+"frames": [ ExtResource( 159 ), ExtResource( 156 ), ExtResource( 177 ), ExtResource( 169 ), ExtResource( 153 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 3 ), ExtResource( 27 ), ExtResource( 33 ), ExtResource( 93 ), ExtResource( 58 ), ExtResource( 91 ), ExtResource( 90 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "Death_225",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 276 ), ExtResource( 279 ), ExtResource( 280 ), ExtResource( 285 ), ExtResource( 291 ), ExtResource( 292 ), ExtResource( 309 ) ],
 "loop": true,
 "name": "Walk_270",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 281 ), ExtResource( 283 ), ExtResource( 302 ), ExtResource( 287 ), ExtResource( 288 ), ExtResource( 274 ), ExtResource( 294 ) ],
+"loop": true,
+"name": "Walk_225",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 99 ), ExtResource( 94 ), ExtResource( 98 ), ExtResource( 112 ), ExtResource( 142 ), ExtResource( 117 ), ExtResource( 124 ), ExtResource( 129 ), ExtResource( 121 ), ExtResource( 137 ), ExtResource( 136 ), ExtResource( 116 ), ExtResource( 146 ), ExtResource( 145 ), ExtResource( 118 ), ExtResource( 143 ), ExtResource( 139 ), ExtResource( 122 ), ExtResource( 127 ) ],
@@ -396,40 +406,100 @@ animations = [ {
 "name": "Idle_045",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 159 ), ExtResource( 156 ), ExtResource( 177 ), ExtResource( 169 ), ExtResource( 153 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 3 ), ExtResource( 27 ), ExtResource( 33 ), ExtResource( 93 ), ExtResource( 58 ), ExtResource( 91 ), ExtResource( 90 ), ExtResource( 16 ) ],
+"frames": [ ExtResource( 175 ), ExtResource( 225 ), ExtResource( 227 ), ExtResource( 230 ), ExtResource( 184 ), ExtResource( 181 ), ExtResource( 182 ) ],
 "loop": true,
-"name": "Death_225",
+"name": "Fire_045",
 "speed": 10.0
-}, {
-"frames": [ ExtResource( 281 ), ExtResource( 283 ), ExtResource( 302 ), ExtResource( 287 ), ExtResource( 288 ), ExtResource( 274 ), ExtResource( 294 ) ],
-"loop": true,
-"name": "Walk_225",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 29 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 2 ), ExtResource( 212 ) ],
-"loop": true,
-"name": "Idle_270",
-"speed": 5.0
 }, {
 "frames": [ ExtResource( 84 ), ExtResource( 87 ), ExtResource( 96 ), ExtResource( 109 ), ExtResource( 86 ), ExtResource( 104 ), ExtResource( 114 ), ExtResource( 115 ), ExtResource( 103 ), ExtResource( 95 ), ExtResource( 107 ), ExtResource( 105 ), ExtResource( 111 ), ExtResource( 97 ), ExtResource( 101 ), ExtResource( 88 ), ExtResource( 92 ), ExtResource( 89 ), ExtResource( 108 ) ],
 "loop": true,
 "name": "Death_090",
 "speed": 10.0
 }, {
+"frames": [ ExtResource( 297 ), ExtResource( 303 ), ExtResource( 299 ), ExtResource( 300 ), ExtResource( 304 ), ExtResource( 286 ), ExtResource( 284 ) ],
+"loop": true,
+"name": "Walk_180",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 232 ), ExtResource( 256 ), ExtResource( 275 ), ExtResource( 277 ), ExtResource( 278 ), ExtResource( 296 ), ExtResource( 249 ) ],
+"loop": true,
+"name": "Fire_225",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 17 ), ExtResource( 23 ), ExtResource( 13 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Idle_180",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 7 ), ExtResource( 19 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 14 ), ExtResource( 4 ), ExtResource( 30 ) ],
 "loop": true,
 "name": "Idle_225",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 183 ), ExtResource( 204 ), ExtResource( 208 ), ExtResource( 180 ), ExtResource( 190 ), ExtResource( 187 ), ExtResource( 205 ) ],
+"loop": true,
+"name": "Idle_090",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 188 ), ExtResource( 217 ), ExtResource( 165 ), ExtResource( 154 ), ExtResource( 179 ), ExtResource( 163 ), ExtResource( 149 ) ],
+"loop": true,
+"name": "Fire_000",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 254 ), ExtResource( 246 ), ExtResource( 257 ), ExtResource( 259 ), ExtResource( 273 ), ExtResource( 260 ), ExtResource( 269 ) ],
+"loop": true,
+"name": "Walk_090",
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 195 ), ExtResource( 155 ), ExtResource( 196 ), ExtResource( 186 ), ExtResource( 220 ), ExtResource( 264 ), ExtResource( 248 ) ],
 "loop": true,
 "name": "Fire_090",
 "speed": 10.0
 }, {
+"frames": [ ExtResource( 120 ), ExtResource( 135 ), ExtResource( 133 ), ExtResource( 128 ), ExtResource( 123 ), ExtResource( 140 ), ExtResource( 125 ), ExtResource( 126 ), ExtResource( 130 ), ExtResource( 141 ), ExtResource( 131 ), ExtResource( 164 ), ExtResource( 170 ), ExtResource( 152 ), ExtResource( 160 ), ExtResource( 176 ), ExtResource( 168 ), ExtResource( 178 ), ExtResource( 157 ) ],
+"loop": true,
+"name": "Death_180",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 289 ), ExtResource( 261 ), ExtResource( 298 ), ExtResource( 295 ), ExtResource( 262 ), ExtResource( 290 ), ExtResource( 243 ) ],
+"loop": true,
+"name": "Fire_135",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 185 ), ExtResource( 199 ), ExtResource( 192 ), ExtResource( 193 ), ExtResource( 197 ), ExtResource( 201 ), ExtResource( 194 ) ],
+"loop": true,
+"name": "Idle_135",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 238 ), ExtResource( 235 ), ExtResource( 219 ), ExtResource( 229 ), ExtResource( 215 ), ExtResource( 216 ), ExtResource( 226 ) ],
+"loop": true,
+"name": "Walk_000",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 43 ), ExtResource( 39 ), ExtResource( 46 ), ExtResource( 42 ), ExtResource( 47 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 41 ), ExtResource( 40 ), ExtResource( 45 ), ExtResource( 48 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 63 ), ExtResource( 79 ), ExtResource( 69 ), ExtResource( 61 ) ],
+"loop": true,
+"name": "Death_000",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 148 ), ExtResource( 158 ), ExtResource( 150 ), ExtResource( 172 ), ExtResource( 167 ), ExtResource( 151 ), ExtResource( 161 ) ],
 "loop": true,
 "name": "Idle_000",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 244 ), ExtResource( 236 ), ExtResource( 245 ), ExtResource( 263 ), ExtResource( 265 ), ExtResource( 242 ), ExtResource( 301 ) ],
+"loop": true,
+"name": "Fire_180",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 313 ), ExtResource( 320 ), ExtResource( 322 ), ExtResource( 317 ), ExtResource( 319 ), ExtResource( 323 ), ExtResource( 314 ) ],
+"loop": true,
+"name": "Walk_315",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 52 ), ExtResource( 59 ), ExtResource( 85 ), ExtResource( 100 ), ExtResource( 134 ), ExtResource( 26 ), ExtResource( 70 ), ExtResource( 32 ), ExtResource( 106 ), ExtResource( 132 ), ExtResource( 119 ), ExtResource( 138 ), ExtResource( 62 ), ExtResource( 110 ), ExtResource( 66 ), ExtResource( 102 ), ExtResource( 113 ), ExtResource( 28 ), ExtResource( 144 ) ],
+"loop": true,
+"name": "Death_270",
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 239 ), ExtResource( 241 ), ExtResource( 258 ), ExtResource( 253 ), ExtResource( 255 ), ExtResource( 250 ), ExtResource( 271 ) ],
 "loop": true,
@@ -441,84 +511,9 @@ animations = [ {
 "name": "Idle_315",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 120 ), ExtResource( 135 ), ExtResource( 133 ), ExtResource( 128 ), ExtResource( 123 ), ExtResource( 140 ), ExtResource( 125 ), ExtResource( 126 ), ExtResource( 130 ), ExtResource( 141 ), ExtResource( 131 ), ExtResource( 164 ), ExtResource( 170 ), ExtResource( 152 ), ExtResource( 160 ), ExtResource( 176 ), ExtResource( 168 ), ExtResource( 178 ), ExtResource( 157 ) ],
-"loop": true,
-"name": "Death_180",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 232 ), ExtResource( 256 ), ExtResource( 275 ), ExtResource( 277 ), ExtResource( 278 ), ExtResource( 296 ), ExtResource( 249 ) ],
-"loop": true,
-"name": "Fire_225",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 43 ), ExtResource( 39 ), ExtResource( 46 ), ExtResource( 42 ), ExtResource( 47 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 41 ), ExtResource( 40 ), ExtResource( 45 ), ExtResource( 48 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 63 ), ExtResource( 79 ), ExtResource( 69 ), ExtResource( 61 ) ],
-"loop": true,
-"name": "Death_000",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 297 ), ExtResource( 303 ), ExtResource( 299 ), ExtResource( 300 ), ExtResource( 304 ), ExtResource( 286 ), ExtResource( 284 ) ],
-"loop": true,
-"name": "Walk_180",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 254 ), ExtResource( 246 ), ExtResource( 257 ), ExtResource( 259 ), ExtResource( 273 ), ExtResource( 260 ), ExtResource( 269 ) ],
-"loop": true,
-"name": "Walk_090",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 17 ), ExtResource( 23 ), ExtResource( 13 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "Idle_180",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 183 ), ExtResource( 204 ), ExtResource( 208 ), ExtResource( 180 ), ExtResource( 190 ), ExtResource( 187 ), ExtResource( 205 ) ],
-"loop": true,
-"name": "Idle_090",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 244 ), ExtResource( 236 ), ExtResource( 245 ), ExtResource( 263 ), ExtResource( 265 ), ExtResource( 242 ), ExtResource( 301 ) ],
-"loop": true,
-"name": "Fire_180",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 307 ), ExtResource( 310 ), ExtResource( 311 ), ExtResource( 315 ), ExtResource( 312 ), ExtResource( 306 ), ExtResource( 308 ) ],
-"loop": true,
-"name": "Fire_315",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 313 ), ExtResource( 320 ), ExtResource( 322 ), ExtResource( 317 ), ExtResource( 319 ), ExtResource( 323 ), ExtResource( 314 ) ],
-"loop": true,
-"name": "Walk_315",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 289 ), ExtResource( 261 ), ExtResource( 298 ), ExtResource( 295 ), ExtResource( 262 ), ExtResource( 290 ), ExtResource( 243 ) ],
-"loop": true,
-"name": "Fire_135",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 188 ), ExtResource( 217 ), ExtResource( 165 ), ExtResource( 154 ), ExtResource( 179 ), ExtResource( 163 ), ExtResource( 149 ) ],
-"loop": true,
-"name": "Fire_000",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 238 ), ExtResource( 235 ), ExtResource( 219 ), ExtResource( 229 ), ExtResource( 215 ), ExtResource( 216 ), ExtResource( 226 ) ],
-"loop": true,
-"name": "Walk_000",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 175 ), ExtResource( 225 ), ExtResource( 227 ), ExtResource( 230 ), ExtResource( 184 ), ExtResource( 181 ), ExtResource( 182 ) ],
-"loop": true,
-"name": "Fire_045",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 282 ), ExtResource( 251 ), ExtResource( 305 ), ExtResource( 293 ), ExtResource( 234 ), ExtResource( 237 ), ExtResource( 316 ) ],
 "loop": true,
 "name": "Fire_270",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 52 ), ExtResource( 59 ), ExtResource( 85 ), ExtResource( 100 ), ExtResource( 134 ), ExtResource( 26 ), ExtResource( 70 ), ExtResource( 32 ), ExtResource( 106 ), ExtResource( 132 ), ExtResource( 119 ), ExtResource( 138 ), ExtResource( 62 ), ExtResource( 110 ), ExtResource( 66 ), ExtResource( 102 ), ExtResource( 113 ), ExtResource( 28 ), ExtResource( 144 ) ],
-"loop": true,
-"name": "Death_270",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 266 ), ExtResource( 267 ), ExtResource( 247 ), ExtResource( 252 ), ExtResource( 268 ), ExtResource( 270 ), ExtResource( 272 ) ],
@@ -526,29 +521,19 @@ animations = [ {
 "name": "Walk_135",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 185 ), ExtResource( 199 ), ExtResource( 192 ), ExtResource( 193 ), ExtResource( 197 ), ExtResource( 201 ), ExtResource( 194 ) ],
+"frames": [ ExtResource( 307 ), ExtResource( 310 ), ExtResource( 311 ), ExtResource( 315 ), ExtResource( 312 ), ExtResource( 306 ), ExtResource( 308 ) ],
 "loop": true,
-"name": "Idle_135",
+"name": "Fire_315",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 2 ), ExtResource( 212 ) ],
+"loop": true,
+"name": "Idle_270",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 353 ), ExtResource( 355 ), ExtResource( 356 ), ExtResource( 359 ), ExtResource( 357 ) ],
-"loop": true,
-"name": "Hit_0_315",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 329 ), ExtResource( 318 ), ExtResource( 321 ), ExtResource( 335 ), ExtResource( 336 ) ],
-"loop": true,
-"name": "Hit_0_000",
-"speed": 10.0
 }, {
 "frames": [ ExtResource( 339 ), ExtResource( 326 ), ExtResource( 340 ), ExtResource( 327 ), ExtResource( 333 ) ],
 "loop": true,
 "name": "Hit_0_135",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 341 ), ExtResource( 343 ), ExtResource( 344 ), ExtResource( 330 ), ExtResource( 361 ) ],
-"loop": true,
-"name": "Hit_0_180",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 345 ), ExtResource( 337 ), ExtResource( 325 ), ExtResource( 338 ), ExtResource( 332 ) ],
@@ -561,14 +546,29 @@ animations = [ {
 "name": "Hit_0_045",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 347 ), ExtResource( 346 ), ExtResource( 358 ), ExtResource( 348 ), ExtResource( 352 ) ],
+"frames": [ ExtResource( 341 ), ExtResource( 343 ), ExtResource( 344 ), ExtResource( 330 ), ExtResource( 361 ) ],
 "loop": true,
-"name": "Hit_0_270",
+"name": "Hit_0_180",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 353 ), ExtResource( 355 ), ExtResource( 356 ), ExtResource( 359 ), ExtResource( 357 ) ],
+"loop": true,
+"name": "Hit_0_315",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 329 ), ExtResource( 318 ), ExtResource( 321 ), ExtResource( 335 ), ExtResource( 336 ) ],
+"loop": true,
+"name": "Hit_0_000",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 354 ), ExtResource( 360 ), ExtResource( 349 ), ExtResource( 350 ), ExtResource( 351 ) ],
 "loop": true,
 "name": "Hit_0_225",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 347 ), ExtResource( 346 ), ExtResource( 358 ), ExtResource( 348 ), ExtResource( 352 ) ],
+"loop": true,
+"name": "Hit_0_270",
 "speed": 10.0
 } ]
 
@@ -588,7 +588,7 @@ script = ExtResource( 1 )
 z_index = 1
 frames = SubResource( 1 )
 animation = "Walk_135"
-frame = 3
+frame = 5
 playing = true
 offset = Vector2( 0, -100 )
 

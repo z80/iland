@@ -9,5 +9,8 @@ func _init_states_map( sm ):
 	sm["hit"]  = $Fit
 	sm["die"]  = $Die
 	sm["dead"] = $Dead
+	
+	start_state_name = "idle"
+
 
 

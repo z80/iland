@@ -7,6 +7,9 @@ extends Node
 # warning-ignore:unused_signal
 signal finished( next_state_name )
 
+var state_machine = null
+var character     = null
+
 func initialize():
 	pass
 
