@@ -14,7 +14,7 @@ func initialize():
 	pass
 
 # Initialize the state. E.g. change the animation.
-func enter():
+func enter( new_state ):
 	pass
 
 

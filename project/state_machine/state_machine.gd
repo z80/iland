@@ -27,11 +27,10 @@ func _ready():
 	_init_states_map( states_map )
 	
 	# Connect signals.
-	for child in get_children():
+	for name in states_map.keys():
+		var child = states_map[name]
 		child.character     = character
 		child.state_machine = self
-		child.connect( "finished", self, "_change_state" )
-		states_map[child.name] = child
 	
 	if start_state_name in states_map:
 		initialize( start_state_name )
@@ -41,7 +40,7 @@ func initialize( initial_state_name ):
 	set_active( true )
 	states_stack.push_back( states_map[initial_state_name] )
 	current_state = states_stack.back()
-	current_state.enter()
+	current_state.enter( true )
 
 
 func set_active( value ):
@@ -67,7 +66,8 @@ func _on_animation_finished( anim_name ):
 	current_state.on_animation_finished( anim_name )
 
 
-func _change_state( state_name ):
+# This one is called by states to either pop current one ot push another one..
+func change_state( state_name=null ):
 	if not _active:
 		return
 	current_state.exit()
@@ -82,8 +82,7 @@ func _change_state( state_name ):
 	current_state = states_stack.back()
 	emit_signal( "state_changed", current_state )
 
-	if not to_previous:
-		current_state.enter()
+	current_state.enter( not to_previous )
 
 
 
