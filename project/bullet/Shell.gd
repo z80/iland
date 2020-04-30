@@ -21,9 +21,10 @@ func sample( direction_string: String ):
 		stri = "Shell_02"
 	#stri = "Shell_02"
 	stri = stri + direction_string
+	$AnimatedSprite.frame     = 0
 	$AnimatedSprite.animation = stri
-	$AnimatedSprite.playing = true
-	$AnimatedSprite.z_index = 2
+	$AnimatedSprite.playing   = true
+	$AnimatedSprite.z_index   = 2
 
 
 func _on_Timer_timeout():

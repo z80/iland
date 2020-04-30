@@ -5,7 +5,8 @@ extends Node
 
 signal gun_animation_start( speed_scale )
 
-var Shell = preload( "res://bullet/Shell.tscn" )
+var Shell  = preload( "res://bullet/Shell.tscn" )
+var Bullet = preload( "res://bullet/Bullet.tscn" )
 
 # Reference to the player
 var player
@@ -44,7 +45,9 @@ func _physics_process( delta ):
 	if ( shoot_elapsed >= shoot_interval ):
 		# Create bullet here. And send command to play shoot animation.
 		var speed_scale = 1.0 / shoot_interval
-		player.gun_animation_start( speed_scale )
+		player.gun_animation_speed = speed_scale
+		player.change_state( "fire" )
+		player.play_sound( shot_sound )
 		_create_shell()
 		shoot_elapsed -= shoot_interval
 		
@@ -53,8 +56,13 @@ func _physics_process( delta ):
 			shooting = false
 		
 		# Create bullet
-		# ...
-
+		var vp = get_tree().get_root()
+		var bullet = Bullet.instance()
+		vp.add_child( bullet )
+		bullet.visible = true
+		bullet.initialize( player.global_position, player.crosshair.global_position )
+		
+		
 func set_available( en: bool ):
 	available = en
 	
@@ -65,7 +73,7 @@ func get_available() -> bool:
 func set_active( en: bool ):
 	active = en
 	if en and player:
-		hud.set_gun_icon( icon )
+		#hud.set_gun_icon( icon )
 		player.set_gun_sound( shot_sound )
 	
 func get_active() -> bool:
@@ -82,10 +90,9 @@ func gun_shoot_start():
 func gun_shoot_stop():
 	# Stops shooting in the case of automatic machine gun fire.
 	shooting = false
-	player.gun_animation_stop()
 	
 func _create_shell():
-	var dir_stri: String = player._animation_dir_name( player.dir )
+	var dir_stri: String = player._animation_dir_name( player._compute_dir() )
 	var shell = Shell.instance()
 	var vp = get_tree().get_root()
 	vp.add_child( shell )

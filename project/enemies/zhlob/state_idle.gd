@@ -1,7 +1,7 @@
 
 extends "res://state_machine/state.gd"
 
-var Character = preload("res://enemies/zhlob/zhlob.gd")
+var Character = preload("res://enemies/zhlob/Zhlob.gd")
 
 func enter( new_state ):
 	character.play_animation( character.ANIM_IDLE )

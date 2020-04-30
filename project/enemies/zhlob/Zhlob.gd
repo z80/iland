@@ -93,8 +93,10 @@ func _compute_dir():
 func play_animation( animation ):
 	var dir = _compute_dir()
 	var name = _animation_name( animation, dir )
-	$AnimatedSprite.animation = name
-	$AnimatedSprite.play()
+	var current_name = $AnimatedSprite.animation
+	if ( current_name != name ):
+		$AnimatedSprite.animation = name
+		$AnimatedSprite.play()
 
 func stop_animation():
 	$AnimatedSprite.playing = false

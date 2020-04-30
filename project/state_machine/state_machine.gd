@@ -60,10 +60,11 @@ func _physics_process( delta ):
 	current_state.physics_update( delta )
 
 
-func _on_animation_finished( anim_name ):
+func _on_animation_finished():
 	if not _active:
 		return
-	current_state.on_animation_finished( anim_name )
+	#print( "StateMachine::_on_animation_finished()" )
+	current_state.on_animation_finished()
 
 
 # This one is called by states to either pop current one ot push another one..

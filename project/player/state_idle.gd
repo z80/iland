@@ -1,14 +1,20 @@
-extends "on_ground.gd"
 
-func enter():
-	owner.get_node("AnimationPlayer").play("idle")
+extends "res://state_machine/state.gd"
+
+var Character = preload("res://player/Player.gd")
+
+func enter( new_state ):
+	character.play_animation( character.ANIM_IDLE )
 
 
-func handle_input(event):
-	return .handle_input(event)
-
-
-func update(_delta):
-	var input_direction = get_input_direction()
-	if input_direction:
-		emit_signal("finished", "move")
+func physics_update( _delta ):
+	if Input.is_action_pressed( "ui_left" ) or \
+		Input.is_action_pressed( "ui_right" ) or \
+		Input.is_action_pressed( "ui_up" ) or \
+		Input.is_action_pressed( "ui_down" ):
+			
+		state_machine.change_state( "walk" )
+	
+	else:
+		# Adjust direction.
+		character.play_animation( character.ANIM_IDLE )

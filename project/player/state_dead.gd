@@ -1,10 +1,14 @@
+
 extends "res://state_machine/state.gd"
 
 # Initialize the state. E.g. change the animation.
-func enter():
-	owner.set_dead(true)
-	owner.get_node("AnimationPlayer").play("die")
+func enter( new_animation ):
+	#var timer = character.get_node( "Timer" )
+	#timer.connect( "timeout", self, "_on_timer_elapsed" )
+	# Do nothing. It just remains dead.
+	pass
 
 
-func _on_animation_finished(_anim_name):
-	emit_signal("finished", "dead")
+#func _on_timer_elapsed():
+#	character.queue_free()
+	

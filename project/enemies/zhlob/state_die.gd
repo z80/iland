@@ -13,6 +13,6 @@ func enter( new_animation ):
 	character.play_sound( sound )
 
 
-func on_animation_finished( _anim_name ):
+func on_animation_finished():
 	character.stop_playing()
 	state_machine.change_state( "dead" )

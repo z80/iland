@@ -1,8 +1,9 @@
+
 extends "res://state_machine/state.gd"
 
-func enter():
-	owner.get_node("AnimationPlayer").play("idle")
+func enter( new_state ):
+	character.play_animation( character.ANIM_FIRE, character.gun_animation_speed )
 
 
-func _on_Sword_attack_finished():
-	emit_signal("finished", "previous")
+func on_animation_finished():
+	state_machine.change_state( "prev" )

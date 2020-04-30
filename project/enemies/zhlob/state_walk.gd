@@ -1,7 +1,7 @@
 
 extends "res://state_machine/state.gd"
 
-var Character = preload("res://enemies/zhlob/zhlob.gd")
+var Character = preload("res://enemies/zhlob/Zhlob.gd")
 
 func enter( new_state ):
 	var target_at = character.target.global_position
@@ -30,6 +30,7 @@ func physics_update(_delta):
 	var own_at = character.global_position
 	var dv = target_at - own_at
 	character.line_of_sight = dv
+	character.play_animation( character.ANIM_WALK )
 
 	var v = dv.normalized()
 	v.y *= 0.707107

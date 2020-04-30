@@ -5,7 +5,7 @@ func enter( new_state ):
 	character.play_animation( character.ANIM_FIRE )
 
 
-func on_animation_finished( _anim_name ):
+func on_animation_finished():
 	var d = character.target_dist()
 	if d < character.fire_distance:
 		character.target.hit( 50 )

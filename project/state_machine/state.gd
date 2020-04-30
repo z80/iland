@@ -31,5 +31,5 @@ func physics_update( _delta ):
 	pass
 
 
-func on_animation_finished( _anim_name ):
+func on_animation_finished():
 	pass

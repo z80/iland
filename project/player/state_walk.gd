@@ -1,38 +1,34 @@
-extends "on_ground.gd"
 
-export(float) var max_walk_speed = 450
-export(float) var max_run_speed = 700
+extends "res://state_machine/state.gd"
 
-func enter():
-	speed = 0.0
-	velocity = Vector2()
+var Character = preload("res://player/Player.gd")
 
-	var input_direction = get_input_direction()
-	update_look_direction(input_direction)
-	owner.get_node("AnimationPlayer").play("walk")
+func enter( new_state ):
+	character.play_animation( character.ANIM_WALK )
 
 
 func handle_input(event):
 	return .handle_input(event)
 
 
-func update(_delta):
-	var input_direction = get_input_direction()
-	if not input_direction:
-		emit_signal("finished", "idle")
-	update_look_direction(input_direction)
+func physics_update(_delta):
+	character.play_animation( character.ANIM_WALK )
 
-	speed = max_run_speed if Input.is_action_pressed("run") else max_walk_speed
-	var collision_info = move(speed, input_direction)
-	if not collision_info:
-		return
-	if speed == max_run_speed and collision_info.collider.is_in_group("environment"):
-		return null
+	var v: Vector2 = Vector2( 0, 0 )
+	
+	if Input.is_action_pressed( "ui_left" ):
+		v.x -= 1
+	if Input.is_action_pressed( "ui_right" ):
+		v.x += 1
+	if Input.is_action_pressed( "ui_up" ):
+		v.y -= 1
+	if Input.is_action_pressed( "ui_down" ):
+		v.y += 1
+	v.y *= 0.707107
+	v *= character.move_speed
+	var actual_v = character.move_and_slide( v )
 
 
-func move(speed, direction):
-	velocity = direction.normalized() * speed
-	owner.move_and_slide(velocity, Vector2(), 5, 2)
-	if owner.get_slide_count() == 0:
-		return
-	return owner.get_slide_collision(0)
+
+
+
