@@ -37,7 +37,7 @@ func target_dist():
 	var target_at = target.global_position
 	var own_at = global_position
 	var dv = target_at - own_at
-	var d = dv.abs()
+	var d = dv.length()
 	return d
 
 	
@@ -98,6 +98,10 @@ func play_animation( animation ):
 
 func stop_animation():
 	$AnimatedSprite.playing = false
+	
+func play_sound( sound ):
+	$AudioStreamPlayer.stream = sound
+	$AudioStreamPlayer.play()
 
 func hit( damage=10 ):
 	health -= damage

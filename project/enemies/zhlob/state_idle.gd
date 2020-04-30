@@ -4,13 +4,13 @@ extends "res://state_machine/state.gd"
 var Character = preload("res://enemies/zhlob/zhlob.gd")
 
 func enter( new_state ):
-	character.play_animation( character.ANIM_WALK )
+	character.play_animation( character.ANIM_IDLE )
 
 func handle_input(event):
 	return .handle_input(event)
 
 
-func update(_delta):
+func physics_update(_delta):
 	var d = character.target_dist()
 	if d <= character.sight_distance:
 		if d > character.fire_distance:

@@ -15,7 +15,7 @@ func handle_input(event):
 	return .handle_input(event)
 
 
-func update(_delta):
+func physics_update(_delta):
 	var d = character.target_dist()
 	if d > character.sight_distance:
 		# Change back to "idle".
