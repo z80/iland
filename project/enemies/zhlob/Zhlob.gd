@@ -73,9 +73,15 @@ func _animation_name( animation, dir ):
 	elif ( animation == ANIM_FIRE ):
 		anim_stri = 'Fire'
 	elif ( animation == ANIM_HIT ):
-		anim_stri = 'Hit'
+		var ind: int = randi() % 3
+		if ind == 0:
+			anim_stri = "Hit_0"
+		elif ind == 1:
+			anim_stri = "Hit_1"
+		else:
+			anim_stri = "Hit_2"
 	elif ( animation == ANIM_DIE ):
-		anim_stri = 'Die'
+		anim_stri = 'Death'
 	elif( animation == ANIM_HIT ):
 		anim_stri = 'Hit'
 	var stri: String = anim_stri + dir_stri
@@ -95,22 +101,34 @@ func play_animation( animation ):
 	var name = _animation_name( animation, dir )
 	var current_name = $AnimatedSprite.animation
 	if ( current_name != name ):
+		print( "Current: ", current_name, ", new: ", name )
+		$AnimatedSprite.frame = 0
 		$AnimatedSprite.animation = name
 		$AnimatedSprite.play()
 
-func stop_animation():
+func stop_animation( frame = -1 ):
 	$AnimatedSprite.playing = false
+	if frame >= 0:
+		$AnimatedSprite.frame = frame
 	
 func play_sound( sound ):
 	$AudioStreamPlayer.stream = sound
 	$AudioStreamPlayer.play()
 
-func hit( damage=10 ):
+func hit( damage=10, hit_sound=null ):
+	if health < 0:
+		return
+		
 	health -= damage
 	if health > 0:
+		play_sound( hit_sound )
 		$StateMachine.change_state( "hit" )
 	else:
 		$StateMachine.change_state( "die" )
+		
+func set_collision( en: bool ):
+	$Area2D.collision_layer = 0
+	$Area2D.collision_mask  = 0
 
 
 

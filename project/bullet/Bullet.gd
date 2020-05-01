@@ -5,7 +5,7 @@ var initialized: bool = false
 
 var damage: int = 10
 var instant: bool = false
-var speed: float = 100.0
+var speed: float = 2000.0
 
 var velocity: Vector2 = Vector2()
 var max_distance: float = 1000.0
@@ -41,11 +41,15 @@ func _init():
 	pass
 	
 func _ready():
+	if hit_sound:
+		hit_sound.set_loop( false )
+	
 	$RayCast2D.collide_with_areas  = true
 	$RayCast2D.collide_with_bodies = false
 	if instant:
 		$Timer.wait_time = timer_interval
 		$Timer.start()
+		$Timer.connect( "timeout", self, "_on_Timer_timeout" )
 		
 
 func _physics_process( delta ):
@@ -66,20 +70,20 @@ func _physics_process( delta ):
 	position = new_pos
 	var collides = $RayCast2D.is_colliding()
 	if ( not collides ):
+		if instant:
+			queue_free()
 		return
 	var obj: Object = $RayCast2D.get_collider()
-	
-	# Play the hit sound
-	$AudioStreamPlayer2D.stream = hit_sound
-	$AudioStreamPlayer2D.play()
 	
 	# Get the owner.
 	var owner = obj.owner
 	if not owner:
+		queue_free()
 		return
 	var has_hit: bool = owner.has_method( "hit" )
 	if has_hit:
-		owner.hit( damage )
+		owner.hit( damage, hit_sound )
+		queue_free()
 	
 	# To not process it anymore
 	has_hit_target = true

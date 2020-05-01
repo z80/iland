@@ -70,6 +70,7 @@ func play_animation( anim, speed := 1.0 ):
 	var stri = _animation_name( anim, d )
 	var current_stri = $AnimatedSprite.animation
 	if current_stri != stri:
+		$AnimatedSprite.frame = 0
 		$AnimatedSprite.animation = stri
 	if $AnimatedSprite.speed_scale != speed:
 		$AnimatedSprite.speed_scale = speed
@@ -170,15 +171,16 @@ func _process_firing():
 			gun.gun_shoot_stop()
 
 
-func set_gun_sound( sound ):
-	$AudioStreamPlayer.stream = sound
 #func _on_gun_animation_stop():
 #	anim = ANIM_FIRE
 #	anim_fire_continuous = false
 #	# Later on it will stop when animation finishes.
 
 
-func hit( amount ):
+func hit( amount, hit_sound ):
+	if health < 0:
+		return
+		
 	health -= amount
 	var stri_state
 	if ( amount <= 0 ):

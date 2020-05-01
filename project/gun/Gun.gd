@@ -72,9 +72,9 @@ func get_available() -> bool:
 
 func set_active( en: bool ):
 	active = en
-	if en and player:
+	#if en and player:
 		#hud.set_gun_icon( icon )
-		player.set_gun_sound( shot_sound )
+		#player.set_gun_sound( shot_sound )
 	
 func get_active() -> bool:
 	var en = active

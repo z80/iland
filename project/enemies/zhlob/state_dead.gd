@@ -5,6 +5,11 @@ extends "res://state_machine/state.gd"
 func enter( new_animation ):
 	var timer = character.get_node( "Timer" )
 	timer.connect( "timeout", self, "_on_timer_elapsed" )
+	timer.start()
+	
+	# Keep it look dead.
+	character.stop_animation( 24 )
+	character.set_collision( false )
 
 
 func _on_timer_elapsed():
