@@ -164,7 +164,6 @@ func _process_firing():
 	if just_pressed:
 		if gun:
 			gun.gun_shoot_start()
-		print( "Player emit_signal( \'gun_shoot_start\' )" )
 	else:
 		var just_released = Input.is_action_just_released( "ui_fire" )
 		if just_released and gun:
@@ -191,4 +190,4 @@ func hit( amount ):
 
 func _on_AudioStreamPlayer_finished():
 	$AudioStreamPlayer.playing = false
-	print( "player sound finished" )
+	#print( "player sound finished" )

@@ -60,7 +60,7 @@ func _physics_process( delta ):
 		var bullet = Bullet.instance()
 		vp.add_child( bullet )
 		bullet.visible = true
-		bullet.initialize( player.global_position, player.crosshair.global_position )
+		bullet.initialize( player.position, player.crosshair.position )
 		
 		
 func set_available( en: bool ):
