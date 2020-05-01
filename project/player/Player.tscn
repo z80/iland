@@ -349,6 +349,7 @@ height = 0.503685
 radius = 58.8822
 
 [node name="Player" type="KinematicBody2D"]
+z_index = 1
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

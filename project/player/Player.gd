@@ -30,7 +30,7 @@ var gun_index = 0
 # Used by "fire" state
 var gun_animation_speed: float = 1.0
 
-var health: int = 100
+var health setget set_health, get_health
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -45,10 +45,6 @@ func _ready():
 	crosshair = Crosshair.instance()
 	vp.add_child( crosshair )
 	crosshair.visible = true
-
-	#hud = Hud.instance()
-	#vp.add_child( hud )
-	#hud.visible = true
 	
 	_create_guns()
 	
@@ -62,7 +58,12 @@ func _physics_process( delta ):
 	_process_firing()
 
 
-
+func set_health( val ):
+	health = val
+	$Hud.set_health_qty( health )
+	
+func get_health() -> int:
+	return health
 
 
 func play_animation( anim, speed := 1.0 ):

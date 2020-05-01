@@ -127,8 +127,7 @@ func hit( damage=10, hit_sound=null ):
 		$StateMachine.change_state( "die" )
 		
 func set_collision( en: bool ):
-	$Area2D.collision_layer = 0
-	$Area2D.collision_mask  = 0
+	$CollisionShape2D.disabled = not en
 
 
 

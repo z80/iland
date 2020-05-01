@@ -24,3 +24,8 @@ func set_gun_icon( resource ):
 func set_ammo_qty( qty ):
 	var stri = "{:02d}".format( qty )
 	$HBoxContainer/Ammo.text = stri
+
+func set_health_qty( qty ):
+	var stri = "{:02d}".format( qty )
+	$HBoxContainer/Ammo.text = stri
+
