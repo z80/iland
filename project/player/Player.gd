@@ -60,7 +60,7 @@ func _physics_process( delta ):
 
 func set_health( val ):
 	health = val
-	$Hud.set_health_qty( health )
+	$Health.set_health_qty( health )
 	
 func get_health() -> int:
 	return health
