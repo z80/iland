@@ -34,6 +34,7 @@ var health setget set_health, get_health
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	health = 100
 	# Make camera 2d current.
 	$Camera2D.make_current()
 	
@@ -58,7 +59,7 @@ func _physics_process( delta ):
 	_process_firing()
 
 
-func set_health( val ):
+func set_health( val: int ):
 	health = val
 	$Health.set_health_qty( health )
 	
