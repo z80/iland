@@ -7,7 +7,7 @@
 [ext_resource path="res://game/state_dead.gd" type="Script" id=5]
 [ext_resource path="res://enemies/zhlob/sprites/Death_0_000_1.png" type="Texture" id=6]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node2D"]
 pause_mode = 2
 script = ExtResource( 2 )
 

@@ -8,11 +8,15 @@ var main_menu = null
 func enter( new_state ):
 	if not main_menu:
 		main_menu = MainMenu.instance()
-		var vp = get_tree().get_root()
-		vp.add_child( main_menu )
+		#var vp = get_tree().get_root()
+		#vp.add_child( main_menu )
+		state_machine.game.add_child( main_menu )
 		
-	main_menu.state = self
+	main_menu.state   = self
 	main_menu.visible = true
+	
+	#state_machine.game.visible = false
+
 
 
 func exit( destroy ):

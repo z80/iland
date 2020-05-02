@@ -8,8 +8,9 @@ func enter( new_state ):
 	.enter( new_state )
 	if not level:
 		level = Level.instance()
-		var vp = get_tree().get_root()
-		vp.add_child( level )
+		#var vp = get_tree().get_root()
+		#vp.add_child( level )
+		state_machine.game.add_child( level )
 	
 	level.state   = self
 	level.visible = true

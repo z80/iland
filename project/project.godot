@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Die Vernichtung"
-run/main_scene="res://game/game.tscn"
+run/main_scene="res://levels/level_00.tscn"
 boot_splash/bg_color=Color( 0.431373, 0, 0, 1 )
 config/icon="res://icon.png"
 

@@ -79,7 +79,7 @@ func change_state( state_name=null, purge=false ):
 	
 	# The new state to switch to.
 	var new_state = null
-	if to_previous:
+	if not to_previous:
 		new_state = states_map[state_name]
 		
 	if purge:
