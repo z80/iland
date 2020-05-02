@@ -7,15 +7,15 @@ extends "res://state_machine/state.gd"
 # the exit menu and pause the game.
 
 func enter( new_state ):
-	pass
+	.enter( new_state )
 
 func exit( destroy ):
-	pass
+	.exit( destroy )
 
 func handle_input( event ):
 	if event is InputEventKey:
 		if event.pressed and event.scancode == KEY_ESCAPE:
-			state_machine.change_state( "exit_menu" )
+			state_machine.change_state( "pause_menu" )
 
 
 func physics_update(_delta):

@@ -3,7 +3,8 @@ extends "res://state_machine/state.gd"
 
 
 func enter( new_state ):
-	pass
+	var tree = get_tree()
+	tree.paused = true
 
 
 func handle_input(event):

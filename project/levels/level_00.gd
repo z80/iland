@@ -7,7 +7,6 @@ extends Node2D
 var Player = preload( "res://player/Player.tscn" )
 var Zhlob  = preload( "res://enemies/zhlob/Zhlob.tscn" )
 
-var state = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
