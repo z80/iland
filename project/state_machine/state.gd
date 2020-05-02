@@ -9,18 +9,19 @@ signal finished( next_state_name )
 
 var state_machine = null
 var character     = null
+var active: bool = false
 
 func initialize():
 	pass
 
 # Initialize the state. E.g. change the animation.
 func enter( new_state ):
-	pass
+	active = true
 
 
 # Clean up the state. Reinitialize values like a timer.
-func exit():
-	pass
+func exit( destroyed ):
+	active = false
 
 
 func handle_input( _event ):

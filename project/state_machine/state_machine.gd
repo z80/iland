@@ -68,17 +68,36 @@ func _on_animation_finished():
 
 
 # This one is called by states to either pop current one ot push another one..
-func change_state( state_name=null ):
+func change_state( state_name=null, purge=false ):
 	if not _active:
 		return
-	current_state.exit()
-
 	#if state_name == "previous":
 	var to_previous: bool = not (state_name in states_map )
+	
+	# Depending on if it is put on stack or removed completely
+	current_state.exit( to_previous )
+	
+	# The new state to switch to.
+	var new_state = null
 	if to_previous:
-		states_stack.pop_back()
+		new_state = states_map[state_name]
+		
+	if purge:
+		# Clean up all the states
+		# with removing content.
+		var qty: int = states_stack.size()
+		for i in range(qty):
+			var state = states_stack.back()
+			if state != new_state:
+				state.exit( true )
+		states_stack.clear()
+		# Keep only the one to be used.
+		states_stack.push_back( new_state )
 	else:
-		states_stack.push_back( states_map[state_name] )
+		if to_previous:
+			states_stack.pop_back()
+		else:
+			states_stack.push_back( new_state )
 
 	current_state = states_stack.back()
 	emit_signal( "state_changed", current_state )

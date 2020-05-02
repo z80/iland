@@ -1,9 +1,10 @@
 
 extends "res://state_machine/state.gd"
 
-var MainMenu = preload( "res://menus/2d_menu.tscn" )
-
-var main_menu = null
+# This state is a base for all other states except 
+# the dead player one.
+# The idea is this one will react on "esc" and display 
+# the exit menu and pause the game.
 
 func enter( new_state ):
 	if not main_menu:
