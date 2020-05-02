@@ -1,14 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://game/state_main_menu.gd" type="Script" id=1]
 [ext_resource path="res://game/game.gd" type="Script" id=2]
 [ext_resource path="res://game/state_level_00.gd" type="Script" id=3]
 [ext_resource path="res://game/state_machine_game.gd" type="Script" id=4]
 [ext_resource path="res://game/state_dead.gd" type="Script" id=5]
+[ext_resource path="res://enemies/zhlob/sprites/Death_0_000_1.png" type="Texture" id=6]
 
 [node name="Game" type="Node"]
 pause_mode = 2
 script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 531.535, 299.881 )
+texture = ExtResource( 6 )
 
 [node name="StateMachine" type="Node" parent="."]
 pause_mode = 2

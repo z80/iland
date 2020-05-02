@@ -10,7 +10,7 @@ func _init_states_map( sm ):
 	sm["level_00"]  = $Level_00
 	sm["dead"]      = $Dead
 	
-	start_state_name = "main_menu"
+	start_state_name = "level_00"
 	
 	game = get_parent()
 	

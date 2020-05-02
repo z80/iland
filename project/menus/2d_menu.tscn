@@ -2,18 +2,9 @@
 
 [ext_resource path="res://menus/2d_menu.gd" type="Script" id=1]
 
-[node name="2d_menu" type="Control"]
+[node name="2d_menu" type="CanvasLayer"]
 pause_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-margin_top = -1.0
-margin_right = 2.0
-margin_bottom = 2.0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ExitBtn" type="Button" parent="."]
 anchor_left = 0.5
@@ -44,6 +35,6 @@ __meta__ = {
 }
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-position = Vector2( 78.0093, 527.465 )
+position = Vector2( 518.009, 303.465 )
 [connection signal="pressed" from="ExitBtn" to="." method="_on_ExitBtn_pressed"]
 [connection signal="pressed" from="StartBtn" to="." method="_on_StartBtn_pressed"]

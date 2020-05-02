@@ -1,4 +1,5 @@
-extends Control
+
+extends CanvasLayer
 
 
 var state = null
