@@ -1,18 +1,17 @@
 
 extends "res://state_machine/state_machine.gd"
 
+var game = null
+
 func _init_states_map( sm ):
 	._init_states_map( sm )
-	sm["idle"] = $Idle
-	sm["walk"] = $Walk
-	sm["fire"] = $Fire
-	sm["hit"]  = $Hit
-	sm["die"]  = $Die
-	sm["dead"] = $Dead
+	sm["main_menu"] = $MainMenu
+	sm["level_00"]  = $Level_00
+	sm["dead"]      = $Dead
 	
-	start_state_name = "idle"
+	start_state_name = "main_menu"
 	
-	character = get_parent()
+	game = get_parent()
 	
 
 
