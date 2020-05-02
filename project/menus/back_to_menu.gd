@@ -15,7 +15,8 @@ func _ready():
 
 
 func _on_ExitBtn_pressed():
-	pass # Replace with function body.
+	if state:
+		state.state_machine.change_state( "main_menu", true )
 
 
 func _on_BackToGame_pressed():

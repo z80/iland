@@ -1,9 +1,7 @@
 extends Control
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var state = null
 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,7 +19,9 @@ func _on_start_click():
 
 
 func _on_StartBtn_pressed():
-	get_tree().change_scene( "res://levels/level_00.tscn" ) # Replace with function body.
+	#get_tree().change_scene( "res://levels/level_00.tscn" ) # Replace with function body.
+	if state:
+		state.state_machine.change_state( "level_00" )
 	
 
 

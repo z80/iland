@@ -1,6 +1,7 @@
 
 extends "res://state_machine/state_machine.gd"
 
+# This one can be accessed by all the states.
 var game = null
 
 func _init_states_map( sm ):

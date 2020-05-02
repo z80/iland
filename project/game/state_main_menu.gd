@@ -11,6 +11,7 @@ func enter( new_state ):
 		var vp = get_tree().get_root()
 		vp.add_child( main_menu )
 		
+	main_menu.state = self
 	main_menu.visible = true
 
 
@@ -22,7 +23,7 @@ func exit( destroy ):
 		main_menu.visible = false
 
 
-func handle_input(event):
+func handle_input( event ):
 	pass
 
 
