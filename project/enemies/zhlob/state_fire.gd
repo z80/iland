@@ -8,5 +8,5 @@ func enter( new_state ):
 func on_animation_finished():
 	var d = character.target_dist()
 	if d < character.fire_distance:
-		character.target.hit( 50 )
+		character.target.hit( 50, null )
 	state_machine.change_state( "prev" )

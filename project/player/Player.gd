@@ -19,9 +19,6 @@ export(int)  var dir  = DIR_000
 var Crosshair = preload( "res://crosshair/Crosshair.tscn" )
 var crosshair = null
 
-var Hud = preload( "res://hud/Hud.tscn" )
-var hud = null
-
 # Create all the guns
 var guns = []
 var gun = null
@@ -31,6 +28,8 @@ var gun_index = 0
 var gun_animation_speed: float = 1.0
 
 var health setget set_health, get_health
+
+var zoom: float = 3.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -54,15 +53,21 @@ func _ready():
 #func _process(delta):
 #	pass
 
+
 func _physics_process( delta ):
 	# Process firing
 	_process_firing()
 
 
+func _input( event ): 
+	_process_zoom( event )
+
+
 func set_health( val: int ):
 	health = val
-	$Health.set_health_qty( health )
-	
+	$CanvasLayer/Health.set_health( health )
+
+
 func get_health() -> int:
 	return health
 
@@ -80,23 +85,28 @@ func play_animation( anim, speed := 1.0 ):
 		$AnimatedSprite.play()
 
 
-func stop_animation():
+func stop_animation( frame=-1 ):
 	$AnimatedSprite.playing = false
-	
+	if frame >= 0:
+		$AnimatedSprite.frame = frame
+
 
 func play_sound( sound ):
 	$AudioStreamPlayer.stream = sound
 	$AudioStreamPlayer.play()
-	
+
+
 func change_state( state_name ):
 	# To change state from outside.
 	# For example, by a gun.
 	$StateMachine.change_state( state_name )
-	
-	
-	
-	
-	
+
+
+func set_collision( en: bool ):
+	$CollisionShape2D.disabled = not en
+
+
+
 func _animation_dir_name( direction ):
 	var dir_stri: String
 	if ( direction == DIR_000 ):
@@ -117,10 +127,10 @@ func _animation_dir_name( direction ):
 		dir_stri = '_315'
 	else:
 		dir_stri = '_000'
-		
-	return dir_stri	
 	
-	
+	return dir_stri
+
+
 func _animation_name( animation, dir ):
 	var dir_stri: String = _animation_dir_name( dir )
 	var anim_stri: String
@@ -134,9 +144,9 @@ func _animation_name( animation, dir ):
 		anim_stri = 'Death'
 	var stri: String = anim_stri + dir_stri
 	return stri
-	
-	
-	
+
+
+
 func _compute_dir():
 	if not crosshair:
 		return 0
@@ -156,13 +166,15 @@ func _create_guns():
 	var g = Pistol.new()
 	guns.append( [ g ] )
 	g.player = self
-	g.hud    = hud
 	g.active = true
 	self.add_child( g )
 	gun = g
 
 
 func _process_firing():
+	if health <= 0:
+		return
+		
 	var just_pressed = Input.is_action_just_pressed( "ui_fire" )
 	if just_pressed:
 		if gun:
@@ -173,6 +185,20 @@ func _process_firing():
 			gun.gun_shoot_stop()
 
 
+func _process_zoom( event ):
+	if event is InputEventMouseButton:
+		# zoom in
+		if (event.button_index == BUTTON_WHEEL_UP) and (zoom > 2.5):
+			# call the zoom function
+			zoom -= 0.1
+			$Camera2D.zoom = Vector2( zoom, zoom )
+		# zoom out
+		if (event.button_index == BUTTON_WHEEL_DOWN) and (zoom < 4.5):
+			# call the zoom function
+			zoom += 0.1
+			$Camera2D.zoom = Vector2( zoom, zoom )
+	
+	
 #func _on_gun_animation_stop():
 #	anim = ANIM_FIRE
 #	anim_fire_continuous = false
@@ -182,16 +208,22 @@ func _process_firing():
 func hit( amount, hit_sound ):
 	if health < 0:
 		return
-		
-	health -= amount
+	
+	set_health( health - amount )
 	var stri_state
-	if ( amount <= 0 ):
+	if ( health <= 0 ):
 		stri_state = "die"
 	else:
 		stri_state = "hit"
+		if hit_sound:
+			play_sound( hit_sound )
 	$StateMachine.change_state( stri_state )
 
 
 func _on_AudioStreamPlayer_finished():
 	$AudioStreamPlayer.playing = false
 	#print( "player sound finished" )
+
+
+
+

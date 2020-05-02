@@ -1,7 +1,24 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://fonts/SourceCodePro-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://hud/health.gd" type="Script" id=2]
+[ext_resource path="res://hud/heart/Beat_4.png" type="Texture" id=3]
+[ext_resource path="res://hud/heart/Beat_1.png" type="Texture" id=4]
+[ext_resource path="res://hud/heart/Beat_3.png" type="Texture" id=5]
+[ext_resource path="res://hud/heart/Beat_7.png" type="Texture" id=6]
+[ext_resource path="res://hud/heart/Beat_8.png" type="Texture" id=7]
+[ext_resource path="res://hud/heart/Beat_6.png" type="Texture" id=8]
+[ext_resource path="res://hud/heart/Beat_9.png" type="Texture" id=9]
+[ext_resource path="res://hud/heart/Beat_10.png" type="Texture" id=10]
+[ext_resource path="res://hud/heart/Beat_0.png" type="Texture" id=11]
+[ext_resource path="res://hud/heart/Beat_5.png" type="Texture" id=12]
+[ext_resource path="res://hud/heart/Beat_2.png" type="Texture" id=13]
+
+[sub_resource type="CanvasItemMaterial" id=3]
+blend_mode = 1
+light_mode = 1
+
+[sub_resource type="Theme" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 78
@@ -11,24 +28,43 @@ font_data = ExtResource( 1 )
 size = 64
 font_data = ExtResource( 1 )
 
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 4 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Beat",
+"speed": 10.0
+} ]
+
 [node name="Health" type="Control"]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_top = -100.0
-margin_right = 200.0
+material = SubResource( 3 )
+margin_right = 500.0
+margin_bottom = 100.0
+theme = SubResource( 4 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="."]
-
 [node name="Health" type="RichTextLabel" parent="."]
-margin_left = 104.0
-margin_top = -2.0
-margin_right = 235.0
-margin_bottom = 85.0
+margin_left = 124.042
+margin_top = 4.68066
+margin_right = 255.042
+margin_bottom = 91.6807
+rect_pivot_offset = Vector2( -623.264, -115.652 )
 custom_fonts/mono_font = SubResource( 1 )
 custom_fonts/normal_font = SubResource( 2 )
 visible_characters = 3
-text = "00"
+text = "100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -1.6702, 3.34033 )
+scale = Vector2( 0.765131, 0.712938 )
+frames = SubResource( 5 )
+animation = "Beat"
+frame = 4
+playing = true
+centered = false

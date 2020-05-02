@@ -13,6 +13,6 @@ func _ready():
 
 
 
-func set_health_qty( qty ):
-	var stri = "{:02d}".format( qty )
+func set_health( qty ):
+	var stri = "%2d" % qty
 	$Health.text = stri
