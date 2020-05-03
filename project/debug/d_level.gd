@@ -18,5 +18,6 @@ func _ready():
 func _input(event):
 	if event is InputEventKey:
 		if event.pressed and event.scancode == KEY_ESCAPE:
-			Game.change_state( "d_main_menu" )
+			#Game.change_state( "d_main_menu" )
+			Game.change_state( "main_menu" )
 

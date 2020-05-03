@@ -25,8 +25,8 @@ func _on_start_click():
 
 
 func _on_StartBtn_pressed():
-	#get_tree().change_scene( "res://levels/level_00.tscn" ) # Replace with function body.
-	Game.change_state( "level_00" )
+	#Game.change_state( "level_00" )
+	Game.change_state( "d_level" )
 	
 
 
