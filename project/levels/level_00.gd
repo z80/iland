@@ -13,13 +13,13 @@ const MIN_DIST: float = 1000.0
 const MAX_DIST: float = 3000.0
 var   rnd = RandomNumberGenerator.new()
 const ENEMY_PROB_MIN = 1.0/300.0
-const ENEMY_PROB_MAX = 1.0/30.0
+const ENEMY_PROB_MAX = 1.0/100.0
 const ENEMY_PROB_PERIOD = 60.0
 var   t: float = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var walls = get_node( "/root/level_00/TileMapWalls" )
+	var walls = get_node( "/root/Level00/TileMapWalls" )
 	#var fl = get_node( "/root/level_00/TileMapFloor" )
 	player = Player.instance()
 	#walls.add_child( player )
@@ -47,7 +47,7 @@ func _process( delta ):
 	
 
 func create_enemy():
-	var walls = get_node( "/root/level_00/TileMapWalls" )
+	var walls = get_node( "/root/Level00/TileMapWalls" )
 	var zhlob = Zhlob.instance()
 	walls.add_child( zhlob )
 	zhlob.set_position( Vector2( 1500, 100 ) )
