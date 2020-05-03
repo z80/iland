@@ -85,7 +85,8 @@ func change_state( state_name=null, purge=false ):
 		# with removing content.
 		var qty: int = states_stack.size()
 		for i in range(qty):
-			var state = states_stack.back()
+			var ind: int = qty - i - 1
+			var state = states_stack[ind]
 			if state != new_state:
 				state.exit( true )
 		states_stack.clear()

@@ -212,6 +212,7 @@ func hit( amount, hit_sound ):
 	set_health( health - amount )
 	var stri_state
 	if ( health <= 0 ):
+		gun.gun_shoot_stop()
 		stri_state = "die"
 	else:
 		stri_state = "hit"
