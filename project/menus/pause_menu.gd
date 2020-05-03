@@ -16,6 +16,9 @@ func _ready():
 
 
 func _on_ExitBtn_pressed():
+	var tree = get_tree()
+	tree.paused = false
+	
 	Game.change_state( "main_menu", true )
 
 

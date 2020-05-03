@@ -8,10 +8,10 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var vp = get_tree().get_root()
-	var prt = get_parent()
-	if vp != prt:
-		vp.add_child( self )
+	#var vp = get_tree().get_root()
+	#var prt = get_parent()
+	#if vp != prt:
+	#	vp.add_child( self )
 	pass # Replace with function body.
 
 
