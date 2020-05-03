@@ -83,12 +83,12 @@ func _physics_process( delta ):
 		queue_free()
 		return
 	var has_hit: bool = owner.has_method( "hit" )
-	if has_hit:
+	var has_is_player: bool = owner.has_method( "is_player" )
+	if has_hit and (not has_is_player):
 		owner.hit( damage, hit_sound )
 		queue_free()
-	
-	# To not process it anymore
-	has_hit_target = true
+		# To not process it anymore
+		has_hit_target = true
 	
 
 func _on_Timer_timeout():

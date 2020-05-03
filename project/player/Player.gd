@@ -226,6 +226,10 @@ func hit( amount, hit_sound ):
 	$StateMachine.change_state( stri_state )
 
 
+func is_player() -> bool:
+	return true
+
+
 func _on_AudioStreamPlayer_finished():
 	$AudioStreamPlayer.playing = false
 	#print( "player sound finished" )

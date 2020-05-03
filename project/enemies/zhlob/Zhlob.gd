@@ -128,7 +128,8 @@ func hit( damage=10, hit_sound=null ):
 		$Area2D.monitorable = false
 		$Area2D.collision_layer = 0
 		$StateMachine.change_state( "die" )
-		
+
+
 func set_collision( en: bool ):
 	$CollisionShape2D.disabled = not en
 

@@ -17,6 +17,7 @@ const ENEMY_PROB_MAX = 1.0/100.0
 const ENEMY_PROB_PERIOD = 60.0
 var   t: float = 0.0
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var walls = get_node( "/root/Level00/TileMapWalls" )
@@ -35,6 +36,7 @@ func _ready():
 	# Make player visible for the zhlob instance.
 	zhlob.target = player
 
+
 func _process( delta ):
 	if t < ENEMY_PROB_PERIOD:
 		t += delta
@@ -44,7 +46,7 @@ func _process( delta ):
 	var p: float = rnd.randf()
 	if p < prob:
 		create_enemy()
-	
+
 
 func create_enemy():
 	var walls = get_node( "/root/Level00/TileMapWalls" )
@@ -62,4 +64,8 @@ func create_enemy():
 	var x: float  = cos(angle) * dist
 	var y: float  = sin(angle) * dist
 	zhlob.position = at + Vector2(x, y)
-	
+
+
+
+
+
