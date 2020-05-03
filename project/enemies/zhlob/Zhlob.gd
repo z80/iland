@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export(int)   var move_speed = 500
 export(float) var fire_period   = 2.0
-export(float) var fire_distance = 512.0
+export(float) var fire_distance = 384.0
 export(float) var sight_distance = 10000.0
 export(int)   var health = 100
 # Declare member variables here. Examples:

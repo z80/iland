@@ -22,7 +22,7 @@ func initialize( start: Vector2, to: Vector2 ):
 	var d = to - start
 	d = d.normalized()
 	# Bullet initial position
-	position = start + d * 50.0
+	position = start + d * 150.0
 	
 	# Sprite orientation.
 	var angle = atan2( d.y, d.x )

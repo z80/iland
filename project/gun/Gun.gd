@@ -56,9 +56,9 @@ func _physics_process( delta ):
 			shooting = false
 		
 		# Create bullet
-		var vp = get_tree().get_root()
+		var p = player.get_parent()
 		var bullet = Bullet.instance()
-		vp.add_child( bullet )
+		p.add_child( bullet )
 		bullet.visible = true
 		bullet.initialize( player.position, player.crosshair.position )
 		
