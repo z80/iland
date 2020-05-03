@@ -44,6 +44,6 @@ __meta__ = {
 }
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-position = Vector2( 78.0093, 527.465 )
+position = Vector2( 515.009, 304.465 )
 [connection signal="pressed" from="ExitBtn" to="." method="_on_ExitBtn_pressed"]
 [connection signal="pressed" from="StartBtn" to="." method="_on_StartBtn_pressed"]

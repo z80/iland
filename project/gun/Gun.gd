@@ -94,8 +94,8 @@ func gun_shoot_stop():
 func _create_shell():
 	var dir_stri: String = player._animation_dir_name( player._compute_dir() )
 	var shell = Shell.instance()
-	var vp = get_tree().get_root()
-	vp.add_child( shell )
+	var p = self.player.get_parent() #get_tree().get_root()
+	p.add_child( shell )
 	shell.sample( dir_stri )
 	shell.position = player.position
 	

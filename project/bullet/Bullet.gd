@@ -43,6 +43,8 @@ func _init():
 func _ready():
 	if hit_sound:
 		hit_sound.set_loop( false )
+		
+	$Sprite.z_index = Game.LAYER_FLYING_OBJECT
 	
 	$RayCast2D.collide_with_areas  = true
 	$RayCast2D.collide_with_bodies = false

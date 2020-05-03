@@ -10,6 +10,8 @@ extends Area2D
 func _ready():
 	$SpriteRed.visible = false
 	$SpriteGreen.visible = true
+	$SpriteRed.z_index   = Game.LAYER_FLYING_OBJECT
+	$SpriteGreen.z_index = Game.LAYER_FLYING_OBJECT
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

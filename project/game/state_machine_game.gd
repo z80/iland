@@ -1,8 +1,8 @@
 
 extends "res://state_machine/state_machine.gd"
 
-# This one can be accessed by all the states.
-var game = null
+enum {LAYER_FLOOR=0, LAYER_ON_FLOOR=1, LAYER_CHARACTER=2, LAYER_FLYING_OBJECT=3}
+
 
 func _init_states_map( sm ):
 	._init_states_map( sm )
@@ -15,9 +15,8 @@ func _init_states_map( sm ):
 	sm["d_level"] = $StateDLevel
 	
 	#start_state_name = "main_menu"
-	start_state_name = "d_main_menu"
+	start_state_name = "main_menu"
 	
-	game = get_parent()
 	
 
 

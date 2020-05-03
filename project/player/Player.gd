@@ -37,13 +37,17 @@ func _ready():
 	# Make camera 2d current.
 	$Camera2D.make_current()
 	
+	$AnimatedSprite.z_index = Game.LAYER_CHARACTER
+	
 	# Make it play animation all the time.
 	$AnimatedSprite.playing = true
 	
+	var p = get_parent()
 	# Create Crosshair.
-	var vp = get_tree().get_root()
+	#var vp = get_tree().get_root()
 	crosshair = Crosshair.instance()
-	vp.add_child( crosshair )
+	#vp.add_child( crosshair )
+	p.add_child( crosshair )
 	crosshair.visible = true
 	
 	_create_guns()
@@ -213,6 +217,7 @@ func hit( amount, hit_sound ):
 	var stri_state
 	if ( health <= 0 ):
 		gun.gun_shoot_stop()
+		$AnimatedSprite.z_index = Game.LAYER_ON_FLOOR
 		stri_state = "die"
 	else:
 		stri_state = "hit"

@@ -21,12 +21,12 @@ func _ready():
 
 func _on_start_click():
 	pass
-	
+
 
 
 func _on_StartBtn_pressed():
-	#Game.change_state( "level_00" )
-	Game.change_state( "d_level" )
+	Game.change_state( "level_00" )
+	#Game.change_state( "d_level" )
 	
 
 

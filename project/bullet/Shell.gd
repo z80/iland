@@ -7,6 +7,7 @@ func __init():
 	pass
 
 func _ready():
+	$AnimatedSprite.z_index = Game.LAYER_FLYING_OBJECT
 	sound.set_loop( false )
 
 func sample( direction_string: String ):
@@ -34,7 +35,7 @@ func _on_Timer_timeout():
 func _on_AnimatedSprite_animation_finished():
 	$AnimatedSprite.playing = false
 	$AnimatedSprite.frame = 24
-	$AnimatedSprite.z_index = 0
+	$AnimatedSprite.z_index = Game.LAYER_ON_FLOOR
 	
 	$AudioStreamPlayer.stream = sound
 	$AudioStreamPlayer.play()

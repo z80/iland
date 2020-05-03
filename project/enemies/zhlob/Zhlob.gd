@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export(int)   var move_speed = 500
 export(float) var fire_period   = 2.0
-export(float) var fire_distance = 256.0
+export(float) var fire_distance = 512.0
 export(float) var sight_distance = 10000.0
 export(int)   var health = 100
 # Declare member variables here. Examples:
@@ -28,7 +28,7 @@ var finished_animation: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	target = null
-	
+	$AnimatedSprite.z_index = Game.LAYER_CHARACTER
 	
 	
 func target_dist():
@@ -124,6 +124,9 @@ func hit( damage=10, hit_sound=null ):
 		play_sound( hit_sound )
 		$StateMachine.change_state( "hit" )
 	else:
+		$AnimatedSprite.z_index = Game.LAYER_ON_FLOOR
+		$Area2D.monitorable = false
+		$Area2D.collision_layer = 0
 		$StateMachine.change_state( "die" )
 		
 func set_collision( en: bool ):
