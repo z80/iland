@@ -16,10 +16,8 @@ func _ready():
 
 
 func _on_ExitBtn_pressed():
-	if state:
-		Game.change_state( "main_menu", true )
+	Game.change_state( "main_menu", true )
 
 
 func _on_BackToGame_pressed():
-	if state:
-		Game.change_state( "prev" )
+	Game.change_state( "prev" )

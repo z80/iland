@@ -74,8 +74,6 @@ func change_state( state_name=null, purge=false ):
 	#if state_name == "previous":
 	var to_previous: bool = not (state_name in states_map )
 	
-	# Depending on if it is put on stack or removed completely
-	current_state.exit( to_previous )
 	
 	# The new state to switch to.
 	var new_state = null
@@ -94,6 +92,9 @@ func change_state( state_name=null, purge=false ):
 		# Keep only the one to be used.
 		states_stack.push_back( new_state )
 	else:
+		# Depending on if it is put on stack or removed completely
+		current_state.exit( to_previous )
+		
 		if to_previous:
 			states_stack.pop_back()
 		else:
