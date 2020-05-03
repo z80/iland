@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://enemies/zhlob/sprites/Death_0_000_1.png" type="Texture" id=1]
+[ext_resource path="res://debug/d_level.gd" type="Script" id=2]
+
+[node name="DLevel" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 527.979, 305.01 )
+texture = ExtResource( 1 )

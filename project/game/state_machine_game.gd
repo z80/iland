@@ -10,8 +10,12 @@ func _init_states_map( sm ):
 	sm["pause_menu"] = $StatePauseMenu
 	sm["level_00"]   = $StateLevel00
 	sm["dead"]       = $StateDead
+	# Debug states
+	sm["d_main_menu"] = $StateDMainMenu
+	sm["d_level"] = $StateDLevel
 	
-	start_state_name = "main_menu"
+	#start_state_name = "main_menu"
+	start_state_name = "d_main_menu"
 	
 	game = get_parent()
 	
