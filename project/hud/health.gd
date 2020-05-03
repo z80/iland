@@ -14,5 +14,11 @@ func _ready():
 
 
 func set_health( qty ):
+	if qty < 0:
+		qty = 0
 	var stri = "%2d" % qty
 	$Health.text = stri
+
+
+
+
