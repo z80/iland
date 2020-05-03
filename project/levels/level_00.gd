@@ -29,12 +29,12 @@ func _ready():
 	player.visible = true
 	#print( get_tree().get_node('/root').name )
 	
-	var zhlob = Zhlob.instance()
-	walls.add_child( zhlob )
-	zhlob.set_position( Vector2( 1500, 100 ) )
-	zhlob.visible = true
-	# Make player visible for the zhlob instance.
-	zhlob.target = player
+	#var zhlob = Zhlob.instance()
+	#walls.add_child( zhlob )
+	#zhlob.set_position( Vector2( 1500, 100 ) )
+	#zhlob.visible = true
+	## Make player visible for the zhlob instance.
+	#zhlob.target = player
 
 
 func _process( delta ):
