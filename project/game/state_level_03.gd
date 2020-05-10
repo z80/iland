@@ -10,6 +10,9 @@ func enter( new_state ):
 		created = true
 		
 	Input.set_mouse_mode( Input.MOUSE_MODE_HIDDEN )
+	
+	# Here it is also #3 as it is the last one at the moment.
+	Game.set_next_level( "level_03" )
 
 
 func exit( destroy ):
@@ -19,6 +22,8 @@ func exit( destroy ):
 		if level:
 			level.queue_free()
 			created = false
+			
+	Game.set_next_level( "level_03" )
 	
 	
 func handle_input( event ):

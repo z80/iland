@@ -107,7 +107,7 @@ func play_animation( animation, restart=false ):
 	if restart:
 		$AnimatedSprite.frame = 0
 	if ( current_name != name ):
-		print( "Current: ", current_name, ", new: ", name )
+		#print( "Current: ", current_name, ", new: ", name )
 		$AnimatedSprite.frame = 0
 		$AnimatedSprite.animation = name
 		$AnimatedSprite.play()

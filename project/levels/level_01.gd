@@ -35,7 +35,6 @@ func _ready():
 	player.set_position( Vector2( 100, 100 ) )
 	player.visible = true
 	Game.set_player( player )
-	Game.set_next_level( "level_02" )
 	#print( get_tree().get_node('/root').name )
 	
 	#create_enemy_spider_brain()

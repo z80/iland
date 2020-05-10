@@ -6,7 +6,7 @@ enum {LAYER_FLOOR=0, LAYER_ON_FLOOR=1, LAYER_CHARACTER=2, LAYER_FLYING_OBJECT=3}
 var player_ = null
 var rnd_ = RandomNumberGenerator.new()
 var enemy_qty_: int = 0
-var next_level_state_: String = "prev"
+var next_level_state_: String = "level_00"
 var score_: int = 0
 
 func _init_states_map( sm ):
