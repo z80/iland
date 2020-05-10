@@ -26,9 +26,10 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Die Vernichtung"
+config/name="Sturmgewehr"
 run/main_scene="res://menus/main_menu.tscn"
 config/icon="res://icon.png"
+config/windows_native_icon="res://icon.png"
 
 [autoload]
 
