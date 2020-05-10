@@ -10,8 +10,12 @@ func on_animation_finished():
 	if d < character.fire_distance:
 		var target = character.target
 		if not target:
-			return
-		
+			target = Game.player()
+			character.target = target
+		elif  not target.alive():
+			target = Game.player()
+			character.target = target
+
 		target.hit( 25, null )
 		var has_set_target: bool = target.has_method( "set_target" )
 		if has_set_target:

@@ -236,4 +236,7 @@ func _on_AudioStreamPlayer_finished():
 
 
 
+func alive() -> bool:
+	var a: bool = (health > 0)
+	return a
 

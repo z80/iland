@@ -140,3 +140,6 @@ func set_target( t ):
 	target = t
 
 
+func alive() -> bool:
+	var a: bool = (health > 0)
+	return a

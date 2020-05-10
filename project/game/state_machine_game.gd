@@ -3,6 +3,7 @@ extends "res://state_machine/state_machine.gd"
 
 enum {LAYER_FLOOR=0, LAYER_ON_FLOOR=1, LAYER_CHARACTER=2, LAYER_FLYING_OBJECT=3}
 
+var player_ = null
 
 func _init_states_map( sm ):
 	._init_states_map( sm )
@@ -38,5 +39,14 @@ func find_node_by_name( name, root=null ):
 			return found
 
 	return null
+
+
+
+func set_player( p ):
+	player_ = p
+
+func player():
+	return player_
+
 
 

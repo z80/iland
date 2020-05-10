@@ -28,6 +28,7 @@ func _ready():
 	walls.add_child( player )
 	player.set_position( Vector2( 100, 100 ) )
 	player.visible = true
+	Game.set_player( player )
 	#print( get_tree().get_node('/root').name )
 	
 	#create_enemy_spider_brain()

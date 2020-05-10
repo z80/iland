@@ -27,7 +27,15 @@ func on_animation_finished():
 
 
 func _shoot():
-	var target_at = character.target.global_position
+	var target = character.target
+	if target == null:
+		target = Game.player()
+		character.target = target
+	elif not target.alive():
+		target = Game.player()
+		character.target = target
+	
+	var target_at = target.global_position
 	var own_at = character.global_position
 	var dv = target_at - own_at
 	character.line_of_sight = dv
