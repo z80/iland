@@ -402,5 +402,6 @@ script = ExtResource( 177 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
+one_shot = true
 [connection signal="animation_finished" from="AnimatedSprite" to="StateMachine" method="_on_animation_finished"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]

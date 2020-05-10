@@ -32,8 +32,10 @@ func _ready():
 	
 	
 func target_dist():
-	if not target:
-		return sight_distance * 10
+	if not target or ( not target.alive() ):
+		target = Game.player()
+		if not target:
+			return sight_distance * 10
 	var target_at = target.global_position
 	var own_at = global_position
 	var dv = target_at - own_at

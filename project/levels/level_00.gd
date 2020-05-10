@@ -18,6 +18,7 @@ const ENEMY_PROB_MAX = 1.0/100.0
 const ENEMY_PROB_PERIOD = 60.0
 var   t: float = 0.0
 
+const ATTEMPTS_QTY: int = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -53,8 +54,6 @@ func create_enemy():
 		create_enemy_zhlob()
 
 
-
-
 func create_enemy_zhlob():
 	var walls = get_node( "/root/Level00/TileMapWalls" )
 	var zhlob = Zhlob.instance()
@@ -64,13 +63,8 @@ func create_enemy_zhlob():
 	# Make player visible for the zhlob instance.
 	zhlob.target = player
 	
-	var at: Vector2 = player.global_position
-	
-	var dist: float = rnd.randf_range( MIN_DIST, MAX_DIST )
-	var angle: float = rnd.randf_range( 0.0, PI*2.0 )
-	var x: float  = cos(angle) * dist
-	var y: float  = sin(angle) * dist
-	zhlob.position = at + Vector2(x, y)
+	var at: Vector2 = enemy_position()
+	zhlob.position = at
 
 
 func create_enemy_spider_brain():
@@ -82,14 +76,24 @@ func create_enemy_spider_brain():
 	# Make player visible for the zhlob instance.
 	enemy.target = player
 	
-	var at: Vector2 = player.global_position
+	var at: Vector2 = enemy_position()
+	enemy.position = at
+
+
+func enemy_position() -> Vector2:
+	var attempts = 0
+	var player_at: Vector2 = player.position
 	
-	var dist: float = rnd.randf_range( MIN_DIST, MAX_DIST )
-	var angle: float = rnd.randf_range( 0.0, PI*2.0 )
-	var x: float  = cos(angle) * dist
-	var y: float  = sin(angle) * dist
-	enemy.position = at + Vector2(x, y)
-
-
+	var at: Vector2
+	while attempts < ATTEMPTS_QTY:
+		var dist: float = rnd.randf_range( MIN_DIST, MAX_DIST )
+		var angle: float = rnd.randf_range( 0.0, PI*2.0 )
+		var x: float  = cos(angle) * dist
+		var y: float  = sin(angle) * dist
+		at = Vector2( x, y )
+		var d = (at - player_at).length()
+		if d > MIN_DIST:
+			break
+	return at
 
 
