@@ -8,10 +8,10 @@ var instant: bool = false
 var speed: float = 5000.0
 
 var velocity: Vector2 = Vector2()
-var max_distance: float = 1000.0
+var max_distance: float = 3000.0
 var distance: float = 0.0
 
-var timer_interval: float = 0.3
+var timer_interval: float = 2.0
 var player = null
 var has_hit_target: bool = false
 
