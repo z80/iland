@@ -27,6 +27,7 @@ func _on_start_click():
 func _on_StartBtn_pressed():
 	var stri: String = Game.next_level()
 	print( "Set level: ", stri )
+	Game.reset_enemy_qty()
 	Game.change_state( stri )
 	#Game.change_state( "d_level" )
 	
