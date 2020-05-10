@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export(int)   var move_speed = 200
 export(float) var fire_period   = 2.0
-export(float) var fire_distance = 1600.0
+export(float) var fire_distance = 1300.0
 export(float) var sight_distance = 3000.0
 export(int)   var health = 300
 # Declare member variables here. Examples:
@@ -121,10 +121,10 @@ func hit( damage=10, hit_sound=null ):
 	health -= damage
 	if health > 0:
 		play_sound( hit_sound )
-		if $StateMachine.current_state != $Hit:
+		if $StateMachine.state() != "hit":
 			$StateMachine.change_state( "hit" )
 	else:
-		if $StateMachine.current_state != $Die:
+		if $StateMachine.state() != "die":
 			$AnimatedSprite.z_index = Game.LAYER_ON_FLOOR
 			$Area2D.monitorable = false
 			$Area2D.collision_layer = 0
