@@ -20,8 +20,13 @@ var   t: float = 0.0
 
 const ATTEMPTS_QTY: int = 10
 
+const TOTAL_ENEMIES_QTY: int = 50
+
+var created_enemies_qty_: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	created_enemies_qty_ = 0
+	
 	var walls = get_node( "/root/Level00/TileMapWalls" )
 	#var fl = get_node( "/root/level_00/TileMapFloor" )
 	player = Player.instance()
@@ -44,15 +49,29 @@ func _process( delta ):
 	var p: float = rnd.randf()
 	if (p < prob) and player and player.alive():
 		create_enemy()
+		
+	var done: bool = check_for_success()
+	if done:
+		Game.change_state( "done" )
 
 
 func create_enemy():
-	var p: float = rnd.randf()
-	if p < 0.2:
-		create_enemy_spider_brain()
-	else:
-		create_enemy_zhlob()
+	if created_enemies_qty_ < TOTAL_ENEMIES_QTY:
+		var p: float = rnd.randf()
+		if p < 0.2:
+			create_enemy_spider_brain()
+		else:
+			create_enemy_zhlob()
+		# Count enemies
+		created_enemies_qty_ += 1
+		Game.inc_enemy_qty()
 
+func check_for_success() -> bool:
+	var all_released: bool = ( created_enemies_qty_ >= TOTAL_ENEMIES_QTY )
+	var all_killed: bool = (Game.enemy_qty() <= 1)
+	var ok: bool = all_released and all_killed
+	return ok
+	
 
 func create_enemy_zhlob():
 	var walls = get_node( "/root/Level00/TileMapWalls" )

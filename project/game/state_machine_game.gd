@@ -5,6 +5,7 @@ enum {LAYER_FLOOR=0, LAYER_ON_FLOOR=1, LAYER_CHARACTER=2, LAYER_FLYING_OBJECT=3}
 
 var player_ = null
 var rnd_ = RandomNumberGenerator.new()
+var enemy_qty_: int = 0
 
 func _init_states_map( sm ):
 	._init_states_map( sm )
@@ -63,4 +64,24 @@ func set_score( v: int = 0 ):
 func add_score( v: int = 0 ):
 	if player_:
 		player_.add_score( v )
+
+
+func inc_enemy_qty():
+	enemy_qty_ += 1
+
+
+func dec_enemy_qty():
+	enemy_qty_ -= 1
+
+
+func enemy_qty() -> int:
+	return enemy_qty_;
+
+
+func reset_enemy_qty():
+	enemy_qty_ = 0
+
+
+
+
 
