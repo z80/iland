@@ -8,7 +8,7 @@ func enter( new_state ):
 	var dv = target_at - own_at
 	character.line_of_sight = dv
 	
-	character.play_animation( character.ANIM_HIT )
+	character.play_animation( character.ANIM_HIT, true )
 
 
 func on_animation_finished():

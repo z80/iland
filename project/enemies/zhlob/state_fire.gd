@@ -2,8 +2,10 @@
 extends "res://state_machine/state.gd"
 
 func enter( new_state ):
-	character.play_animation( character.ANIM_FIRE )
-
+	if new_state:
+		character.play_animation( character.ANIM_FIRE )
+	else:
+		state_machine.change_state( "prev" )
 
 func on_animation_finished():
 	var d = character.target_dist()

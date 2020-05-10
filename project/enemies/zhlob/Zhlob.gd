@@ -98,10 +98,12 @@ func _compute_dir():
 		d += 8
 	return d
 	
-func play_animation( animation ):
+func play_animation( animation, restart=false ):
 	var dir = _compute_dir()
 	var name = _animation_name( animation, dir )
 	var current_name = $AnimatedSprite.animation
+	if restart:
+		$AnimatedSprite.frame = 0
 	if ( current_name != name ):
 		print( "Current: ", current_name, ", new: ", name )
 		$AnimatedSprite.frame = 0
@@ -124,8 +126,7 @@ func hit( damage=10, hit_sound=null ):
 	health -= damage
 	if health > 0:
 		play_sound( hit_sound )
-		if $StateMachine.current_state != $Hit:
-			$StateMachine.change_state( "hit" )
+		$StateMachine.change_state( "hit" )
 	else:
 		if $StateMachine.current_state != $Die:
 			$AnimatedSprite.z_index = Game.LAYER_ON_FLOOR

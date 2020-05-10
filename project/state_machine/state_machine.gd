@@ -15,7 +15,6 @@ var states_map = {}
 
 var states_stack = []
 var current_state = null
-var current_state_name: String = String()
 var _active = false setget set_active
 
 var character = null
@@ -39,9 +38,8 @@ func _ready():
 
 func initialize( initial_state_name ):
 	set_active( true )
-	current_state_name = initial_state_name
-	states_stack.push_back( states_map[initial_state_name] )
-	current_state = states_stack.back()
+	states_stack.push_back( { "name": initial_state_name, "state": states_map[initial_state_name] } )
+	current_state = states_stack.back()["state"]
 	current_state.enter( true )
 
 
@@ -68,22 +66,28 @@ func _on_animation_finished():
 	#print( "StateMachine::_on_animation_finished()" )
 	current_state.on_animation_finished()
 
-func state() -> String:
-	return current_state_name
+func state_name() -> String:
+	var name: String = states_stack.back()["name"]
+	return name
 
 # This one is called by states to either pop current one ot push another one..
-func change_state( state_name=null, purge=false ):
+func change_state( new_state_name=null, purge=false ):
 	if not _active:
 		return
 	#if state_name == "previous":
-	var to_previous: bool = not (state_name in states_map )
-	
+	var to_previous: bool = not (new_state_name in states_map )
 	
 	# The new state to switch to.
 	var new_state = null
 	if not to_previous:
-		current_state_name = state_name
-		new_state = states_map[state_name]
+		# First check if it is the same as current one.
+		var current_name: String = state_name()
+		if new_state_name == current_name:
+			current_state.enter( false )
+			return
+		
+		# It is not the same as current state.
+		new_state = states_map[new_state_name]
 		
 	if purge:
 		# Clean up all the states
@@ -91,12 +95,12 @@ func change_state( state_name=null, purge=false ):
 		var qty: int = states_stack.size()
 		for i in range(qty):
 			var ind: int = qty - i - 1
-			var state = states_stack[ind]
+			var state = states_stack[ind]["state"]
 			if state != new_state:
 				state.exit( true )
 		states_stack.clear()
 		# Keep only the one to be used.
-		states_stack.push_back( new_state )
+		states_stack.push_back( { "name": new_state_name, "state": new_state } )
 	else:
 		# Depending on if it is put on stack or removed completely
 		current_state.exit( to_previous )
@@ -104,9 +108,9 @@ func change_state( state_name=null, purge=false ):
 		if to_previous:
 			states_stack.pop_back()
 		else:
-			states_stack.push_back( new_state )
+			states_stack.push_back( { "name": new_state_name, "state": new_state } )
 
-	current_state = states_stack.back()
+	current_state = states_stack.back()["state"]
 	emit_signal( "state_changed", current_state )
 
 	current_state.enter( not to_previous )

@@ -14,8 +14,11 @@ func _ready():
 
 
 func enter( new_state ):
-	character.play_animation( character.ANIM_FIRE )
-	_shoot()
+	if new_state:
+		character.play_animation( character.ANIM_FIRE )
+		_shoot()
+	else:
+		state_machine.change_state( "prev" )
 
 
 func on_animation_finished():
