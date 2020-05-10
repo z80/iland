@@ -52,6 +52,7 @@ func _process( delta ):
 		
 	var done: bool = check_for_success()
 	if done:
+		Game.set_next_level( "level_03" )
 		Game.change_state( "done_menu" )
 
 

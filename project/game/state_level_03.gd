@@ -22,10 +22,10 @@ func exit( destroy ):
 		if level:
 			level.queue_free()
 			created = false
-			
-	Game.set_next_level( "level_03" )
-	
-	
+
+
+
+
 func handle_input( event ):
 	.handle_input( event )
 
