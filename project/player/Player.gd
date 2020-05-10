@@ -229,14 +229,24 @@ func hit( amount, hit_sound ):
 func is_player() -> bool:
 	return true
 
+func alive() -> bool:
+	var res: bool = (health > 0)
+	return res
 
 func _on_AudioStreamPlayer_finished():
 	$AudioStreamPlayer.playing = false
 	#print( "player sound finished" )
 
 
+func add_score( v: int ):
+	if alive():
+		$CanvasLayer/Health.add_score( v )
 
-func alive() -> bool:
-	var a: bool = (health > 0)
-	return a
+
+func set_score( v: int ):
+	$CanvasLayer/Health.set_score( v )
+
+
+
+
 

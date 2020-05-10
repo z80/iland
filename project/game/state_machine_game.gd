@@ -45,8 +45,17 @@ func find_node_by_name( name, root=null ):
 func set_player( p ):
 	player_ = p
 
+
 func player():
 	return player_
 
 
+func set_score( v: int = 0 ):
+	if player_:
+		player_.set_score( v )
+
+
+func add_score( v: int = 0 ):
+	if player_:
+		player_.add_score( v )
 

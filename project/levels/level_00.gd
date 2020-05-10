@@ -42,7 +42,7 @@ func _process( delta ):
 			t = ENEMY_PROB_PERIOD
 	var prob: float = ENEMY_PROB_MIN + (ENEMY_PROB_MAX - ENEMY_PROB_MIN) * t / ENEMY_PROB_PERIOD
 	var p: float = rnd.randf()
-	if p < prob:
+	if (p < prob) and player and player.alive():
 		create_enemy()
 
 

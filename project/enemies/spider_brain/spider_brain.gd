@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+const SCORE_: int = 3
+
 export(int)   var move_speed = 200
 export(float) var fire_period   = 2.0
 export(float) var fire_distance = 1300.0
@@ -130,6 +132,7 @@ func hit( damage=10, hit_sound=null ):
 			$Area2D.monitorable = false
 			$Area2D.collision_layer = 0
 			$StateMachine.change_state( "die" )
+			Game.add_score( SCORE_ )
 
 
 func set_collision( en: bool ):
