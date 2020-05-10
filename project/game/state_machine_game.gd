@@ -4,6 +4,7 @@ extends "res://state_machine/state_machine.gd"
 enum {LAYER_FLOOR=0, LAYER_ON_FLOOR=1, LAYER_CHARACTER=2, LAYER_FLYING_OBJECT=3}
 
 var player_ = null
+var rnd_ = RandomNumberGenerator.new()
 
 func _init_states_map( sm ):
 	._init_states_map( sm )
@@ -17,8 +18,12 @@ func _init_states_map( sm ):
 	
 	#start_state_name = "main_menu"
 	start_state_name = "main_menu"
-	
-	
+
+
+
+func random_generator():
+	return rnd_
+
 
 
 func find_node_by_name( name, root=null ):

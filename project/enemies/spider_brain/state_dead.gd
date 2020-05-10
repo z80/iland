@@ -10,6 +10,7 @@ func enter( new_animation ):
 	# Keep it look dead.
 	character.stop_animation( 12 )
 	character.set_collision( false )
+	character.spawn_medikit()
 
 
 func _on_timer_elapsed():

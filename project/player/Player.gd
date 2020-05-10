@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+const HEALTH: int = 100
+
 export(int) var move_speed = 500
 # Declare member variables here. Examples:
 # var a = 2
@@ -33,7 +35,7 @@ var zoom: float = 3.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	health = 100
+	health = HEALTH
 	# Make camera 2d current.
 	$Camera2D.make_current()
 	
@@ -75,6 +77,11 @@ func set_health( val: int ):
 func get_health() -> int:
 	return health
 
+func add_health( d: int = 10 ):
+	var h: int = health + d
+	if h > HEALTH:
+		h = HEALTH
+	set_health( h )
 
 func play_animation( anim, speed := 1.0 ):
 	var d = _compute_dir()

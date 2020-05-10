@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 const SCORE_: int = 3
+const PICKUP_PROB: float = 0.5
 
 export(int)   var move_speed = 200
 export(float) var fire_period   = 2.0
@@ -20,6 +21,7 @@ export(int)  var anim_prev = ANIM_IDLE
 export(int)  var anim_dir  = DIR_000
 
 var Player = preload("res://player/Player.gd")
+var Medikit = preload("res://pickups/medikit/medikit.tscn")
 
 var state: int = STATE_IDLE
 var state_prev: int = STATE_IDLE
@@ -113,10 +115,12 @@ func stop_animation( frame = -1 ):
 	$AnimatedSprite.playing = false
 	if frame >= 0:
 		$AnimatedSprite.frame = frame
-	
+
+
 func play_sound( sound ):
 	$AudioStreamPlayer.stream = sound
 	$AudioStreamPlayer.play()
+
 
 func hit( damage=10, hit_sound=null ):
 	if health < 0:
@@ -138,10 +142,27 @@ func hit( damage=10, hit_sound=null ):
 func set_collision( en: bool ):
 	$CollisionShape2D.disabled = not en
 
+
 func set_target( t ):
 	target = t
+
 
 func alive() -> bool:
 	var a: bool = (health > 0)
 	return a
+
+
+
+func spawn_medikit():
+	var rnd = Game.random_generator()
+	var p: float = rnd.randf()
+	if p > PICKUP_PROB:
+		return
+	
+	var pt = get_parent()
+	var mk = Medikit.instance()
+	
+	pt.add_child( mk )
+	mk.position = position
+
 
