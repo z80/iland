@@ -8,6 +8,7 @@ func enter( new_state ):
 	#if not menu:
 	get_tree().change_scene( "res://menus/main_menu.tscn" )
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	Game.set_score( 0 )
 		#menu = Game.find_node_by_name( "MainMenu" )
 	#else:
 	#	menu.visible = true

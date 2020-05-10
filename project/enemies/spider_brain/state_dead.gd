@@ -11,6 +11,7 @@ func enter( new_animation ):
 	character.stop_animation( 12 )
 	character.set_collision( false )
 	character.spawn_medikit()
+	Game.dec_enemy_qty()
 
 
 func _on_timer_elapsed():

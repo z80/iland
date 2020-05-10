@@ -6,11 +6,14 @@ enum {LAYER_FLOOR=0, LAYER_ON_FLOOR=1, LAYER_CHARACTER=2, LAYER_FLYING_OBJECT=3}
 var player_ = null
 var rnd_ = RandomNumberGenerator.new()
 var enemy_qty_: int = 0
+var next_level_state_: String = "prev"
+var score_: int = 0
 
 func _init_states_map( sm ):
 	._init_states_map( sm )
 	sm["main_menu"]  = $StateMainMenu
 	sm["pause_menu"] = $StatePauseMenu
+	sm["done_menu"]  = $StateDoneMenu
 	sm["level_00"]   = $StateLevel00
 	sm["dead"]       = $StateDead
 	# Debug states
@@ -50,6 +53,8 @@ func find_node_by_name( name, root=null ):
 
 func set_player( p ):
 	player_ = p
+	if p:
+		player_.set_score( score_ )
 
 
 func player():
@@ -57,13 +62,15 @@ func player():
 
 
 func set_score( v: int = 0 ):
+	score_ = v
 	if player_:
-		player_.set_score( v )
+		player_.set_score( score_ )
 
 
 func add_score( v: int = 0 ):
+	set_score( score_ + v )
 	if player_:
-		player_.add_score( v )
+		player_.set_score( score_ )
 
 
 func inc_enemy_qty():
@@ -80,6 +87,17 @@ func enemy_qty() -> int:
 
 func reset_enemy_qty():
 	enemy_qty_ = 0
+
+
+
+func set_next_level( s: String ):
+	next_level_state_ = s
+
+
+
+func next_level() -> String:
+	return next_level_state_
+
 
 
 

@@ -10,6 +10,7 @@ func enter( new_animation ):
 	# Keep it look dead.
 	character.stop_animation( 24 )
 	character.set_collision( false )
+	Game.dec_enemy_qty()
 
 
 func _on_timer_elapsed():

@@ -20,7 +20,7 @@ var   t: float = 0.0
 
 const ATTEMPTS_QTY: int = 10
 
-const TOTAL_ENEMIES_QTY: int = 50
+const TOTAL_ENEMIES_QTY: int = 2
 
 var created_enemies_qty_: int = 0
 # Called when the node enters the scene tree for the first time.
@@ -35,6 +35,7 @@ func _ready():
 	player.set_position( Vector2( 100, 100 ) )
 	player.visible = true
 	Game.set_player( player )
+	Game.set_next_level( "level_00" )
 	#print( get_tree().get_node('/root').name )
 	
 	#create_enemy_spider_brain()
@@ -52,7 +53,7 @@ func _process( delta ):
 		
 	var done: bool = check_for_success()
 	if done:
-		Game.change_state( "done" )
+		Game.change_state( "done_menu" )
 
 
 func create_enemy():
@@ -68,7 +69,7 @@ func create_enemy():
 
 func check_for_success() -> bool:
 	var all_released: bool = ( created_enemies_qty_ >= TOTAL_ENEMIES_QTY )
-	var all_killed: bool = (Game.enemy_qty() <= 1)
+	var all_killed: bool = (Game.enemy_qty() < 1)
 	var ok: bool = all_released and all_killed
 	return ok
 	

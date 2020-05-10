@@ -22,8 +22,10 @@ func _on_ExitBtn_pressed():
 	Game.change_state( "main_menu", true )
 
 
-func _on_BackToGame_pressed():
 
 
 func _on_NextLevelBtn_pressed():
-	Game.change_state( "level_01", true )
+	var stri: String = Game.next_level()
+	Game.change_state( stri, true )
+
+

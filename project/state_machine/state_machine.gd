@@ -101,6 +101,9 @@ func change_state( new_state_name=null, purge=false ):
 		states_stack.clear()
 		# Keep only the one to be used.
 		states_stack.push_back( { "name": new_state_name, "state": new_state } )
+		
+		# Enforce to re-enter the state
+		to_previous = false
 	else:
 		# Depending on if it is put on stack or removed completely
 		current_state.exit( to_previous )

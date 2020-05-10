@@ -86,6 +86,6 @@ position = Vector2( -1.6702, 3.34033 )
 scale = Vector2( 0.765131, 0.712938 )
 frames = SubResource( 6 )
 animation = "Beat"
-frame = 6
+frame = 8
 playing = true
 centered = false

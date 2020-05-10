@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://game/state_main_menu.gd" type="Script" id=1]
 [ext_resource path="res://game/state_pause_menu.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://game/state_dead.gd" type="Script" id=5]
 [ext_resource path="res://game/state_d_level.gd" type="Script" id=6]
 [ext_resource path="res://game/state_d_main_menu.gd" type="Script" id=7]
+[ext_resource path="res://game/state_done_menu.gd" type="Script" id=8]
 
 [node name="Game" type="Node"]
 pause_mode = 2
@@ -29,3 +30,6 @@ script = ExtResource( 7 )
 
 [node name="StateDLevel" type="Node" parent="."]
 script = ExtResource( 6 )
+
+[node name="StateDoneMenu" type="Node" parent="."]
+script = ExtResource( 8 )
