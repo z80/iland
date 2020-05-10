@@ -121,10 +121,10 @@ func hit( damage=10, hit_sound=null ):
 	health -= damage
 	if health > 0:
 		play_sound( hit_sound )
-		if $StateMachine.state() != "hit":
+		if $StateMachine.current_state != $Hit:
 			$StateMachine.change_state( "hit" )
 	else:
-		if $StateMachine.state() != "die":
+		if $StateMachine.current_state != $Die:
 			$AnimatedSprite.z_index = Game.LAYER_ON_FLOOR
 			$Area2D.monitorable = false
 			$Area2D.collision_layer = 0
