@@ -6,7 +6,7 @@ var created: bool = false
 func enter( new_state ):
 	.enter( new_state )
 	if (not created) or new_state:
-		get_tree().change_scene( "res://levels/level_00.tscn" )
+		get_tree().change_scene( "res://levels/level_02.tscn" )
 		created = true
 		
 	Input.set_mouse_mode( Input.MOUSE_MODE_HIDDEN )

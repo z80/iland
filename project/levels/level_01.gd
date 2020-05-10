@@ -15,12 +15,12 @@ const MAX_DIST: float = 3000.0
 var   rnd = RandomNumberGenerator.new()
 const ENEMY_PROB_MIN = 1.0/300.0
 const ENEMY_PROB_MAX = 1.0/100.0
-const ENEMY_PROB_PERIOD = 10.0
+const ENEMY_PROB_PERIOD = 60.0
 var   t: float = 0.0
 
 const ATTEMPTS_QTY: int = 10
 
-const TOTAL_ENEMIES_QTY: int = 10
+const TOTAL_ENEMIES_QTY: int = 50
 
 var created_enemies_qty_: int = 0
 # Called when the node enters the scene tree for the first time.
@@ -35,7 +35,7 @@ func _ready():
 	player.set_position( Vector2( 100, 100 ) )
 	player.visible = true
 	Game.set_player( player )
-	Game.set_next_level( "level_01" )
+	Game.set_next_level( "level_02" )
 	#print( get_tree().get_node('/root').name )
 	
 	#create_enemy_spider_brain()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://levels/level_00.gd" type="Script" id=1]
+[ext_resource path="res://levels/level_03.gd" type="Script" id=1]
 [ext_resource path="res://levels/tiles_floor/TileFloor_003.png" type="Texture" id=2]
 [ext_resource path="res://levels/tiles_floor/TileFloor_001.png" type="Texture" id=3]
 [ext_resource path="res://levels/tiles_floor/TileFloor_000.png" type="Texture" id=4]
