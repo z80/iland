@@ -1,10 +1,10 @@
 
 extends "res://state_machine/state.gd"
 
-var Character = preload("res://enemies/zhlob/Zhlob.gd")
+var Character = preload("res://enemies/spider_brain/spider_brain.gd")
 
 func enter( new_state ):
-	character.play_animation( character.ANIM_IDLE )
+	character.play_animation( Character.ANIM_IDLE )
 
 func handle_input(event):
 	return .handle_input(event)

@@ -15,6 +15,7 @@ var states_map = {}
 
 var states_stack = []
 var current_state = null
+var current_state_name: String = String()
 var _active = false setget set_active
 
 var character = null
@@ -38,6 +39,7 @@ func _ready():
 
 func initialize( initial_state_name ):
 	set_active( true )
+	current_state_name = initial_state_name
 	states_stack.push_back( states_map[initial_state_name] )
 	current_state = states_stack.back()
 	current_state.enter( true )
@@ -66,6 +68,8 @@ func _on_animation_finished():
 	#print( "StateMachine::_on_animation_finished()" )
 	current_state.on_animation_finished()
 
+func state() -> String:
+	return current_state_name
 
 # This one is called by states to either pop current one ot push another one..
 func change_state( state_name=null, purge=false ):
@@ -78,6 +82,7 @@ func change_state( state_name=null, purge=false ):
 	# The new state to switch to.
 	var new_state = null
 	if not to_previous:
+		current_state_name = state_name
 		new_state = states_map[state_name]
 		
 	if purge:

@@ -4,8 +4,9 @@ extends Node2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var Player = preload( "res://player/Player.tscn" )
-var Zhlob  = preload( "res://enemies/zhlob/Zhlob.tscn" )
+var Player      = preload( "res://player/Player.tscn" )
+var Zhlob       = preload( "res://enemies/zhlob/Zhlob.tscn" )
+var SpiderBrain = preload( "res://enemies/spider_brain/spider_brain.tscn" )
 
 var player = null
 
@@ -29,12 +30,7 @@ func _ready():
 	player.visible = true
 	#print( get_tree().get_node('/root').name )
 	
-	#var zhlob = Zhlob.instance()
-	#walls.add_child( zhlob )
-	#zhlob.set_position( Vector2( 1500, 100 ) )
-	#zhlob.visible = true
-	## Make player visible for the zhlob instance.
-	#zhlob.target = player
+	#create_enemy_spider_brain()
 
 
 func _process( delta ):
@@ -49,6 +45,16 @@ func _process( delta ):
 
 
 func create_enemy():
+	var p: float = rnd.randf()
+	if p < 0.2:
+		create_enemy_spider_brain()
+	else:
+		create_enemy_zhlob()
+
+
+
+
+func create_enemy_zhlob():
 	var walls = get_node( "/root/Level00/TileMapWalls" )
 	var zhlob = Zhlob.instance()
 	walls.add_child( zhlob )
@@ -65,6 +71,23 @@ func create_enemy():
 	var y: float  = sin(angle) * dist
 	zhlob.position = at + Vector2(x, y)
 
+
+func create_enemy_spider_brain():
+	var walls = get_node( "/root/Level00/TileMapWalls" )
+	var enemy = SpiderBrain.instance()
+	walls.add_child( enemy )
+	enemy.set_position( Vector2( 1500, 100 ) )
+	enemy.visible = true
+	# Make player visible for the zhlob instance.
+	enemy.target = player
+	
+	var at: Vector2 = player.global_position
+	
+	var dist: float = rnd.randf_range( MIN_DIST, MAX_DIST )
+	var angle: float = rnd.randf_range( 0.0, PI*2.0 )
+	var x: float  = cos(angle) * dist
+	var y: float  = sin(angle) * dist
+	enemy.position = at + Vector2(x, y)
 
 
 

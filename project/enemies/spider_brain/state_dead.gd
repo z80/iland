@@ -8,7 +8,7 @@ func enter( new_animation ):
 	timer.start()
 	
 	# Keep it look dead.
-	character.stop_animation( 24 )
+	character.stop_animation( 12 )
 	character.set_collision( false )
 
 

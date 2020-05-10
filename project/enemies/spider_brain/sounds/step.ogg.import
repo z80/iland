@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/step.ogg-3273a438f9b1c2918641b9b51b1fa62c.oggstr"
+
+[deps]
+
+source_file="res://enemies/spider_brain/sounds/step.ogg"
+dest_files=[ "res://.import/step.ogg-3273a438f9b1c2918641b9b51b1fa62c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

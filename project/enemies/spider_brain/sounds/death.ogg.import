@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/death.ogg-558c9b4098336c4922be05f537a1ea49.oggstr"
+
+[deps]
+
+source_file="res://enemies/spider_brain/sounds/death.ogg"
+dest_files=[ "res://.import/death.ogg-558c9b4098336c4922be05f537a1ea49.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

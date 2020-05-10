@@ -5,20 +5,22 @@ var initialized: bool = false
 
 var damage: int = 10
 var instant: bool = false
-var speed: float = 5000.0
+var speed: float = 2000.0
 
 var velocity: Vector2 = Vector2()
 var max_distance: float = 1000.0
 var distance: float = 0.0
 
-var timer_interval: float = 0.3
-var player = null
+var timer_interval: float = 2.0
+var character = null
 var has_hit_target: bool = false
 
-var hit_sound: Resource = preload( "res://bullet/sounds/hit.ogg" )
+var hit_sound: Resource = preload( "res://enemies/spider_brain/sounds/hit.ogg" )
 
 # Call this after instantiation.
-func initialize( start: Vector2, to: Vector2 ):
+func initialize( origin, start: Vector2, to: Vector2 ):
+	character = origin
+	
 	var d = to - start
 	d = d.normalized()
 	# Bullet initial position
@@ -51,8 +53,7 @@ func _ready():
 
 	$Timer.wait_time = timer_interval
 	$Timer.start()
-	$Timer.connect( "timeout", self, "_on_Timer_timeout" )
-		
+
 
 func _physics_process( delta ):
 	# If not initialized, do nothing.
@@ -82,13 +83,14 @@ func _physics_process( delta ):
 	if not owner:
 		queue_free()
 		return
-	var has_hit: bool = owner.has_method( "hit" )
-	var has_is_player: bool = owner.has_method( "is_player" )
-	if has_hit and (not has_is_player):
+	var has_hit: bool   = owner.has_method( "hit" )
+	var is_player: bool = owner.has_method( "is_player" )
+	var has_set_target: bool = owner.has_method( "set_target" )
+	if has_hit:
 		owner.hit( damage, hit_sound )
+		if has_set_target:
+			owner.set_target( character )
 		queue_free()
-		# To not process it anymore
-		has_hit_target = true
 	
 
 func _on_Timer_timeout():

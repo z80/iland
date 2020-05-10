@@ -3,8 +3,11 @@ extends "res://state_machine/state.gd"
 
 
 func enter( new_state ):
-	var tree = get_tree()
-	tree.paused = true
+	#var tree = get_tree()
+	#tree.paused = true
+	
+	# For now just go to pause menu.
+	state_machine.change_state( "pause_menu" )
 
 
 func handle_input(event):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=156 format=2]
+[gd_scene load_steps=292 format=2]
 
 [ext_resource path="res://enemies/spider_brain/state_walk.gd" type="Script" id=1]
 [ext_resource path="res://enemies/spider_brain/state_die.gd" type="Script" id=2]
@@ -152,18 +152,219 @@
 [ext_resource path="res://enemies/spider_brain/sprites/Hit_000_2.png" type="Texture" id=150]
 [ext_resource path="res://enemies/spider_brain/sprites/Hit_045_1.png" type="Texture" id=151]
 [ext_resource path="res://enemies/spider_brain/sprites/Hit_045_2.png" type="Texture" id=152]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_045_7.png" type="Texture" id=153]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_000_7.png" type="Texture" id=154]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_090_1.png" type="Texture" id=155]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_135_1.png" type="Texture" id=156]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_135_4.png" type="Texture" id=157]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_045_2.png" type="Texture" id=158]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_000_3.png" type="Texture" id=159]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_045_1.png" type="Texture" id=160]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_045_6.png" type="Texture" id=161]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_090_2.png" type="Texture" id=162]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_090_5.png" type="Texture" id=163]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_135_2.png" type="Texture" id=164]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_135_5.png" type="Texture" id=165]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_045_5.png" type="Texture" id=166]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_090_6.png" type="Texture" id=167]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_090_4.png" type="Texture" id=168]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_135_6.png" type="Texture" id=169]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_135_3.png" type="Texture" id=170]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_000_4.png" type="Texture" id=171]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_135_0.png" type="Texture" id=172]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_045_3.png" type="Texture" id=173]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_090_7.png" type="Texture" id=174]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_090_3.png" type="Texture" id=175]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_135_7.png" type="Texture" id=176]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_000_6.png" type="Texture" id=177]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_180_0.png" type="Texture" id=178]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_000_5.png" type="Texture" id=179]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_090_0.png" type="Texture" id=180]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_180_1.png" type="Texture" id=181]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_180_2.png" type="Texture" id=182]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_045_0.png" type="Texture" id=183]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_045_4.png" type="Texture" id=184]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_090_3.png" type="Texture" id=185]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_090_4.png" type="Texture" id=186]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_045_0.png" type="Texture" id=187]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_090_2.png" type="Texture" id=188]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_090_5.png" type="Texture" id=189]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_000_5.png" type="Texture" id=190]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_090_0.png" type="Texture" id=191]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_045_2.png" type="Texture" id=192]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_045_3.png" type="Texture" id=193]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_045_4.png" type="Texture" id=194]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_045_5.png" type="Texture" id=195]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_090_1.png" type="Texture" id=196]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_045_1.png" type="Texture" id=197]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_135_3.png" type="Texture" id=198]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_135_4.png" type="Texture" id=199]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_135_0.png" type="Texture" id=200]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_135_2.png" type="Texture" id=201]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_180_3.png" type="Texture" id=202]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_135_5.png" type="Texture" id=203]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_135_1.png" type="Texture" id=204]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_180_1.png" type="Texture" id=205]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_180_4.png" type="Texture" id=206]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_180_0.png" type="Texture" id=207]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_180_5.png" type="Texture" id=208]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_180_3.png" type="Texture" id=209]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_180_2.png" type="Texture" id=210]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_225_2.png" type="Texture" id=211]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_270_2.png" type="Texture" id=212]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_315_1.png" type="Texture" id=213]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_225_3.png" type="Texture" id=214]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_225_5.png" type="Texture" id=215]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_270_5.png" type="Texture" id=216]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_315_3.png" type="Texture" id=217]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_315_5.png" type="Texture" id=218]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_270_0.png" type="Texture" id=219]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_000_1.png" type="Texture" id=220]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_000_2.png" type="Texture" id=221]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_270_3.png" type="Texture" id=222]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_315_0.png" type="Texture" id=223]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_270_4.png" type="Texture" id=224]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_270_1.png" type="Texture" id=225]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_225_0.png" type="Texture" id=226]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_225_4.png" type="Texture" id=227]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_225_1.png" type="Texture" id=228]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_315_2.png" type="Texture" id=229]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_000_0.png" type="Texture" id=230]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_315_4.png" type="Texture" id=231]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_225_0.png" type="Texture" id=232]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_180_4.png" type="Texture" id=233]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_225_3.png" type="Texture" id=234]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_270_0.png" type="Texture" id=235]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_270_3.png" type="Texture" id=236]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_270_4.png" type="Texture" id=237]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_270_1.png" type="Texture" id=238]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_270_6.png" type="Texture" id=239]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_225_7.png" type="Texture" id=240]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_270_7.png" type="Texture" id=241]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_180_6.png" type="Texture" id=242]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_225_1.png" type="Texture" id=243]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_180_5.png" type="Texture" id=244]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_225_4.png" type="Texture" id=245]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_225_5.png" type="Texture" id=246]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_315_0.png" type="Texture" id=247]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_270_5.png" type="Texture" id=248]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_315_2.png" type="Texture" id=249]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_225_2.png" type="Texture" id=250]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_225_6.png" type="Texture" id=251]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_315_4.png" type="Texture" id=252]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_270_2.png" type="Texture" id=253]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_315_1.png" type="Texture" id=254]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_315_3.png" type="Texture" id=255]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_180_7.png" type="Texture" id=256]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_315_6.png" type="Texture" id=257]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_315_7.png" type="Texture" id=258]
+[ext_resource path="res://enemies/spider_brain/sprites/Walk_315_5.png" type="Texture" id=259]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_000_4.png" type="Texture" id=260]
+[ext_resource path="res://enemies/spider_brain/sprites/Hit_135_1.png" type="Texture" id=261]
+[ext_resource path="res://enemies/spider_brain/sprites/Hit_180_1.png" type="Texture" id=262]
+[ext_resource path="res://enemies/spider_brain/sprites/Hit_135_3.png" type="Texture" id=263]
+[ext_resource path="res://enemies/spider_brain/sprites/Hit_225_0.png" type="Texture" id=264]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_000_0.png" type="Texture" id=265]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_000_1.png" type="Texture" id=266]
+[ext_resource path="res://enemies/spider_brain/sprites/Hit_225_2.png" type="Texture" id=267]
+[ext_resource path="res://enemies/spider_brain/sprites/Hit_225_1.png" type="Texture" id=268]
+[ext_resource path="res://enemies/spider_brain/sprites/Hit_090_3.png" type="Texture" id=269]
+[ext_resource path="res://enemies/spider_brain/sprites/Hit_315_0.png" type="Texture" id=270]
+[ext_resource path="res://enemies/spider_brain/sprites/Hit_315_1.png" type="Texture" id=271]
+[ext_resource path="res://enemies/spider_brain/sprites/Hit_090_2.png" type="Texture" id=272]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_000_2.png" type="Texture" id=273]
+[ext_resource path="res://enemies/spider_brain/sprites/Hit_225_3.png" type="Texture" id=274]
+[ext_resource path="res://enemies/spider_brain/sprites/Idle_000_3.png" type="Texture" id=275]
+[ext_resource path="res://enemies/spider_brain/sprites/Hit_135_2.png" type="Texture" id=276]
+[ext_resource path="res://enemies/spider_brain/sprites/Hit_315_2.png" type="Texture" id=277]
+[ext_resource path="res://enemies/spider_brain/sprites/Hit_090_0.png" type="Texture" id=278]
+[ext_resource path="res://enemies/spider_brain/sprites/Hit_270_2.png" type="Texture" id=279]
+[ext_resource path="res://enemies/spider_brain/sprites/Hit_090_1.png" type="Texture" id=280]
+[ext_resource path="res://enemies/spider_brain/sprites/Hit_180_3.png" type="Texture" id=281]
+[ext_resource path="res://enemies/spider_brain/sprites/Hit_180_2.png" type="Texture" id=282]
+[ext_resource path="res://enemies/spider_brain/sprites/Hit_135_0.png" type="Texture" id=283]
+[ext_resource path="res://enemies/spider_brain/sprites/Hit_180_0.png" type="Texture" id=284]
+[ext_resource path="res://enemies/spider_brain/sprites/Hit_270_1.png" type="Texture" id=285]
+[ext_resource path="res://enemies/spider_brain/sprites/Hit_270_0.png" type="Texture" id=286]
+[ext_resource path="res://enemies/spider_brain/sprites/Hit_270_3.png" type="Texture" id=287]
+[ext_resource path="res://enemies/spider_brain/sprites/Hit_315_3.png" type="Texture" id=288]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 25 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 40 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 42 ), ExtResource( 31 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 17 ), ExtResource( 43 ), ExtResource( 44 ) ],
+"frames": [ ExtResource( 139 ), ExtResource( 135 ), ExtResource( 137 ), ExtResource( 136 ) ],
 "loop": true,
-"name": "Death_045",
+"name": "Fire_315",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 191 ), ExtResource( 196 ), ExtResource( 188 ), ExtResource( 185 ), ExtResource( 186 ), ExtResource( 189 ) ],
+"loop": true,
+"name": "Idle_090",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 187 ), ExtResource( 197 ), ExtResource( 192 ), ExtResource( 193 ), ExtResource( 194 ), ExtResource( 195 ) ],
+"loop": true,
+"name": "Idle_045",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 80 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 67 ), ExtResource( 58 ), ExtResource( 72 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 62 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 74 ) ],
+"loop": true,
+"name": "Death_180",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 172 ), ExtResource( 156 ), ExtResource( 164 ), ExtResource( 170 ), ExtResource( 157 ), ExtResource( 165 ), ExtResource( 169 ), ExtResource( 176 ) ],
+"loop": true,
+"name": "Walk_135",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 223 ), ExtResource( 213 ), ExtResource( 229 ), ExtResource( 217 ), ExtResource( 231 ), ExtResource( 218 ) ],
+"loop": true,
+"name": "Idle_315",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 232 ), ExtResource( 243 ), ExtResource( 250 ), ExtResource( 234 ), ExtResource( 245 ), ExtResource( 246 ), ExtResource( 251 ), ExtResource( 240 ) ],
+"loop": true,
+"name": "Walk_225",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 122 ), ExtResource( 115 ), ExtResource( 117 ), ExtResource( 123 ) ],
+"loop": true,
+"name": "Fire_090",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 235 ), ExtResource( 238 ), ExtResource( 253 ), ExtResource( 236 ), ExtResource( 237 ), ExtResource( 248 ), ExtResource( 239 ), ExtResource( 241 ) ],
+"loop": true,
+"name": "Walk_270",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 113 ), ExtResource( 129 ), ExtResource( 134 ), ExtResource( 114 ) ],
 "loop": true,
 "name": "Fire_045",
 "speed": 15.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 48 ), ExtResource( 26 ), ExtResource( 37 ), ExtResource( 30 ), ExtResource( 18 ), ExtResource( 23 ), ExtResource( 39 ), ExtResource( 32 ), ExtResource( 24 ), ExtResource( 41 ) ],
+"loop": true,
+"name": "Death_000",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 247 ), ExtResource( 254 ), ExtResource( 249 ), ExtResource( 255 ), ExtResource( 252 ), ExtResource( 259 ), ExtResource( 257 ), ExtResource( 258 ) ],
+"loop": true,
+"name": "Walk_315",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 183 ), ExtResource( 160 ), ExtResource( 158 ), ExtResource( 173 ), ExtResource( 184 ), ExtResource( 166 ), ExtResource( 161 ), ExtResource( 153 ) ],
+"loop": true,
+"name": "Walk_045",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 116 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 125 ) ],
+"loop": true,
+"name": "Fire_135",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 178 ), ExtResource( 181 ), ExtResource( 182 ), ExtResource( 202 ), ExtResource( 233 ), ExtResource( 244 ), ExtResource( 242 ), ExtResource( 256 ) ],
+"loop": true,
+"name": "Walk_180",
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 148 ), ExtResource( 140 ), ExtResource( 142 ), ExtResource( 146 ) ],
 "loop": true,
@@ -175,34 +376,14 @@ animations = [ {
 "name": "Death_135",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 139 ), ExtResource( 135 ), ExtResource( 137 ), ExtResource( 136 ) ],
-"loop": true,
-"name": "Fire_315",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 131 ), ExtResource( 133 ), ExtResource( 132 ), ExtResource( 124 ) ],
-"loop": true,
-"name": "Fire_000",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 116 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 125 ) ],
-"loop": true,
-"name": "Fire_135",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 96 ), ExtResource( 102 ), ExtResource( 86 ), ExtResource( 104 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 111 ) ],
 "loop": true,
 "name": "Death_315",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 80 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 67 ), ExtResource( 58 ), ExtResource( 72 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 62 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 74 ) ],
+"frames": [ ExtResource( 25 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 40 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 42 ), ExtResource( 31 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 17 ), ExtResource( 43 ), ExtResource( 44 ) ],
 "loop": true,
-"name": "Death_180",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 29 ), ExtResource( 33 ), ExtResource( 21 ), ExtResource( 34 ), ExtResource( 45 ), ExtResource( 22 ), ExtResource( 35 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 71 ), ExtResource( 54 ), ExtResource( 51 ), ExtResource( 53 ) ],
-"loop": true,
-"name": "Death_090",
+"name": "Death_045",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 75 ), ExtResource( 76 ), ExtResource( 106 ), ExtResource( 98 ), ExtResource( 97 ), ExtResource( 105 ), ExtResource( 92 ), ExtResource( 99 ), ExtResource( 107 ), ExtResource( 110 ), ExtResource( 84 ), ExtResource( 87 ), ExtResource( 109 ) ],
@@ -210,14 +391,39 @@ animations = [ {
 "name": "Death_225",
 "speed": 10.0
 }, {
+"frames": [ ExtResource( 120 ), ExtResource( 126 ), ExtResource( 121 ), ExtResource( 127 ) ],
+"loop": true,
+"name": "Fire_180",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 180 ), ExtResource( 155 ), ExtResource( 162 ), ExtResource( 175 ), ExtResource( 168 ), ExtResource( 163 ), ExtResource( 167 ), ExtResource( 174 ) ],
+"loop": true,
+"name": "Walk_090",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 131 ), ExtResource( 133 ), ExtResource( 132 ), ExtResource( 124 ) ],
+"loop": true,
+"name": "Fire_000",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 219 ), ExtResource( 225 ), ExtResource( 212 ), ExtResource( 222 ), ExtResource( 224 ), ExtResource( 216 ) ],
+"loop": true,
+"name": "Idle_270",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 207 ), ExtResource( 205 ), ExtResource( 210 ), ExtResource( 209 ), ExtResource( 206 ), ExtResource( 208 ) ],
+"loop": true,
+"name": "Idle_180",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 230 ), ExtResource( 220 ), ExtResource( 221 ), ExtResource( 159 ), ExtResource( 171 ), ExtResource( 179 ), ExtResource( 177 ), ExtResource( 154 ) ],
+"loop": true,
+"name": "Walk_000",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 108 ), ExtResource( 88 ), ExtResource( 83 ), ExtResource( 100 ), ExtResource( 89 ), ExtResource( 85 ), ExtResource( 101 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 93 ), ExtResource( 103 ), ExtResource( 94 ), ExtResource( 95 ) ],
 "loop": true,
 "name": "Death_270",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 48 ), ExtResource( 26 ), ExtResource( 37 ), ExtResource( 30 ), ExtResource( 18 ), ExtResource( 23 ), ExtResource( 39 ), ExtResource( 32 ), ExtResource( 24 ), ExtResource( 41 ) ],
-"loop": true,
-"name": "Death_000",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 128 ), ExtResource( 130 ), ExtResource( 144 ), ExtResource( 143 ) ],
@@ -225,14 +431,34 @@ animations = [ {
 "name": "Fire_225",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 120 ), ExtResource( 126 ), ExtResource( 121 ), ExtResource( 127 ) ],
+"frames": [ ExtResource( 265 ), ExtResource( 266 ), ExtResource( 273 ), ExtResource( 275 ), ExtResource( 260 ), ExtResource( 190 ) ],
 "loop": true,
-"name": "Fire_180",
+"name": "Idle_000",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 33 ), ExtResource( 21 ), ExtResource( 34 ), ExtResource( 45 ), ExtResource( 22 ), ExtResource( 35 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 71 ), ExtResource( 54 ), ExtResource( 51 ), ExtResource( 53 ) ],
+"loop": true,
+"name": "Death_090",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 226 ), ExtResource( 228 ), ExtResource( 211 ), ExtResource( 214 ), ExtResource( 227 ), ExtResource( 215 ) ],
+"loop": true,
+"name": "Idle_225",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 200 ), ExtResource( 204 ), ExtResource( 201 ), ExtResource( 198 ), ExtResource( 199 ), ExtResource( 203 ) ],
+"loop": true,
+"name": "Idle_135",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 286 ), ExtResource( 285 ), ExtResource( 279 ), ExtResource( 287 ) ],
+"loop": true,
+"name": "Hit_270",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 122 ), ExtResource( 115 ), ExtResource( 117 ), ExtResource( 123 ) ],
+"frames": [ ExtResource( 284 ), ExtResource( 262 ), ExtResource( 282 ), ExtResource( 281 ) ],
 "loop": true,
-"name": "Fire_090",
+"name": "Hit_180",
 "speed": 15.0
 }, {
 "frames": [ ExtResource( 145 ), ExtResource( 149 ), ExtResource( 150 ), ExtResource( 147 ) ],
@@ -244,22 +470,42 @@ animations = [ {
 "loop": true,
 "name": "Hit_045",
 "speed": 15.0
+}, {
+"frames": [ ExtResource( 278 ), ExtResource( 280 ), ExtResource( 272 ), ExtResource( 269 ) ],
+"loop": true,
+"name": "Hit_090",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 264 ), ExtResource( 268 ), ExtResource( 267 ), ExtResource( 274 ) ],
+"loop": true,
+"name": "Hit_225",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 270 ), ExtResource( 271 ), ExtResource( 277 ), ExtResource( 288 ) ],
+"loop": true,
+"name": "Hit_315",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 283 ), ExtResource( 261 ), ExtResource( 276 ), ExtResource( 263 ) ],
+"loop": true,
+"name": "Hit_135",
+"speed": 15.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 132.79
+radius = 237.81
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 133.864
+radius = 239.234
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 112 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
-animation = "Death_090"
-frame = 8
-playing = true
+animation = "Walk_315"
+frame = 2
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -267,9 +513,10 @@ playing = true
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1.58679, 0 )
 shape = SubResource( 3 )
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 5 )
@@ -291,3 +538,7 @@ script = ExtResource( 2 )
 
 [node name="Dead" type="Node" parent="StateMachine"]
 script = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+[connection signal="animation_finished" from="AnimatedSprite" to="StateMachine" method="_on_animation_finished"]

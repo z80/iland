@@ -1,10 +1,10 @@
 extends KinematicBody2D
 
-export(int)   var move_speed = 500
+export(int)   var move_speed = 200
 export(float) var fire_period   = 2.0
-export(float) var fire_distance = 384.0
-export(float) var sight_distance = 10000.0
-export(int)   var health = 100
+export(float) var fire_distance = 1000.0
+export(float) var sight_distance = 3000.0
+export(int)   var health = 300
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -68,22 +68,18 @@ func _animation_dir_name( direction ):
 func _animation_name( animation, dir ):
 	var dir_stri: String = _animation_dir_name( dir )
 	var anim_stri: String
+	if ( animation == ANIM_IDLE ):
+		anim_stri = 'Idle'
 	if ( animation == ANIM_WALK ):
 		anim_stri = 'Walk'
 	elif ( animation == ANIM_FIRE ):
 		anim_stri = 'Fire'
 	elif ( animation == ANIM_HIT ):
-		var ind: int = randi() % 3
-		if ind == 0:
-			anim_stri = "Hit_0"
-		elif ind == 1:
-			anim_stri = "Hit_1"
-		else:
-			anim_stri = "Hit_2"
+		anim_stri = "Hit"
 	elif ( animation == ANIM_DIE ):
 		anim_stri = 'Death'
-	elif( animation == ANIM_HIT ):
-		anim_stri = 'Hit'
+	else:
+		anim_stri = 'Idle'
 	var stri: String = anim_stri + dir_stri
 	return stri
 	
@@ -106,6 +102,7 @@ func play_animation( animation ):
 		$AnimatedSprite.animation = name
 		$AnimatedSprite.play()
 
+
 func stop_animation( frame = -1 ):
 	$AnimatedSprite.playing = false
 	if frame >= 0:
@@ -122,16 +119,19 @@ func hit( damage=10, hit_sound=null ):
 	health -= damage
 	if health > 0:
 		play_sound( hit_sound )
-		$StateMachine.change_state( "hit" )
+		if $StateMachine.current_state != $Hit:
+			$StateMachine.change_state( "hit" )
 	else:
-		$AnimatedSprite.z_index = Game.LAYER_ON_FLOOR
-		$Area2D.monitorable = false
-		$Area2D.collision_layer = 0
-		$StateMachine.change_state( "die" )
+		if $StateMachine.current_state != $Die:
+			$AnimatedSprite.z_index = Game.LAYER_ON_FLOOR
+			$Area2D.monitorable = false
+			$Area2D.collision_layer = 0
+			$StateMachine.change_state( "die" )
 
 
 func set_collision( en: bool ):
 	$CollisionShape2D.disabled = not en
 
-
+func set_target( t ):
+	target = t
 

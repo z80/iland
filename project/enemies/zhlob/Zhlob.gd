@@ -82,8 +82,8 @@ func _animation_name( animation, dir ):
 			anim_stri = "Hit_2"
 	elif ( animation == ANIM_DIE ):
 		anim_stri = 'Death'
-	elif( animation == ANIM_HIT ):
-		anim_stri = 'Hit'
+	elif( animation == ANIM_IDLE ):
+		anim_stri = 'Idle'
 	var stri: String = anim_stri + dir_stri
 	return stri
 	
@@ -122,16 +122,21 @@ func hit( damage=10, hit_sound=null ):
 	health -= damage
 	if health > 0:
 		play_sound( hit_sound )
-		$StateMachine.change_state( "hit" )
+		if $StateMachine.current_state != $Hit:
+			$StateMachine.change_state( "hit" )
 	else:
-		$AnimatedSprite.z_index = Game.LAYER_ON_FLOOR
-		$Area2D.monitorable = false
-		$Area2D.collision_layer = 0
-		$StateMachine.change_state( "die" )
+		if $StateMachine.current_state != $Die:
+			$AnimatedSprite.z_index = Game.LAYER_ON_FLOOR
+			$Area2D.monitorable = false
+			$Area2D.collision_layer = 0
+			$StateMachine.change_state( "die" )
 
 
 func set_collision( en: bool ):
 	$CollisionShape2D.disabled = not en
 
+
+func set_target( t ):
+	target = t
 
 
