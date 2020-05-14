@@ -14,7 +14,7 @@ def setAction( action ):
     bpy.data.objects['MuzzleFlash'].animation_data.action = bpy.data.actions[action]
 
 def renderImage( fname ):
-    base_path = 'C:/Users/sbashkirov/projects/iland.git/assets/character/sprites_low/'
+    base_path = 'C:/Users/sbashkirov/projects/iland.git/assets/character/sprites_high/'
     full_name = base_path + fname
     print( "Save file {}".format( full_name ) )
     bpy.data.scenes['Scene'].render.filepath = full_name
@@ -32,8 +32,10 @@ def renderSprites():
                {'name': 'Walk', 'frames': [1, 15, 30, 45, 60]}, \
                {'name': 'Fire', 'frames': [30, 60]}, \
                {'name': 'Death', 'frames': [1, 10, 20, 30, 40, 50, 60, 80, 120]}]
+    action = {'name': 'Fire', 'frames': [20, 40, 60]}
     #action = {'name': 'Walk', 'frames': [1, 7, 15, 23, 30, 38, 45, 53]}
-    action = {'name': 'Idle', 'frames': [1, 25, 50, 75, 100]}
+    #action = {'name': 'Idle', 'frames': [1, 25, 50, 75, 100]}
+    #action = {'name': 'Death', 'frames': [1, 10, 20, 30, 40, 50, 60, 80, 120]}
     for angle in angles:
         setView( angle )
         # Do all actions
