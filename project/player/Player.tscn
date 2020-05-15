@@ -1,4 +1,4 @@
-[gd_scene load_steps=181 format=2]
+[gd_scene load_steps=570 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://player/sprites/Walk_000_0.png" type="Texture" id=2]
@@ -169,6 +169,7 @@
 [ext_resource path="res://player/sprites/Death_315_7.png" type="Texture" id=167]
 [ext_resource path="res://player/sprites/Death_315_8.png" type="Texture" id=168]
 [ext_resource path="res://player/sprites/Death_270_5.png" type="Texture" id=169]
+[ext_resource path="res://player/sprites/lower/Death_000_0.png" type="Texture" id=170]
 [ext_resource path="res://player/state_idle.gd" type="Script" id=171]
 [ext_resource path="res://player/state_machine_player.gd" type="Script" id=172]
 [ext_resource path="res://player/state_die.gd" type="Script" id=173]
@@ -177,17 +178,398 @@
 [ext_resource path="res://player/state_hit.gd" type="Script" id=176]
 [ext_resource path="res://player/state_dead.gd" type="Script" id=177]
 [ext_resource path="res://hud/health.tscn" type="PackedScene" id=178]
+[ext_resource path="res://player/sprites/lower/Death_000_5.png" type="Texture" id=179]
+[ext_resource path="res://player/sprites/lower/Death_000_2.png" type="Texture" id=180]
+[ext_resource path="res://player/sprites/lower/Death_000_7.png" type="Texture" id=181]
+[ext_resource path="res://player/sprites/lower/Death_000_3.png" type="Texture" id=182]
+[ext_resource path="res://player/sprites/lower/Death_000_4.png" type="Texture" id=183]
+[ext_resource path="res://player/sprites/lower/Death_000_8.png" type="Texture" id=184]
+[ext_resource path="res://player/sprites/lower/Death_000_6.png" type="Texture" id=185]
+[ext_resource path="res://player/sprites/lower/Death_000_1.png" type="Texture" id=186]
+[ext_resource path="res://player/sprites/upper/Fire_135_0.png" type="Texture" id=187]
+[ext_resource path="res://player/sprites/upper/Fire_180_0.png" type="Texture" id=188]
+[ext_resource path="res://player/sprites/upper/Fire_090_0.png" type="Texture" id=189]
+[ext_resource path="res://player/sprites/upper/Fire_135_2.png" type="Texture" id=190]
+[ext_resource path="res://player/sprites/upper/Fire_180_2.png" type="Texture" id=191]
+[ext_resource path="res://player/sprites/upper/Fire_225_0.png" type="Texture" id=192]
+[ext_resource path="res://player/sprites/upper/Fire_270_0.png" type="Texture" id=193]
+[ext_resource path="res://player/sprites/upper/Idle_000_1.png" type="Texture" id=194]
+[ext_resource path="res://player/sprites/upper/Idle_000_0.png" type="Texture" id=195]
+[ext_resource path="res://player/sprites/upper/Fire_180_1.png" type="Texture" id=196]
+[ext_resource path="res://player/sprites/upper/Fire_270_1.png" type="Texture" id=197]
+[ext_resource path="res://player/sprites/upper/Idle_045_0.png" type="Texture" id=198]
+[ext_resource path="res://player/sprites/upper/Fire_315_2.png" type="Texture" id=199]
+[ext_resource path="res://player/sprites/upper/Fire_135_1.png" type="Texture" id=200]
+[ext_resource path="res://player/sprites/upper/Fire_270_2.png" type="Texture" id=201]
+[ext_resource path="res://player/sprites/upper/Idle_000_2.png" type="Texture" id=202]
+[ext_resource path="res://player/sprites/upper/Idle_000_3.png" type="Texture" id=203]
+[ext_resource path="res://player/sprites/upper/Fire_225_2.png" type="Texture" id=204]
+[ext_resource path="res://player/sprites/upper/Idle_045_1.png" type="Texture" id=205]
+[ext_resource path="res://player/sprites/upper/Idle_045_3.png" type="Texture" id=206]
+[ext_resource path="res://player/sprites/upper/Fire_225_1.png" type="Texture" id=207]
+[ext_resource path="res://player/sprites/upper/Fire_045_2.png" type="Texture" id=208]
+[ext_resource path="res://player/sprites/upper/Fire_315_1.png" type="Texture" id=209]
+[ext_resource path="res://player/sprites/upper/Idle_045_2.png" type="Texture" id=210]
+[ext_resource path="res://player/sprites/upper/Fire_315_0.png" type="Texture" id=211]
+[ext_resource path="res://player/sprites/upper/Fire_090_2.png" type="Texture" id=212]
+[ext_resource path="res://player/sprites/upper/Fire_090_1.png" type="Texture" id=213]
+[ext_resource path="res://player/sprites/upper/Idle_000_4.png" type="Texture" id=214]
+[ext_resource path="res://player/sprites/upper/Idle_045_4.png" type="Texture" id=215]
+[ext_resource path="res://player/sprites/upper/Idle_090_0.png" type="Texture" id=216]
+[ext_resource path="res://player/sprites/upper/Idle_090_2.png" type="Texture" id=217]
+[ext_resource path="res://player/sprites/upper/Idle_090_1.png" type="Texture" id=218]
+[ext_resource path="res://player/sprites/lower/Death_135_0.png" type="Texture" id=219]
+[ext_resource path="res://player/sprites/lower/Death_135_2.png" type="Texture" id=220]
+[ext_resource path="res://player/sprites/lower/Death_045_3.png" type="Texture" id=221]
+[ext_resource path="res://player/sprites/lower/Death_045_0.png" type="Texture" id=222]
+[ext_resource path="res://player/sprites/lower/Death_090_7.png" type="Texture" id=223]
+[ext_resource path="res://player/sprites/lower/Death_135_4.png" type="Texture" id=224]
+[ext_resource path="res://player/sprites/lower/Death_045_6.png" type="Texture" id=225]
+[ext_resource path="res://player/sprites/lower/Death_135_1.png" type="Texture" id=226]
+[ext_resource path="res://player/sprites/lower/Death_135_3.png" type="Texture" id=227]
+[ext_resource path="res://player/sprites/lower/Death_045_2.png" type="Texture" id=228]
+[ext_resource path="res://player/sprites/lower/Death_090_0.png" type="Texture" id=229]
+[ext_resource path="res://player/sprites/lower/Death_090_2.png" type="Texture" id=230]
+[ext_resource path="res://player/sprites/lower/Death_045_1.png" type="Texture" id=231]
+[ext_resource path="res://player/sprites/lower/Death_045_4.png" type="Texture" id=232]
+[ext_resource path="res://player/sprites/lower/Death_090_3.png" type="Texture" id=233]
+[ext_resource path="res://player/sprites/lower/Death_045_7.png" type="Texture" id=234]
+[ext_resource path="res://player/sprites/lower/Death_090_4.png" type="Texture" id=235]
+[ext_resource path="res://player/sprites/lower/Death_090_5.png" type="Texture" id=236]
+[ext_resource path="res://player/sprites/lower/Death_045_8.png" type="Texture" id=237]
+[ext_resource path="res://player/sprites/lower/Death_090_1.png" type="Texture" id=238]
+[ext_resource path="res://player/sprites/lower/Death_045_5.png" type="Texture" id=239]
+[ext_resource path="res://player/sprites/lower/Death_090_6.png" type="Texture" id=240]
+[ext_resource path="res://player/sprites/lower/Death_090_8.png" type="Texture" id=241]
+[ext_resource path="res://player/sprites/lower/Death_180_1.png" type="Texture" id=242]
+[ext_resource path="res://player/sprites/lower/Death_180_6.png" type="Texture" id=243]
+[ext_resource path="res://player/sprites/lower/Death_180_2.png" type="Texture" id=244]
+[ext_resource path="res://player/sprites/lower/Death_180_5.png" type="Texture" id=245]
+[ext_resource path="res://player/sprites/lower/Death_270_5.png" type="Texture" id=246]
+[ext_resource path="res://player/sprites/lower/Death_135_5.png" type="Texture" id=247]
+[ext_resource path="res://player/sprites/lower/Death_270_0.png" type="Texture" id=248]
+[ext_resource path="res://player/sprites/lower/Death_135_8.png" type="Texture" id=249]
+[ext_resource path="res://player/sprites/lower/Death_180_4.png" type="Texture" id=250]
+[ext_resource path="res://player/sprites/lower/Death_225_8.png" type="Texture" id=251]
+[ext_resource path="res://player/sprites/lower/Death_180_3.png" type="Texture" id=252]
+[ext_resource path="res://player/sprites/lower/Death_270_1.png" type="Texture" id=253]
+[ext_resource path="res://player/sprites/lower/Death_270_6.png" type="Texture" id=254]
+[ext_resource path="res://player/sprites/lower/Death_180_8.png" type="Texture" id=255]
+[ext_resource path="res://player/sprites/lower/Death_180_7.png" type="Texture" id=256]
+[ext_resource path="res://player/sprites/lower/Death_270_8.png" type="Texture" id=257]
+[ext_resource path="res://player/sprites/lower/Death_225_5.png" type="Texture" id=258]
+[ext_resource path="res://player/sprites/lower/Death_225_2.png" type="Texture" id=259]
+[ext_resource path="res://player/sprites/lower/Death_225_4.png" type="Texture" id=260]
+[ext_resource path="res://player/sprites/lower/Death_135_6.png" type="Texture" id=261]
+[ext_resource path="res://player/sprites/lower/Death_225_1.png" type="Texture" id=262]
+[ext_resource path="res://player/sprites/lower/Death_270_4.png" type="Texture" id=263]
+[ext_resource path="res://player/sprites/lower/Death_270_2.png" type="Texture" id=264]
+[ext_resource path="res://player/sprites/lower/Death_270_3.png" type="Texture" id=265]
+[ext_resource path="res://player/sprites/lower/Death_270_7.png" type="Texture" id=266]
+[ext_resource path="res://player/sprites/upper/Idle_090_3.png" type="Texture" id=267]
+[ext_resource path="res://player/sprites/lower/Death_225_6.png" type="Texture" id=268]
+[ext_resource path="res://player/sprites/lower/Death_225_3.png" type="Texture" id=269]
+[ext_resource path="res://player/sprites/lower/Death_135_7.png" type="Texture" id=270]
+[ext_resource path="res://player/sprites/lower/Death_225_7.png" type="Texture" id=271]
+[ext_resource path="res://player/sprites/lower/Death_180_0.png" type="Texture" id=272]
+[ext_resource path="res://player/sprites/lower/Death_225_0.png" type="Texture" id=273]
+[ext_resource path="res://player/sprites/lower/Idle_090_3.png" type="Texture" id=274]
+[ext_resource path="res://player/sprites/lower/Idle_000_1.png" type="Texture" id=275]
+[ext_resource path="res://player/sprites/lower/Idle_045_0.png" type="Texture" id=276]
+[ext_resource path="res://player/sprites/lower/Death_315_2.png" type="Texture" id=277]
+[ext_resource path="res://player/sprites/lower/Idle_135_3.png" type="Texture" id=278]
+[ext_resource path="res://player/sprites/lower/Idle_090_4.png" type="Texture" id=279]
+[ext_resource path="res://player/sprites/lower/Idle_135_2.png" type="Texture" id=280]
+[ext_resource path="res://player/sprites/lower/Idle_180_1.png" type="Texture" id=281]
+[ext_resource path="res://player/sprites/lower/Death_315_8.png" type="Texture" id=282]
+[ext_resource path="res://player/sprites/lower/Idle_045_3.png" type="Texture" id=283]
+[ext_resource path="res://player/sprites/lower/Idle_135_0.png" type="Texture" id=284]
+[ext_resource path="res://player/sprites/lower/Idle_180_0.png" type="Texture" id=285]
+[ext_resource path="res://player/sprites/lower/Idle_180_2.png" type="Texture" id=286]
+[ext_resource path="res://player/sprites/lower/Idle_090_0.png" type="Texture" id=287]
+[ext_resource path="res://player/sprites/lower/Idle_090_2.png" type="Texture" id=288]
+[ext_resource path="res://player/sprites/lower/Idle_090_1.png" type="Texture" id=289]
+[ext_resource path="res://player/sprites/lower/Idle_135_4.png" type="Texture" id=290]
+[ext_resource path="res://player/sprites/lower/Idle_180_3.png" type="Texture" id=291]
+[ext_resource path="res://player/sprites/lower/Death_315_4.png" type="Texture" id=292]
+[ext_resource path="res://player/sprites/lower/Idle_000_0.png" type="Texture" id=293]
+[ext_resource path="res://player/sprites/lower/Idle_000_3.png" type="Texture" id=294]
+[ext_resource path="res://player/sprites/lower/Idle_000_4.png" type="Texture" id=295]
+[ext_resource path="res://player/sprites/lower/Death_315_0.png" type="Texture" id=296]
+[ext_resource path="res://player/sprites/lower/Idle_045_1.png" type="Texture" id=297]
+[ext_resource path="res://player/sprites/lower/Idle_045_2.png" type="Texture" id=298]
+[ext_resource path="res://player/sprites/lower/Idle_045_4.png" type="Texture" id=299]
+[ext_resource path="res://player/sprites/lower/Death_315_7.png" type="Texture" id=300]
+[ext_resource path="res://player/sprites/lower/Death_315_6.png" type="Texture" id=301]
+[ext_resource path="res://player/sprites/lower/Idle_135_1.png" type="Texture" id=302]
+[ext_resource path="res://player/sprites/lower/Death_315_3.png" type="Texture" id=303]
+[ext_resource path="res://player/sprites/lower/Death_315_5.png" type="Texture" id=304]
+[ext_resource path="res://player/sprites/lower/Idle_000_2.png" type="Texture" id=305]
+[ext_resource path="res://player/sprites/lower/Death_315_1.png" type="Texture" id=306]
+[ext_resource path="res://player/sprites/lower/Walk_045_2.png" type="Texture" id=307]
+[ext_resource path="res://player/sprites/lower/Walk_045_3.png" type="Texture" id=308]
+[ext_resource path="res://player/sprites/lower/Walk_045_4.png" type="Texture" id=309]
+[ext_resource path="res://player/sprites/lower/Idle_270_1.png" type="Texture" id=310]
+[ext_resource path="res://player/sprites/lower/Idle_315_1.png" type="Texture" id=311]
+[ext_resource path="res://player/sprites/lower/Walk_000_3.png" type="Texture" id=312]
+[ext_resource path="res://player/sprites/lower/Idle_225_3.png" type="Texture" id=313]
+[ext_resource path="res://player/sprites/lower/Walk_000_5.png" type="Texture" id=314]
+[ext_resource path="res://player/sprites/lower/Idle_225_4.png" type="Texture" id=315]
+[ext_resource path="res://player/sprites/lower/Idle_315_4.png" type="Texture" id=316]
+[ext_resource path="res://player/sprites/lower/Walk_000_1.png" type="Texture" id=317]
+[ext_resource path="res://player/sprites/lower/Walk_000_7.png" type="Texture" id=318]
+[ext_resource path="res://player/sprites/lower/Walk_000_4.png" type="Texture" id=319]
+[ext_resource path="res://player/sprites/lower/Walk_045_1.png" type="Texture" id=320]
+[ext_resource path="res://player/sprites/lower/Idle_180_4.png" type="Texture" id=321]
+[ext_resource path="res://player/sprites/lower/Idle_315_2.png" type="Texture" id=322]
+[ext_resource path="res://player/sprites/lower/Idle_225_0.png" type="Texture" id=323]
+[ext_resource path="res://player/sprites/lower/Idle_225_1.png" type="Texture" id=324]
+[ext_resource path="res://player/sprites/lower/Idle_315_3.png" type="Texture" id=325]
+[ext_resource path="res://player/sprites/lower/Idle_315_0.png" type="Texture" id=326]
+[ext_resource path="res://player/sprites/lower/Idle_225_2.png" type="Texture" id=327]
+[ext_resource path="res://player/sprites/lower/Walk_000_2.png" type="Texture" id=328]
+[ext_resource path="res://player/sprites/lower/Idle_270_0.png" type="Texture" id=329]
+[ext_resource path="res://player/sprites/lower/Walk_045_0.png" type="Texture" id=330]
+[ext_resource path="res://player/sprites/lower/Walk_045_5.png" type="Texture" id=331]
+[ext_resource path="res://player/sprites/lower/Walk_045_6.png" type="Texture" id=332]
+[ext_resource path="res://player/sprites/lower/Walk_045_7.png" type="Texture" id=333]
+[ext_resource path="res://player/sprites/lower/Idle_270_3.png" type="Texture" id=334]
+[ext_resource path="res://player/sprites/lower/Walk_000_0.png" type="Texture" id=335]
+[ext_resource path="res://player/sprites/lower/Walk_000_6.png" type="Texture" id=336]
+[ext_resource path="res://player/sprites/lower/Idle_270_2.png" type="Texture" id=337]
+[ext_resource path="res://player/sprites/lower/Idle_270_4.png" type="Texture" id=338]
+[ext_resource path="res://player/sprites/lower/Walk_180_0.png" type="Texture" id=339]
+[ext_resource path="res://player/sprites/lower/Walk_225_7.png" type="Texture" id=340]
+[ext_resource path="res://player/sprites/lower/Walk_180_7.png" type="Texture" id=341]
+[ext_resource path="res://player/sprites/lower/Walk_180_6.png" type="Texture" id=342]
+[ext_resource path="res://player/sprites/lower/Walk_180_5.png" type="Texture" id=343]
+[ext_resource path="res://player/sprites/lower/Walk_090_0.png" type="Texture" id=344]
+[ext_resource path="res://player/sprites/lower/Walk_225_1.png" type="Texture" id=345]
+[ext_resource path="res://player/sprites/lower/Walk_225_3.png" type="Texture" id=346]
+[ext_resource path="res://player/sprites/lower/Walk_090_6.png" type="Texture" id=347]
+[ext_resource path="res://player/sprites/lower/Walk_090_4.png" type="Texture" id=348]
+[ext_resource path="res://player/sprites/lower/Walk_090_3.png" type="Texture" id=349]
+[ext_resource path="res://player/sprites/lower/Walk_135_3.png" type="Texture" id=350]
+[ext_resource path="res://player/sprites/lower/Walk_135_0.png" type="Texture" id=351]
+[ext_resource path="res://player/sprites/lower/Walk_090_1.png" type="Texture" id=352]
+[ext_resource path="res://player/sprites/lower/Walk_135_4.png" type="Texture" id=353]
+[ext_resource path="res://player/sprites/lower/Walk_090_2.png" type="Texture" id=354]
+[ext_resource path="res://player/sprites/lower/Walk_135_2.png" type="Texture" id=355]
+[ext_resource path="res://player/sprites/lower/Walk_135_6.png" type="Texture" id=356]
+[ext_resource path="res://player/sprites/lower/Walk_135_5.png" type="Texture" id=357]
+[ext_resource path="res://player/sprites/lower/Walk_090_5.png" type="Texture" id=358]
+[ext_resource path="res://player/sprites/lower/Walk_180_4.png" type="Texture" id=359]
+[ext_resource path="res://player/sprites/lower/Walk_135_1.png" type="Texture" id=360]
+[ext_resource path="res://player/sprites/lower/Walk_180_1.png" type="Texture" id=361]
+[ext_resource path="res://player/sprites/lower/Walk_180_3.png" type="Texture" id=362]
+[ext_resource path="res://player/sprites/lower/Walk_135_7.png" type="Texture" id=363]
+[ext_resource path="res://player/sprites/lower/Walk_225_0.png" type="Texture" id=364]
+[ext_resource path="res://player/sprites/lower/Walk_225_4.png" type="Texture" id=365]
+[ext_resource path="res://player/sprites/lower/Walk_090_7.png" type="Texture" id=366]
+[ext_resource path="res://player/sprites/lower/Walk_180_2.png" type="Texture" id=367]
+[ext_resource path="res://player/sprites/lower/Walk_225_2.png" type="Texture" id=368]
+[ext_resource path="res://player/sprites/lower/Walk_225_5.png" type="Texture" id=369]
+[ext_resource path="res://player/sprites/lower/Walk_225_6.png" type="Texture" id=370]
+[ext_resource path="res://player/sprites/upper/Death_000_6.png" type="Texture" id=371]
+[ext_resource path="res://player/sprites/upper/Death_045_0.png" type="Texture" id=372]
+[ext_resource path="res://player/sprites/upper/Death_000_7.png" type="Texture" id=373]
+[ext_resource path="res://player/sprites/lower/Walk_270_6.png" type="Texture" id=374]
+[ext_resource path="res://player/sprites/lower/Walk_315_3.png" type="Texture" id=375]
+[ext_resource path="res://player/sprites/lower/Walk_270_2.png" type="Texture" id=376]
+[ext_resource path="res://player/sprites/upper/Death_045_1.png" type="Texture" id=377]
+[ext_resource path="res://player/sprites/upper/Death_000_2.png" type="Texture" id=378]
+[ext_resource path="res://player/sprites/upper/Death_000_0.png" type="Texture" id=379]
+[ext_resource path="res://player/sprites/lower/Walk_270_1.png" type="Texture" id=380]
+[ext_resource path="res://player/sprites/upper/Death_045_2.png" type="Texture" id=381]
+[ext_resource path="res://player/sprites/upper/Death_045_3.png" type="Texture" id=382]
+[ext_resource path="res://player/sprites/upper/Death_045_4.png" type="Texture" id=383]
+[ext_resource path="res://player/sprites/upper/Death_045_5.png" type="Texture" id=384]
+[ext_resource path="res://player/sprites/upper/Death_045_6.png" type="Texture" id=385]
+[ext_resource path="res://player/sprites/lower/Walk_270_3.png" type="Texture" id=386]
+[ext_resource path="res://player/sprites/upper/Death_000_5.png" type="Texture" id=387]
+[ext_resource path="res://player/sprites/upper/Death_000_8.png" type="Texture" id=388]
+[ext_resource path="res://player/sprites/lower/Walk_315_1.png" type="Texture" id=389]
+[ext_resource path="res://player/sprites/lower/Walk_315_6.png" type="Texture" id=390]
+[ext_resource path="res://player/sprites/lower/Walk_315_0.png" type="Texture" id=391]
+[ext_resource path="res://player/sprites/lower/Walk_270_0.png" type="Texture" id=392]
+[ext_resource path="res://player/sprites/upper/Death_000_1.png" type="Texture" id=393]
+[ext_resource path="res://player/sprites/lower/Walk_270_4.png" type="Texture" id=394]
+[ext_resource path="res://player/sprites/lower/Walk_270_5.png" type="Texture" id=395]
+[ext_resource path="res://player/sprites/lower/Walk_315_5.png" type="Texture" id=396]
+[ext_resource path="res://player/sprites/lower/Walk_315_7.png" type="Texture" id=397]
+[ext_resource path="res://player/sprites/upper/Death_000_4.png" type="Texture" id=398]
+[ext_resource path="res://player/sprites/lower/Walk_315_2.png" type="Texture" id=399]
+[ext_resource path="res://player/sprites/upper/Death_000_3.png" type="Texture" id=400]
+[ext_resource path="res://player/sprites/lower/Walk_315_4.png" type="Texture" id=401]
+[ext_resource path="res://player/sprites/lower/Walk_270_7.png" type="Texture" id=402]
+[ext_resource path="res://player/sprites/upper/Death_090_8.png" type="Texture" id=403]
+[ext_resource path="res://player/sprites/upper/Death_135_3.png" type="Texture" id=404]
+[ext_resource path="res://player/sprites/upper/Death_090_0.png" type="Texture" id=405]
+[ext_resource path="res://player/sprites/upper/Death_090_5.png" type="Texture" id=406]
+[ext_resource path="res://player/sprites/upper/Death_135_7.png" type="Texture" id=407]
+[ext_resource path="res://player/sprites/upper/Death_180_1.png" type="Texture" id=408]
+[ext_resource path="res://player/sprites/upper/Death_045_8.png" type="Texture" id=409]
+[ext_resource path="res://player/sprites/upper/Death_135_8.png" type="Texture" id=410]
+[ext_resource path="res://player/sprites/upper/Death_180_4.png" type="Texture" id=411]
+[ext_resource path="res://player/sprites/upper/Death_135_4.png" type="Texture" id=412]
+[ext_resource path="res://player/sprites/upper/Death_090_4.png" type="Texture" id=413]
+[ext_resource path="res://player/sprites/upper/Death_180_5.png" type="Texture" id=414]
+[ext_resource path="res://player/sprites/upper/Death_090_6.png" type="Texture" id=415]
+[ext_resource path="res://player/sprites/upper/Death_180_0.png" type="Texture" id=416]
+[ext_resource path="res://player/sprites/upper/Death_135_2.png" type="Texture" id=417]
+[ext_resource path="res://player/sprites/upper/Death_090_2.png" type="Texture" id=418]
+[ext_resource path="res://player/sprites/upper/Death_090_7.png" type="Texture" id=419]
+[ext_resource path="res://player/sprites/upper/Death_090_3.png" type="Texture" id=420]
+[ext_resource path="res://player/sprites/upper/Death_090_1.png" type="Texture" id=421]
+[ext_resource path="res://player/sprites/upper/Death_045_7.png" type="Texture" id=422]
+[ext_resource path="res://player/sprites/upper/Death_135_1.png" type="Texture" id=423]
+[ext_resource path="res://player/sprites/upper/Death_135_6.png" type="Texture" id=424]
+[ext_resource path="res://player/sprites/upper/Death_180_2.png" type="Texture" id=425]
+[ext_resource path="res://player/sprites/upper/Death_180_6.png" type="Texture" id=426]
+[ext_resource path="res://player/sprites/upper/Death_180_8.png" type="Texture" id=427]
+[ext_resource path="res://player/sprites/upper/Death_225_0.png" type="Texture" id=428]
+[ext_resource path="res://player/sprites/upper/Death_225_1.png" type="Texture" id=429]
+[ext_resource path="res://player/sprites/upper/Death_180_3.png" type="Texture" id=430]
+[ext_resource path="res://player/sprites/upper/Death_135_5.png" type="Texture" id=431]
+[ext_resource path="res://player/sprites/upper/Death_180_7.png" type="Texture" id=432]
+[ext_resource path="res://player/sprites/upper/Death_225_2.png" type="Texture" id=433]
+[ext_resource path="res://player/sprites/upper/Death_135_0.png" type="Texture" id=434]
+[ext_resource path="res://player/sprites/upper/Death_225_5.png" type="Texture" id=435]
+[ext_resource path="res://player/sprites/upper/Death_315_1.png" type="Texture" id=436]
+[ext_resource path="res://player/sprites/upper/Death_315_2.png" type="Texture" id=437]
+[ext_resource path="res://player/sprites/upper/Death_270_3.png" type="Texture" id=438]
+[ext_resource path="res://player/sprites/upper/Death_270_1.png" type="Texture" id=439]
+[ext_resource path="res://player/sprites/upper/Death_315_5.png" type="Texture" id=440]
+[ext_resource path="res://player/sprites/upper/Death_225_7.png" type="Texture" id=441]
+[ext_resource path="res://player/sprites/upper/Death_315_3.png" type="Texture" id=442]
+[ext_resource path="res://player/sprites/upper/Death_225_3.png" type="Texture" id=443]
+[ext_resource path="res://player/sprites/upper/Death_270_0.png" type="Texture" id=444]
+[ext_resource path="res://player/sprites/upper/Death_270_4.png" type="Texture" id=445]
+[ext_resource path="res://player/sprites/upper/Death_315_8.png" type="Texture" id=446]
+[ext_resource path="res://player/sprites/upper/Fire_000_0.png" type="Texture" id=447]
+[ext_resource path="res://player/sprites/upper/Fire_000_1.png" type="Texture" id=448]
+[ext_resource path="res://player/sprites/upper/Death_315_4.png" type="Texture" id=449]
+[ext_resource path="res://player/sprites/upper/Death_225_6.png" type="Texture" id=450]
+[ext_resource path="res://player/sprites/upper/Death_315_6.png" type="Texture" id=451]
+[ext_resource path="res://player/sprites/upper/Fire_045_0.png" type="Texture" id=452]
+[ext_resource path="res://player/sprites/upper/Fire_045_1.png" type="Texture" id=453]
+[ext_resource path="res://player/sprites/upper/Death_270_5.png" type="Texture" id=454]
+[ext_resource path="res://player/sprites/upper/Death_225_8.png" type="Texture" id=455]
+[ext_resource path="res://player/sprites/upper/Death_270_8.png" type="Texture" id=456]
+[ext_resource path="res://player/sprites/upper/Death_315_0.png" type="Texture" id=457]
+[ext_resource path="res://player/sprites/upper/Death_315_7.png" type="Texture" id=458]
+[ext_resource path="res://player/sprites/upper/Death_270_2.png" type="Texture" id=459]
+[ext_resource path="res://player/sprites/upper/Death_225_4.png" type="Texture" id=460]
+[ext_resource path="res://player/sprites/upper/Fire_000_2.png" type="Texture" id=461]
+[ext_resource path="res://player/sprites/upper/Death_270_6.png" type="Texture" id=462]
+[ext_resource path="res://player/sprites/upper/Death_270_7.png" type="Texture" id=463]
+[ext_resource path="res://player/sprites/upper/Walk_000_2.png" type="Texture" id=464]
+[ext_resource path="res://player/sprites/upper/Walk_000_3.png" type="Texture" id=465]
+[ext_resource path="res://player/sprites/upper/Idle_135_4.png" type="Texture" id=466]
+[ext_resource path="res://player/sprites/upper/Idle_315_0.png" type="Texture" id=467]
+[ext_resource path="res://player/sprites/upper/Idle_180_2.png" type="Texture" id=468]
+[ext_resource path="res://player/sprites/upper/Idle_090_4.png" type="Texture" id=469]
+[ext_resource path="res://player/sprites/upper/Idle_270_4.png" type="Texture" id=470]
+[ext_resource path="res://player/sprites/upper/Walk_000_4.png" type="Texture" id=471]
+[ext_resource path="res://player/sprites/upper/Idle_135_2.png" type="Texture" id=472]
+[ext_resource path="res://player/sprites/upper/Walk_000_5.png" type="Texture" id=473]
+[ext_resource path="res://player/sprites/upper/Idle_180_1.png" type="Texture" id=474]
+[ext_resource path="res://player/sprites/upper/Idle_270_3.png" type="Texture" id=475]
+[ext_resource path="res://player/sprites/upper/Idle_225_1.png" type="Texture" id=476]
+[ext_resource path="res://player/sprites/upper/Walk_000_0.png" type="Texture" id=477]
+[ext_resource path="res://player/sprites/upper/Idle_135_1.png" type="Texture" id=478]
+[ext_resource path="res://player/sprites/upper/Idle_180_4.png" type="Texture" id=479]
+[ext_resource path="res://player/sprites/upper/Idle_135_0.png" type="Texture" id=480]
+[ext_resource path="res://player/sprites/upper/Idle_225_0.png" type="Texture" id=481]
+[ext_resource path="res://player/sprites/upper/Idle_225_4.png" type="Texture" id=482]
+[ext_resource path="res://player/sprites/upper/Idle_225_2.png" type="Texture" id=483]
+[ext_resource path="res://player/sprites/upper/Idle_225_3.png" type="Texture" id=484]
+[ext_resource path="res://player/sprites/upper/Idle_270_0.png" type="Texture" id=485]
+[ext_resource path="res://player/sprites/upper/Idle_270_1.png" type="Texture" id=486]
+[ext_resource path="res://player/sprites/upper/Idle_270_2.png" type="Texture" id=487]
+[ext_resource path="res://player/sprites/upper/Idle_315_1.png" type="Texture" id=488]
+[ext_resource path="res://player/sprites/upper/Idle_315_3.png" type="Texture" id=489]
+[ext_resource path="res://player/sprites/upper/Idle_315_4.png" type="Texture" id=490]
+[ext_resource path="res://player/sprites/upper/Idle_180_3.png" type="Texture" id=491]
+[ext_resource path="res://player/sprites/upper/Idle_180_0.png" type="Texture" id=492]
+[ext_resource path="res://player/sprites/upper/Idle_315_2.png" type="Texture" id=493]
+[ext_resource path="res://player/sprites/upper/Idle_135_3.png" type="Texture" id=494]
+[ext_resource path="res://player/sprites/upper/Walk_000_1.png" type="Texture" id=495]
+[ext_resource path="res://player/sprites/upper/Walk_180_2.png" type="Texture" id=496]
+[ext_resource path="res://player/sprites/upper/Walk_090_3.png" type="Texture" id=497]
+[ext_resource path="res://player/sprites/upper/Walk_180_4.png" type="Texture" id=498]
+[ext_resource path="res://player/sprites/upper/Walk_090_5.png" type="Texture" id=499]
+[ext_resource path="res://player/sprites/upper/Walk_045_4.png" type="Texture" id=500]
+[ext_resource path="res://player/sprites/upper/Walk_000_7.png" type="Texture" id=501]
+[ext_resource path="res://player/sprites/upper/Walk_045_0.png" type="Texture" id=502]
+[ext_resource path="res://player/sprites/upper/Walk_045_5.png" type="Texture" id=503]
+[ext_resource path="res://player/sprites/upper/Walk_135_0.png" type="Texture" id=504]
+[ext_resource path="res://player/sprites/upper/Walk_135_1.png" type="Texture" id=505]
+[ext_resource path="res://player/sprites/upper/Walk_135_2.png" type="Texture" id=506]
+[ext_resource path="res://player/sprites/upper/Walk_045_3.png" type="Texture" id=507]
+[ext_resource path="res://player/sprites/upper/Walk_045_2.png" type="Texture" id=508]
+[ext_resource path="res://player/sprites/upper/Walk_045_7.png" type="Texture" id=509]
+[ext_resource path="res://player/sprites/upper/Walk_090_6.png" type="Texture" id=510]
+[ext_resource path="res://player/sprites/upper/Walk_180_1.png" type="Texture" id=511]
+[ext_resource path="res://player/sprites/upper/Walk_135_6.png" type="Texture" id=512]
+[ext_resource path="res://player/sprites/upper/Walk_000_6.png" type="Texture" id=513]
+[ext_resource path="res://player/sprites/upper/Walk_090_4.png" type="Texture" id=514]
+[ext_resource path="res://player/sprites/upper/Walk_180_0.png" type="Texture" id=515]
+[ext_resource path="res://player/sprites/upper/Walk_135_3.png" type="Texture" id=516]
+[ext_resource path="res://player/sprites/upper/Walk_180_5.png" type="Texture" id=517]
+[ext_resource path="res://player/sprites/upper/Walk_090_2.png" type="Texture" id=518]
+[ext_resource path="res://player/sprites/upper/Walk_135_5.png" type="Texture" id=519]
+[ext_resource path="res://player/sprites/upper/Walk_135_7.png" type="Texture" id=520]
+[ext_resource path="res://player/sprites/upper/Walk_180_3.png" type="Texture" id=521]
+[ext_resource path="res://player/sprites/upper/Walk_090_0.png" type="Texture" id=522]
+[ext_resource path="res://player/sprites/upper/Walk_135_4.png" type="Texture" id=523]
+[ext_resource path="res://player/sprites/upper/Walk_045_6.png" type="Texture" id=524]
+[ext_resource path="res://player/sprites/upper/Walk_090_7.png" type="Texture" id=525]
+[ext_resource path="res://player/sprites/upper/Walk_045_1.png" type="Texture" id=526]
+[ext_resource path="res://player/sprites/upper/Walk_090_1.png" type="Texture" id=527]
+[ext_resource path="res://player/sprites/upper/Walk_180_6.png" type="Texture" id=528]
+[ext_resource path="res://player/sprites/upper/Walk_315_3.png" type="Texture" id=529]
+[ext_resource path="res://player/sprites/upper/Walk_315_7.png" type="Texture" id=530]
+[ext_resource path="res://player/sprites/upper/Walk_270_1.png" type="Texture" id=531]
+[ext_resource path="res://player/sprites/upper/Walk_315_6.png" type="Texture" id=532]
+[ext_resource path="res://player/sprites/upper/Walk_225_6.png" type="Texture" id=533]
+[ext_resource path="res://player/sprites/upper/Walk_270_0.png" type="Texture" id=534]
+[ext_resource path="res://player/sprites/upper/Walk_225_4.png" type="Texture" id=535]
+[ext_resource path="res://player/sprites/upper/Walk_225_5.png" type="Texture" id=536]
+[ext_resource path="res://player/sprites/upper/Walk_270_6.png" type="Texture" id=537]
+[ext_resource path="res://player/sprites/upper/Walk_315_4.png" type="Texture" id=538]
+[ext_resource path="res://player/sprites/upper/Walk_270_5.png" type="Texture" id=539]
+[ext_resource path="res://player/sprites/upper/Walk_270_7.png" type="Texture" id=540]
+[ext_resource path="res://player/sprites/upper/Walk_225_2.png" type="Texture" id=541]
+[ext_resource path="res://player/sprites/upper/Walk_270_3.png" type="Texture" id=542]
+[ext_resource path="res://player/sprites/upper/Walk_315_2.png" type="Texture" id=543]
+[ext_resource path="res://player/sprites/upper/Walk_225_7.png" type="Texture" id=544]
+[ext_resource path="res://player/sprites/upper/Walk_315_1.png" type="Texture" id=545]
+[ext_resource path="res://player/sprites/upper/Walk_180_7.png" type="Texture" id=546]
+[ext_resource path="res://player/sprites/upper/Walk_225_0.png" type="Texture" id=547]
+[ext_resource path="res://player/sprites/upper/Walk_315_5.png" type="Texture" id=548]
+[ext_resource path="res://player/sprites/upper/Walk_225_3.png" type="Texture" id=549]
+[ext_resource path="res://player/sprites/upper/Walk_270_4.png" type="Texture" id=550]
+[ext_resource path="res://player/sprites/upper/Walk_315_0.png" type="Texture" id=551]
+[ext_resource path="res://player/sprites/upper/Walk_270_2.png" type="Texture" id=552]
+[ext_resource path="res://player/sprites/upper/Walk_225_1.png" type="Texture" id=553]
+[ext_resource path="res://player/state_lower_idle.gd" type="Script" id=554]
+[ext_resource path="res://player/state_upper_idle.gd" type="Script" id=555]
+[ext_resource path="res://player/state_upper_dead.gd" type="Script" id=556]
+[ext_resource path="res://player/state_lower_walk.gd" type="Script" id=557]
+[ext_resource path="res://player/state_upper_walk.gd" type="Script" id=558]
+[ext_resource path="res://player/state_machine_lower.gd" type="Script" id=559]
+[ext_resource path="res://player/state_lower_die.gd" type="Script" id=560]
+[ext_resource path="res://player/state_machine_upper.gd" type="Script" id=561]
+[ext_resource path="res://player/state_upper_fire.gd" type="Script" id=562]
+[ext_resource path="res://player/state_lower_dead.gd" type="Script" id=563]
+[ext_resource path="res://player/state_upper_die.gd" type="Script" id=564]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 25 ), ExtResource( 26 ) ],
+"frames": [ ExtResource( 102 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 100 ), ExtResource( 98 ), ExtResource( 105 ), ExtResource( 109 ), ExtResource( 106 ), ExtResource( 99 ) ],
 "loop": true,
-"name": "Fire_315",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 147 ), ExtResource( 152 ), ExtResource( 154 ), ExtResource( 155 ), ExtResource( 162 ), ExtResource( 169 ), ExtResource( 158 ), ExtResource( 163 ), ExtResource( 160 ) ],
-"loop": true,
-"name": "Death_270",
+"name": "Death_000",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 12 ) ],
@@ -195,19 +577,39 @@ animations = [ {
 "name": "Idle_000",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 65 ), ExtResource( 54 ), ExtResource( 58 ), ExtResource( 42 ), ExtResource( 43 ) ],
+"frames": [ ExtResource( 27 ), ExtResource( 22 ) ],
 "loop": true,
-"name": "Walk_090",
+"name": "Fire_135",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "Walk_000",
+"speed": 7.0
 }, {
 "frames": [ ExtResource( 165 ), ExtResource( 156 ), ExtResource( 166 ), ExtResource( 161 ), ExtResource( 157 ), ExtResource( 164 ), ExtResource( 159 ), ExtResource( 167 ), ExtResource( 168 ) ],
 "loop": true,
 "name": "Death_315",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 94 ), ExtResource( 92 ), ExtResource( 91 ), ExtResource( 93 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 35 ), ExtResource( 32 ), ExtResource( 16 ), ExtResource( 95 ), ExtResource( 96 ) ],
 "loop": true,
-"name": "Idle_135",
+"name": "Idle_090",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 49 ), ExtResource( 57 ), ExtResource( 60 ), ExtResource( 63 ), ExtResource( 69 ) ],
+"loop": true,
+"name": "Walk_045",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 119 ), ExtResource( 139 ), ExtResource( 121 ), ExtResource( 115 ), ExtResource( 129 ), ExtResource( 138 ), ExtResource( 128 ), ExtResource( 130 ), ExtResource( 111 ) ],
+"loop": true,
+"name": "Death_090",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 134 ), ExtResource( 112 ), ExtResource( 131 ), ExtResource( 116 ), ExtResource( 141 ), ExtResource( 126 ), ExtResource( 122 ), ExtResource( 123 ), ExtResource( 137 ) ],
+"loop": true,
+"name": "Death_135",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 10 ), ExtResource( 14 ) ],
@@ -215,39 +617,29 @@ animations = [ {
 "name": "Fire_000",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 86 ), ExtResource( 88 ), ExtResource( 78 ), ExtResource( 85 ), ExtResource( 90 ) ],
+"frames": [ ExtResource( 65 ), ExtResource( 54 ), ExtResource( 58 ), ExtResource( 42 ), ExtResource( 43 ) ],
 "loop": true,
-"name": "Walk_270",
+"name": "Walk_090",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 102 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 100 ), ExtResource( 98 ), ExtResource( 105 ), ExtResource( 109 ), ExtResource( 106 ), ExtResource( 99 ) ],
+"frames": [ ExtResource( 83 ), ExtResource( 89 ), ExtResource( 79 ), ExtResource( 87 ), ExtResource( 73 ) ],
 "loop": true,
-"name": "Death_000",
+"name": "Walk_225",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 97 ), ExtResource( 59 ), ExtResource( 50 ), ExtResource( 64 ) ],
+"frames": [ ExtResource( 18 ), ExtResource( 28 ) ],
 "loop": true,
-"name": "Idle_180",
+"name": "Fire_090",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 31 ), ExtResource( 33 ), ExtResource( 36 ), ExtResource( 34 ), ExtResource( 37 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 30 ) ],
 "loop": true,
-"name": "Idle_045",
+"name": "Fire_180",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 61 ), ExtResource( 80 ) ],
+"frames": [ ExtResource( 94 ), ExtResource( 92 ), ExtResource( 91 ), ExtResource( 93 ), ExtResource( 15 ) ],
 "loop": true,
-"name": "Walk_135",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 20 ), ExtResource( 29 ) ],
-"loop": true,
-"name": "Fire_270",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 134 ), ExtResource( 112 ), ExtResource( 131 ), ExtResource( 116 ), ExtResource( 141 ), ExtResource( 126 ), ExtResource( 122 ), ExtResource( 123 ), ExtResource( 137 ) ],
-"loop": true,
-"name": "Death_135",
+"name": "Idle_135",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 74 ), ExtResource( 81 ), ExtResource( 84 ), ExtResource( 70 ), ExtResource( 82 ) ],
@@ -260,34 +652,9 @@ animations = [ {
 "name": "Idle_270",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 83 ), ExtResource( 89 ), ExtResource( 79 ), ExtResource( 87 ), ExtResource( 73 ) ],
+"frames": [ ExtResource( 107 ), ExtResource( 101 ), ExtResource( 108 ), ExtResource( 110 ), ExtResource( 124 ), ExtResource( 125 ), ExtResource( 117 ), ExtResource( 120 ), ExtResource( 140 ) ],
 "loop": true,
-"name": "Walk_225",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 51 ), ExtResource( 38 ), ExtResource( 52 ), ExtResource( 56 ), ExtResource( 67 ) ],
-"loop": true,
-"name": "Idle_225",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 35 ), ExtResource( 32 ), ExtResource( 16 ), ExtResource( 95 ), ExtResource( 96 ) ],
-"loop": true,
-"name": "Idle_090",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 142 ), ExtResource( 127 ), ExtResource( 118 ), ExtResource( 132 ), ExtResource( 135 ), ExtResource( 133 ), ExtResource( 136 ), ExtResource( 113 ), ExtResource( 114 ) ],
-"loop": true,
-"name": "Death_180",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 47 ), ExtResource( 66 ), ExtResource( 68 ), ExtResource( 62 ), ExtResource( 41 ) ],
-"loop": true,
-"name": "Idle_315",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 19 ), ExtResource( 30 ) ],
-"loop": true,
-"name": "Fire_180",
+"name": "Death_045",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ), ExtResource( 24 ) ],
@@ -295,9 +662,14 @@ animations = [ {
 "name": "Fire_225",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 49 ), ExtResource( 57 ), ExtResource( 60 ), ExtResource( 63 ), ExtResource( 69 ) ],
+"frames": [ ExtResource( 86 ), ExtResource( 88 ), ExtResource( 78 ), ExtResource( 85 ), ExtResource( 90 ) ],
 "loop": true,
-"name": "Walk_045",
+"name": "Walk_270",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "Fire_270",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 153 ), ExtResource( 148 ), ExtResource( 149 ), ExtResource( 145 ), ExtResource( 151 ), ExtResource( 143 ), ExtResource( 150 ), ExtResource( 146 ), ExtResource( 144 ) ],
@@ -305,19 +677,29 @@ animations = [ {
 "name": "Death_225",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 18 ), ExtResource( 28 ) ],
+"frames": [ ExtResource( 147 ), ExtResource( 152 ), ExtResource( 154 ), ExtResource( 155 ), ExtResource( 162 ), ExtResource( 169 ), ExtResource( 158 ), ExtResource( 163 ), ExtResource( 160 ) ],
 "loop": true,
-"name": "Fire_090",
+"name": "Death_270",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 21 ) ],
 "loop": true,
-"name": "Walk_000",
-"speed": 7.0
+"name": "Fire_045",
+"speed": 5.0
 }, {
-"frames": [ ExtResource( 119 ), ExtResource( 139 ), ExtResource( 121 ), ExtResource( 115 ), ExtResource( 129 ), ExtResource( 138 ), ExtResource( 128 ), ExtResource( 130 ), ExtResource( 111 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 97 ), ExtResource( 59 ), ExtResource( 50 ), ExtResource( 64 ) ],
 "loop": true,
-"name": "Death_090",
+"name": "Idle_180",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 61 ), ExtResource( 80 ) ],
+"loop": true,
+"name": "Walk_135",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 31 ), ExtResource( 33 ), ExtResource( 36 ), ExtResource( 34 ), ExtResource( 37 ) ],
+"loop": true,
+"name": "Idle_045",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 75 ), ExtResource( 76 ), ExtResource( 72 ), ExtResource( 71 ), ExtResource( 77 ) ],
@@ -325,27 +707,318 @@ animations = [ {
 "name": "Walk_315",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 27 ), ExtResource( 22 ) ],
+"frames": [ ExtResource( 25 ), ExtResource( 26 ) ],
 "loop": true,
-"name": "Fire_135",
+"name": "Fire_315",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 107 ), ExtResource( 101 ), ExtResource( 108 ), ExtResource( 110 ), ExtResource( 124 ), ExtResource( 125 ), ExtResource( 117 ), ExtResource( 120 ), ExtResource( 140 ) ],
+"frames": [ ExtResource( 51 ), ExtResource( 38 ), ExtResource( 52 ), ExtResource( 56 ), ExtResource( 67 ) ],
+"loop": true,
+"name": "Idle_225",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 47 ), ExtResource( 66 ), ExtResource( 68 ), ExtResource( 62 ), ExtResource( 41 ) ],
+"loop": true,
+"name": "Idle_315",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 142 ), ExtResource( 127 ), ExtResource( 118 ), ExtResource( 132 ), ExtResource( 135 ), ExtResource( 133 ), ExtResource( 136 ), ExtResource( 113 ), ExtResource( 114 ) ],
+"loop": true,
+"name": "Death_180",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 379 ), ExtResource( 393 ), ExtResource( 378 ), ExtResource( 400 ), ExtResource( 398 ), ExtResource( 387 ), ExtResource( 371 ), ExtResource( 373 ), ExtResource( 388 ) ],
+"loop": true,
+"name": "Death_000",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 195 ), ExtResource( 194 ), ExtResource( 202 ), ExtResource( 203 ), ExtResource( 214 ) ],
+"loop": true,
+"name": "Idle_000",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 187 ), ExtResource( 200 ), ExtResource( 190 ) ],
+"loop": true,
+"name": "Fire_135",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 477 ), ExtResource( 495 ), ExtResource( 464 ), ExtResource( 465 ), ExtResource( 471 ), ExtResource( 473 ), ExtResource( 513 ), ExtResource( 501 ) ],
+"loop": true,
+"name": "Walk_000",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 457 ), ExtResource( 436 ), ExtResource( 437 ), ExtResource( 442 ), ExtResource( 449 ), ExtResource( 440 ), ExtResource( 451 ), ExtResource( 458 ), ExtResource( 446 ) ],
+"loop": true,
+"name": "Death_315",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 216 ), ExtResource( 218 ), ExtResource( 217 ), ExtResource( 267 ), ExtResource( 469 ) ],
+"loop": true,
+"name": "Idle_090",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 502 ), ExtResource( 526 ), ExtResource( 508 ), ExtResource( 507 ), ExtResource( 500 ), ExtResource( 503 ), ExtResource( 524 ), ExtResource( 509 ) ],
+"loop": true,
+"name": "Walk_045",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 405 ), ExtResource( 421 ), ExtResource( 418 ), ExtResource( 420 ), ExtResource( 413 ), ExtResource( 406 ), ExtResource( 415 ), ExtResource( 419 ), ExtResource( 403 ) ],
+"loop": true,
+"name": "Death_090",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 434 ), ExtResource( 423 ), ExtResource( 417 ), ExtResource( 404 ), ExtResource( 412 ), ExtResource( 431 ), ExtResource( 424 ), ExtResource( 407 ), ExtResource( 410 ) ],
+"loop": true,
+"name": "Death_135",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 447 ), ExtResource( 448 ), ExtResource( 461 ) ],
+"loop": true,
+"name": "Fire_000",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 522 ), ExtResource( 527 ), ExtResource( 518 ), ExtResource( 497 ), ExtResource( 514 ), ExtResource( 499 ), ExtResource( 510 ), ExtResource( 525 ) ],
+"loop": true,
+"name": "Walk_090",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 547 ), ExtResource( 553 ), ExtResource( 541 ), ExtResource( 549 ), ExtResource( 535 ), ExtResource( 536 ), ExtResource( 533 ), ExtResource( 544 ) ],
+"loop": true,
+"name": "Walk_225",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 189 ), ExtResource( 213 ), ExtResource( 212 ) ],
+"loop": true,
+"name": "Fire_090",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 188 ), ExtResource( 196 ), ExtResource( 191 ) ],
+"loop": true,
+"name": "Fire_180",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 480 ), ExtResource( 478 ), ExtResource( 472 ), ExtResource( 494 ), ExtResource( 466 ) ],
+"loop": true,
+"name": "Idle_135",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 515 ), ExtResource( 511 ), ExtResource( 496 ), ExtResource( 521 ), ExtResource( 498 ), ExtResource( 517 ), ExtResource( 528 ), ExtResource( 546 ) ],
+"loop": true,
+"name": "Walk_180",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 485 ), ExtResource( 486 ), ExtResource( 487 ), ExtResource( 475 ), ExtResource( 470 ) ],
+"loop": true,
+"name": "Idle_270",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 372 ), ExtResource( 377 ), ExtResource( 381 ), ExtResource( 382 ), ExtResource( 383 ), ExtResource( 384 ), ExtResource( 385 ), ExtResource( 422 ), ExtResource( 409 ) ],
 "loop": true,
 "name": "Death_045",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 21 ) ],
+"frames": [ ExtResource( 192 ), ExtResource( 207 ), ExtResource( 204 ) ],
+"loop": true,
+"name": "Fire_225",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 534 ), ExtResource( 531 ), ExtResource( 552 ), ExtResource( 542 ), ExtResource( 550 ), ExtResource( 539 ), ExtResource( 537 ), ExtResource( 540 ) ],
+"loop": true,
+"name": "Walk_270",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 193 ), ExtResource( 197 ), ExtResource( 201 ) ],
+"loop": true,
+"name": "Fire_270",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 428 ), ExtResource( 429 ), ExtResource( 433 ), ExtResource( 443 ), ExtResource( 460 ), ExtResource( 435 ), ExtResource( 450 ), ExtResource( 441 ), ExtResource( 455 ) ],
+"loop": true,
+"name": "Death_225",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 444 ), ExtResource( 439 ), ExtResource( 459 ), ExtResource( 438 ), ExtResource( 445 ), ExtResource( 454 ), ExtResource( 462 ), ExtResource( 463 ), ExtResource( 456 ) ],
+"loop": true,
+"name": "Death_270",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 452 ), ExtResource( 453 ), ExtResource( 208 ) ],
 "loop": true,
 "name": "Fire_045",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 492 ), ExtResource( 474 ), ExtResource( 468 ), ExtResource( 491 ), ExtResource( 479 ) ],
+"loop": true,
+"name": "Idle_180",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 504 ), ExtResource( 505 ), ExtResource( 506 ), ExtResource( 516 ), ExtResource( 523 ), ExtResource( 519 ), ExtResource( 512 ), ExtResource( 520 ) ],
+"loop": true,
+"name": "Walk_135",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 198 ), ExtResource( 205 ), ExtResource( 210 ), ExtResource( 206 ), ExtResource( 215 ) ],
+"loop": true,
+"name": "Idle_045",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 551 ), ExtResource( 545 ), ExtResource( 543 ), ExtResource( 529 ), ExtResource( 538 ), ExtResource( 548 ), ExtResource( 532 ), ExtResource( 530 ) ],
+"loop": true,
+"name": "Walk_315",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 211 ), ExtResource( 209 ), ExtResource( 199 ) ],
+"loop": true,
+"name": "Fire_315",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 481 ), ExtResource( 476 ), ExtResource( 483 ), ExtResource( 484 ), ExtResource( 482 ) ],
+"loop": true,
+"name": "Idle_225",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 467 ), ExtResource( 488 ), ExtResource( 493 ), ExtResource( 489 ), ExtResource( 490 ) ],
+"loop": true,
+"name": "Idle_315",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 416 ), ExtResource( 408 ), ExtResource( 425 ), ExtResource( 430 ), ExtResource( 411 ), ExtResource( 414 ), ExtResource( 426 ), ExtResource( 432 ), ExtResource( 427 ) ],
+"loop": true,
+"name": "Death_180",
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 170 ), ExtResource( 186 ), ExtResource( 180 ), ExtResource( 182 ), ExtResource( 183 ), ExtResource( 179 ), ExtResource( 185 ), ExtResource( 181 ), ExtResource( 184 ) ],
+"loop": true,
+"name": "Death_000",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 293 ), ExtResource( 275 ), ExtResource( 305 ), ExtResource( 294 ), ExtResource( 295 ) ],
+"loop": true,
+"name": "Idle_000",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 335 ), ExtResource( 317 ), ExtResource( 328 ), ExtResource( 312 ), ExtResource( 319 ), ExtResource( 314 ), ExtResource( 336 ), ExtResource( 318 ) ],
+"loop": true,
+"name": "Walk_000",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 296 ), ExtResource( 306 ), ExtResource( 277 ), ExtResource( 303 ), ExtResource( 292 ), ExtResource( 304 ), ExtResource( 301 ), ExtResource( 300 ), ExtResource( 282 ) ],
+"loop": true,
+"name": "Death_315",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 287 ), ExtResource( 289 ), ExtResource( 288 ), ExtResource( 274 ), ExtResource( 279 ) ],
+"loop": true,
+"name": "Idle_090",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 330 ), ExtResource( 320 ), ExtResource( 307 ), ExtResource( 308 ), ExtResource( 309 ), ExtResource( 331 ), ExtResource( 332 ), ExtResource( 333 ) ],
+"loop": true,
+"name": "Walk_045",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 229 ), ExtResource( 238 ), ExtResource( 230 ), ExtResource( 233 ), ExtResource( 235 ), ExtResource( 236 ), ExtResource( 240 ), ExtResource( 223 ), ExtResource( 241 ) ],
+"loop": true,
+"name": "Death_090",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 219 ), ExtResource( 226 ), ExtResource( 220 ), ExtResource( 227 ), ExtResource( 224 ), ExtResource( 247 ), ExtResource( 261 ), ExtResource( 270 ), ExtResource( 249 ) ],
+"loop": true,
+"name": "Death_135",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 344 ), ExtResource( 352 ), ExtResource( 354 ), ExtResource( 349 ), ExtResource( 348 ), ExtResource( 358 ), ExtResource( 347 ), ExtResource( 366 ) ],
+"loop": true,
+"name": "Walk_090",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 364 ), ExtResource( 345 ), ExtResource( 368 ), ExtResource( 346 ), ExtResource( 365 ), ExtResource( 369 ), ExtResource( 370 ), ExtResource( 340 ) ],
+"loop": true,
+"name": "Walk_225",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 284 ), ExtResource( 302 ), ExtResource( 280 ), ExtResource( 278 ), ExtResource( 290 ) ],
+"loop": true,
+"name": "Idle_135",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 339 ), ExtResource( 361 ), ExtResource( 367 ), ExtResource( 362 ), ExtResource( 359 ), ExtResource( 343 ), ExtResource( 342 ), ExtResource( 341 ) ],
+"loop": true,
+"name": "Walk_180",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 329 ), ExtResource( 310 ), ExtResource( 337 ), ExtResource( 334 ), ExtResource( 338 ) ],
+"loop": true,
+"name": "Idle_270",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 222 ), ExtResource( 231 ), ExtResource( 228 ), ExtResource( 221 ), ExtResource( 232 ), ExtResource( 239 ), ExtResource( 225 ), ExtResource( 234 ), ExtResource( 237 ) ],
+"loop": true,
+"name": "Death_045",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 392 ), ExtResource( 380 ), ExtResource( 376 ), ExtResource( 386 ), ExtResource( 394 ), ExtResource( 395 ), ExtResource( 374 ), ExtResource( 402 ) ],
+"loop": true,
+"name": "Walk_270",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 273 ), ExtResource( 262 ), ExtResource( 259 ), ExtResource( 269 ), ExtResource( 260 ), ExtResource( 258 ), ExtResource( 268 ), ExtResource( 271 ), ExtResource( 251 ) ],
+"loop": true,
+"name": "Death_225",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 248 ), ExtResource( 253 ), ExtResource( 264 ), ExtResource( 265 ), ExtResource( 263 ), ExtResource( 246 ), ExtResource( 254 ), ExtResource( 266 ), ExtResource( 257 ) ],
+"loop": true,
+"name": "Death_270",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 285 ), ExtResource( 281 ), ExtResource( 286 ), ExtResource( 291 ), ExtResource( 321 ) ],
+"loop": true,
+"name": "Idle_180",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 351 ), ExtResource( 360 ), ExtResource( 355 ), ExtResource( 350 ), ExtResource( 353 ), ExtResource( 357 ), ExtResource( 356 ), ExtResource( 363 ) ],
+"loop": true,
+"name": "Walk_135",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 276 ), ExtResource( 297 ), ExtResource( 298 ), ExtResource( 283 ), ExtResource( 299 ) ],
+"loop": true,
+"name": "Idle_045",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 391 ), ExtResource( 389 ), ExtResource( 399 ), ExtResource( 375 ), ExtResource( 401 ), ExtResource( 396 ), ExtResource( 390 ), ExtResource( 397 ) ],
+"loop": true,
+"name": "Walk_315",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 323 ), ExtResource( 324 ), ExtResource( 327 ), ExtResource( 313 ), ExtResource( 315 ) ],
+"loop": true,
+"name": "Idle_225",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 326 ), ExtResource( 311 ), ExtResource( 322 ), ExtResource( 325 ), ExtResource( 316 ) ],
+"loop": true,
+"name": "Idle_315",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 272 ), ExtResource( 242 ), ExtResource( 244 ), ExtResource( 252 ), ExtResource( 250 ), ExtResource( 245 ), ExtResource( 243 ), ExtResource( 256 ), ExtResource( 255 ) ],
+"loop": true,
+"name": "Death_180",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=4]
 radius = 56.8383
 height = 0.503685
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=5]
 radius = 58.8822
 
 [node name="Player" type="KinematicBody2D"]
@@ -364,14 +1037,28 @@ frames = SubResource( 1 )
 animation = "Death_315"
 offset = Vector2( 0, -100 )
 
+[node name="AnimatedSpriteUpper" type="AnimatedSprite" parent="."]
+z_index = 2
+frames = SubResource( 2 )
+animation = "Walk_315"
+frame = 4
+playing = true
+
+[node name="AnimatedSpriteLower" type="AnimatedSprite" parent="."]
+z_index = 1
+frames = SubResource( 3 )
+animation = "Death_000"
+frame = 6
+playing = true
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 1.07172, 3.47889 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
@@ -399,6 +1086,39 @@ script = ExtResource( 173 )
 
 [node name="Dead" type="Node" parent="StateMachine"]
 script = ExtResource( 177 )
+
+[node name="StateMachineLower" type="Node" parent="."]
+script = ExtResource( 559 )
+
+[node name="Idle" type="Node" parent="StateMachineLower"]
+script = ExtResource( 554 )
+
+[node name="Walk" type="Node" parent="StateMachineLower"]
+script = ExtResource( 557 )
+
+[node name="Die" type="Node" parent="StateMachineLower"]
+script = ExtResource( 560 )
+
+[node name="Dead" type="Node" parent="StateMachineLower"]
+script = ExtResource( 563 )
+
+[node name="StateMachineUpper" type="Node" parent="."]
+script = ExtResource( 561 )
+
+[node name="Idle" type="Node" parent="StateMachineUpper"]
+script = ExtResource( 555 )
+
+[node name="Fire" type="Node" parent="StateMachineUpper"]
+script = ExtResource( 562 )
+
+[node name="Walk" type="Node" parent="StateMachineUpper"]
+script = ExtResource( 558 )
+
+[node name="Die" type="Node" parent="StateMachineUpper"]
+script = ExtResource( 564 )
+
+[node name="Dead" type="Node" parent="StateMachineUpper"]
+script = ExtResource( 556 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
