@@ -32,8 +32,9 @@ def renderSprites():
                {'name': 'Walk', 'frames': [1, 15, 30, 45, 60]}, \
                {'name': 'Fire', 'frames': [30, 60]}, \
                {'name': 'Death', 'frames': [1, 10, 20, 30, 40, 50, 60, 80, 120]}]
-    #action = {'name': 'Walk', 'frames': [1, 7, 15, 23, 30, 38, 45, 53]}
-    action = {'name': 'Idle', 'frames': [1, 25, 50, 75, 100]}
+    action = {'name': 'Walk', 'frames': [1, 7, 15, 23, 30, 38, 45, 53]}
+    #action = {'name': 'Idle', 'frames': [1, 25, 50, 75, 100]}
+    #action = {'name': 'Death', 'frames': [1, 10, 20, 30, 40, 50, 60, 80, 120]}
     for angle in angles:
         setView( angle )
         # Do all actions
