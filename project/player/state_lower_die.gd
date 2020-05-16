@@ -14,5 +14,5 @@ func enter( new_animation ):
 
 
 func on_animation_finished():
-	character.stop_animation()
+	character.stop_animation_lower()
 	state_machine.change_state( "dead" )

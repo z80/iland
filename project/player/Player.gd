@@ -85,23 +85,6 @@ func add_health( d: int = 10 ):
 		h = HEALTH
 	set_health( h )
 
-func play_animation( anim, speed := 1.0 ):
-	var d = _compute_dir()
-	var stri = _animation_name( anim, d )
-	var current_stri = $AnimatedSprite.animation
-	if current_stri != stri:
-		$AnimatedSprite.frame = 0
-		$AnimatedSprite.animation = stri
-	if $AnimatedSprite.speed_scale != speed:
-		$AnimatedSprite.speed_scale = speed
-	if not $AnimatedSprite.playing:
-		$AnimatedSprite.play()
-
-func stop_animation( frame=-1 ):
-	$AnimatedSprite.playing = false
-	if frame >= 0:
-		$AnimatedSprite.frame = frame
-
 
 func play_animation_lower( anim ):
 	var d = _compute_dir()
@@ -276,7 +259,7 @@ func hit( amount, hit_sound ):
 	if ( health <= 0 ):
 		gun.gun_shoot_stop()
 		$AnimatedSpriteLower.z_index = Game.LAYER_ON_FLOOR
-		$AnimatedSpriteUpper.z_index = Game.LAYER_ON_FLOOR
+		$AnimatedSpriteUpper.z_index = Game.LAYER_ON_FLOOR+1
 		stri_state = "die"
 		$StateMachineLower.change_state( stri_state )
 		$StateMachineUpper.change_state( stri_state )

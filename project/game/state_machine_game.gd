@@ -1,7 +1,7 @@
 
 extends "res://state_machine/state_machine.gd"
 
-enum {LAYER_FLOOR=0, LAYER_ON_FLOOR=1, LAYER_CHARACTER=2, LAYER_FLYING_OBJECT=4}
+enum {LAYER_FLOOR=0, LAYER_ON_FLOOR=2, LAYER_CHARACTER=4, LAYER_FLYING_OBJECT=6}
 
 var player_ = null
 var rnd_ = RandomNumberGenerator.new()

@@ -16,5 +16,5 @@ func enter( new_animation ):
 
 
 func _on_timer_elapsed():
-	Game.change_state( "pause_menu" )
+	Game.change_state( "dead_menu" )
 	
