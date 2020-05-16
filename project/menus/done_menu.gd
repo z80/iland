@@ -27,6 +27,9 @@ func _on_ExitBtn_pressed():
 
 func _on_NextLevelBtn_pressed():
 	var stri: String = Game.next_level()
+	var tree = get_tree()
+
+	tree.paused = false
 	Game.change_state( stri, true )
 
 
@@ -34,3 +37,6 @@ func _on_NextLevelBtn_pressed():
 
 func _on_Timer_timeout():
 	$CanvasLayer/Panel.visible = true
+
+	var tree = get_tree()
+	tree.paused = true
