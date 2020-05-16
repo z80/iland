@@ -32,7 +32,7 @@ var automatic: bool = false
 func _init():
 	player = null
 	hud = null
-	print( "End of Gun.gd::_init()" )
+	#print( "End of Gun.gd::_init()" )
 
 func _ready():
 	shot_sound.set_loop( false )
