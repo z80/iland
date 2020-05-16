@@ -275,7 +275,8 @@ func hit( amount, hit_sound ):
 	var stri_state
 	if ( health <= 0 ):
 		gun.gun_shoot_stop()
-		$AnimatedSprite.z_index = Game.LAYER_ON_FLOOR
+		$AnimatedSpriteLower.z_index = Game.LAYER_ON_FLOOR
+		$AnimatedSpriteUpper.z_index = Game.LAYER_ON_FLOOR
 		stri_state = "die"
 		$StateMachineLower.change_state( stri_state )
 		$StateMachineUpper.change_state( stri_state )

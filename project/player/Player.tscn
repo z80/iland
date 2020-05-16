@@ -698,7 +698,7 @@ position = Vector2( 0, -128 )
 z_index = 2
 frames = SubResource( 2 )
 animation = "Walk_315"
-frame = 3
+frame = 6
 playing = true
 
 [node name="AnimatedSpriteLower" type="AnimatedSprite" parent="."]
@@ -706,7 +706,7 @@ position = Vector2( 0, -128 )
 z_index = 1
 frames = SubResource( 3 )
 animation = "Walk_315"
-frame = 1
+frame = 3
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]

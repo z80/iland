@@ -7,7 +7,7 @@ func enter( new_state ):
 	#tree.paused = true
 	
 	# For now just go to pause menu.
-	state_machine.change_state( "pause_menu" )
+	state_machine.change_state( "dead_menu" )
 
 
 func handle_input(event):
