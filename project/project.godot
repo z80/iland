@@ -30,7 +30,7 @@ config/name="Sturmgewehr"
 run/main_scene="res://menus/main_menu.tscn"
 boot_splash/image="res://sg.png"
 config/icon="res://icon.png"
-config/windows_native_icon="res://icon.png"
+config/windows_native_icon="res://icon.ico"
 
 [autoload]
 

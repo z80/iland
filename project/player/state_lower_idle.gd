@@ -5,7 +5,7 @@ var Character = preload("res://player/Player.gd")
 
 func enter( new_state ):
 	character.play_animation_lower( character.ANIM_IDLE )
-	print( "lower idle" )
+	#print( "lower idle" )
 
 
 func physics_update( _delta ):

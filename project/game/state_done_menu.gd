@@ -17,8 +17,6 @@ func enter( new_state ):
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-	var tree = get_tree()
-	tree.paused = true
 
 
 func exit( destroy ):
@@ -28,14 +26,9 @@ func exit( destroy ):
 			done_menu = null
 		else:
 			done_menu.visible = false
-	var tree = get_tree()
-	tree.paused = false
 
 
-func handle_input( event ):
-	if event is InputEventKey:
-		if event.pressed and event.scancode == KEY_ESCAPE:
-			state_machine.change_state( "prev" )
+
 
 
 

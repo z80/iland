@@ -28,7 +28,7 @@ margin_left = 12.5475
 margin_top = 14.9048
 margin_right = 187.548
 margin_bottom = 91.9048
-text = "Back to game"
+text = "Try again"
 __meta__ = {
 "_edit_use_anchors_": false
 }

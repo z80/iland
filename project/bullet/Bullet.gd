@@ -51,7 +51,7 @@ func _ready():
 
 	$Timer.wait_time = timer_interval
 	$Timer.start()
-	$Timer.connect( "timeout", self, "_on_Timer_timeout" )
+	#$Timer.connect( "timeout", self, "_on_Timer_timeout" )
 		
 
 func _physics_process( delta ):

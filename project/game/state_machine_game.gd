@@ -14,6 +14,7 @@ func _init_states_map( sm ):
 	sm["main_menu"]  = $StateMainMenu
 	sm["pause_menu"] = $StatePauseMenu
 	sm["done_menu"]  = $StateDoneMenu
+	sm["dead_menu"]  = $StateDeadMenu
 	sm["level_00"]   = $StateLevel00
 	sm["level_01"]   = $StateLevel01
 	sm["level_02"]   = $StateLevel02

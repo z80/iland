@@ -5,7 +5,7 @@ var Character = preload("res://player/Player.gd")
 
 func enter( new_state ):
 	character.play_animation_lower( character.ANIM_WALK )
-	print( "lower walk" )
+	#print( "lower walk" )
 
 
 func handle_input(event):

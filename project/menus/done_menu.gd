@@ -7,6 +7,7 @@ var state = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$CanvasLayer/Panel.visible = false
 	pass # Replace with function body.
 
 
@@ -29,3 +30,7 @@ func _on_NextLevelBtn_pressed():
 	Game.change_state( stri, true )
 
 
+
+
+func _on_Timer_timeout():
+	$CanvasLayer/Panel.visible = true
