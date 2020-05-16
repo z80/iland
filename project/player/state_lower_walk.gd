@@ -4,7 +4,8 @@ extends "res://state_machine/state.gd"
 var Character = preload("res://player/Player.gd")
 
 func enter( new_state ):
-	character.play_animation( character.ANIM_WALK )
+	character.play_animation_lower( character.ANIM_WALK )
+	print( "lower walk" )
 
 
 func handle_input(event):
@@ -12,7 +13,8 @@ func handle_input(event):
 
 
 func physics_update(_delta):
-	character.play_animation( character.ANIM_WALK )
+	# Adjust direction
+	character.play_animation_lower( character.ANIM_WALK )
 
 	var v: Vector2 = Vector2( 0, 0 )
 	var keep_walking: bool = false

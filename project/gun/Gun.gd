@@ -46,7 +46,6 @@ func _physics_process( delta ):
 		# Create bullet here. And send command to play shoot animation.
 		var speed_scale = 1.0 / shoot_interval
 		player.gun_animation_speed = speed_scale
-		player.change_state( "fire" )
 		player.play_sound( shot_sound )
 		_create_shell()
 		shoot_elapsed -= shoot_interval
@@ -85,10 +84,12 @@ func get_active() -> bool:
 #	pass
 	
 func gun_shoot_start():
+	player.change_state_upper( "fire" )
 	shooting = true
 	
 func gun_shoot_stop():
 	# Stops shooting in the case of automatic machine gun fire.
+	player.change_state_upper( "prev" )
 	shooting = false
 	
 func _create_shell():

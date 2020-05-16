@@ -9,7 +9,7 @@ func _ready():
 
 # Initialize the state. E.g. change the animation.
 func enter( new_animation ):
-	character.play_animation( character.ANIM_DIE )
+	character.play_animation_upper( character.ANIM_DIE, true )
 	#character.play_sound( sound )
 
 

@@ -11,7 +11,7 @@ enabled = true
 cast_to = Vector2( 256, 0 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -64 )
+position = Vector2( 0, -128 )
 texture = ExtResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

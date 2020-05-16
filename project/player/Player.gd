@@ -39,10 +39,12 @@ func _ready():
 	# Make camera 2d current.
 	$Camera2D.make_current()
 	
-	$AnimatedSprite.z_index = Game.LAYER_CHARACTER
+	$AnimatedSpriteLower.z_index = Game.LAYER_CHARACTER
+	$AnimatedSpriteUpper.z_index = Game.LAYER_CHARACTER+1
 	
 	# Make it play animation all the time.
-	$AnimatedSprite.playing = true
+	$AnimatedSpriteLower.playing = true
+	$AnimatedSpriteUpper.playing = true
 	
 	var p = get_parent()
 	# Create Crosshair.
@@ -95,11 +97,47 @@ func play_animation( anim, speed := 1.0 ):
 	if not $AnimatedSprite.playing:
 		$AnimatedSprite.play()
 
-
 func stop_animation( frame=-1 ):
 	$AnimatedSprite.playing = false
 	if frame >= 0:
 		$AnimatedSprite.frame = frame
+
+
+func play_animation_lower( anim ):
+	var d = _compute_dir()
+	var stri = _animation_name( anim, d )
+	var current_stri = $AnimatedSpriteLower.animation
+	if current_stri != stri:
+		$AnimatedSpriteLower.frame = 0
+		$AnimatedSpriteLower.animation = stri
+	if not $AnimatedSpriteLower.playing:
+		$AnimatedSpriteLower.play()
+
+
+func stop_animation_lower( frame=-1 ):
+	$AnimatedSpriteLower.playing = false
+	if frame >= 0:
+		$AnimatedSpriteLower.frame = frame
+
+
+func play_animation_upper( anim, same=false ):
+	var d = _compute_dir()
+	var stri = _animation_name( anim, d )
+	var current_stri = $AnimatedSpriteUpper.animation
+	if current_stri != stri:
+		if not same:
+			$AnimatedSpriteUpper.frame = 0
+		else:
+			$AnimatedSpriteUpper.frame = $AnimatedSpriteLower.frame
+		$AnimatedSpriteUpper.animation = stri
+	if not $AnimatedSpriteUpper.playing:
+		$AnimatedSpriteUpper.play()
+
+
+func stop_animation_upper( frame=-1 ):
+	$AnimatedSpriteUpper.playing = false
+	if frame >= 0:
+		$AnimatedSpriteUpper.frame = frame
 
 
 func play_sound( sound ):
@@ -107,15 +145,28 @@ func play_sound( sound ):
 	$AudioStreamPlayer.play()
 
 
-func change_state( state_name ):
+func change_state_lower( state_name ):
 	# To change state from outside.
 	# For example, by a gun.
-	$StateMachine.change_state( state_name )
+	$StateMachineLower.change_state( state_name )
+
+
+func change_state_upper( state_name ):
+	# To change state from outside.
+	# For example, by a gun.
+	$StateMachineUpper.change_state( state_name )
 
 
 func set_collision( en: bool ):
 	$CollisionShape2D.disabled = not en
 
+
+func state_machine_lower():
+	return $StateMachineLower
+
+
+func state_machine_upper():
+	return $StateMachineUpper
 
 
 func _animation_dir_name( direction ):
@@ -185,15 +236,15 @@ func _create_guns():
 func _process_firing():
 	if health <= 0:
 		return
-		
-	var just_pressed = Input.is_action_just_pressed( "ui_fire" )
-	if just_pressed:
-		if gun:
+	
+	if gun:
+		var just_pressed = Input.is_action_just_pressed( "ui_fire" )
+		if just_pressed:
 			gun.gun_shoot_start()
-	else:
-		var just_released = Input.is_action_just_released( "ui_fire" )
-		if just_released and gun:
-			gun.gun_shoot_stop()
+		else:
+			var just_released = Input.is_action_just_released( "ui_fire" )
+			if just_released:
+				gun.gun_shoot_stop()
 
 
 func _process_zoom( event ):
@@ -226,11 +277,12 @@ func hit( amount, hit_sound ):
 		gun.gun_shoot_stop()
 		$AnimatedSprite.z_index = Game.LAYER_ON_FLOOR
 		stri_state = "die"
+		$StateMachineLower.change_state( stri_state )
+		$StateMachineUpper.change_state( stri_state )
 	else:
-		stri_state = "hit"
+		#stri_state = "hit"
 		if hit_sound:
 			play_sound( hit_sound )
-	$StateMachine.change_state( stri_state )
 
 
 func is_player() -> bool:

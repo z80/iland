@@ -9,7 +9,7 @@ func enter( new_animation ):
 	timer.start()
 	# Do nothing. It just remains dead.
 	# Keep it look dead.
-	character.stop_animation( 8 )
+	character.stop_animation_lower( 8 )
 	character.set_collision( false )
 	
 	# On death

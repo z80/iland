@@ -4,7 +4,8 @@ extends "res://state_machine/state.gd"
 var Character = preload("res://player/Player.gd")
 
 func enter( new_state ):
-	character.play_animation( character.ANIM_IDLE )
+	character.play_animation_lower( character.ANIM_IDLE )
+	print( "lower idle" )
 
 
 func physics_update( _delta ):
@@ -17,4 +18,4 @@ func physics_update( _delta ):
 	
 	else:
 		# Adjust direction.
-		character.play_animation( character.ANIM_IDLE )
+		character.play_animation_lower( character.ANIM_IDLE )

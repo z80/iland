@@ -6,7 +6,6 @@ func _init_states_map( sm ):
 	sm["idle"] = $Idle
 	sm["walk"] = $Walk
 	sm["fire"] = $Fire
-	sm["hit"]  = $Hit
 	sm["die"]  = $Die
 	sm["dead"] = $Dead
 	
