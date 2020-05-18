@@ -49,3 +49,5 @@ script = ExtResource( 6 )
 
 [node name="StateDoneMenu" type="Node" parent="."]
 script = ExtResource( 8 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

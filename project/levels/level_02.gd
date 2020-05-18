@@ -7,6 +7,7 @@ extends Node2D
 var Player      = preload( "res://player/Player.tscn" )
 var Zhlob       = preload( "res://enemies/zhlob/Zhlob.tscn" )
 var SpiderBrain = preload( "res://enemies/spider_brain/spider_brain.tscn" )
+var RfPrivate   = preload( "res://enemies/rf_private/rf_private.tscn" )
 
 var player = null
 
@@ -38,6 +39,7 @@ func _ready():
 	#print( get_tree().get_node('/root').name )
 	
 	#create_enemy_spider_brain()
+	Game.play_music()
 
 
 func _process( delta ):
@@ -60,7 +62,11 @@ func create_enemy():
 	if created_enemies_qty_ < TOTAL_ENEMIES_QTY:
 		var p: float = rnd.randf()
 		if p < 0.8:
-			create_enemy_zhlob()
+			p = rnd.randf()
+			if p < 0.7:
+				create_enemy_zhlob()
+			else:
+				create_enemy_rf_private()
 		else:
 			create_enemy_spider_brain()
 		# Count enemies
@@ -85,6 +91,20 @@ func create_enemy_zhlob():
 	
 	var at: Vector2 = enemy_position()
 	zhlob.position = at
+
+
+
+func create_enemy_rf_private():
+	var walls = get_node( "/root/Level00/TileMapWalls" )
+	var rf_private = RfPrivate.instance()
+	walls.add_child( rf_private )
+	rf_private.set_position( Vector2( 1500, 100 ) )
+	rf_private.visible = true
+	# Make player visible for the zhlob instance.
+	rf_private.target = player
+	
+	var at: Vector2 = enemy_position()
+	rf_private.position = at
 
 
 func create_enemy_spider_brain():

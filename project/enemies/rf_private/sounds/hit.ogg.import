@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hit.ogg-1ded891a1c7e9237c6f78b123fe5b10a.oggstr"
+
+[deps]
+
+source_file="res://enemies/rf_private/sounds/hit.ogg"
+dest_files=[ "res://.import/hit.ogg-1ded891a1c7e9237c6f78b123fe5b10a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -7,6 +7,7 @@ extends Node2D
 var Player      = preload( "res://player/Player.tscn" )
 var Zhlob       = preload( "res://enemies/zhlob/Zhlob.tscn" )
 var SpiderBrain = preload( "res://enemies/spider_brain/spider_brain.tscn" )
+var RfPrivate   = preload( "res://enemies/rf_private/rf_private.tscn" )
 
 var player = null
 
@@ -38,6 +39,7 @@ func _ready():
 	#print( get_tree().get_node('/root').name )
 	
 	#create_enemy_spider_brain()
+	Game.play_music()
 
 
 func _process( delta ):

@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Death_315_21.png-b0c384897bf4464cb8c15f9cd6a7d46f.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://enemies/rf_private/sprites/sprites/Death_315_21.png"
+dest_files=[ "res://.import/Death_315_21.png-b0c384897bf4464cb8c15f9cd6a7d46f.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
