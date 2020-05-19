@@ -9,6 +9,7 @@ var enemy_qty_: int = 0
 var next_level_state_: String = "level_00"
 var score_: int = 0
 
+var intro    = preload( "res://game/sounds/intro.ogg" )
 var track_00 = preload( "res://game/sounds/track_00.ogg" )
 
 func _init_states_map( sm ):
@@ -106,11 +107,17 @@ func next_level() -> String:
 
 
 func play_music( restart=false ):
-	var playing = music_playing()
-	if restart or (not playing):
-		$AudioStreamPlayer.stream = track_00
-		$AudioStreamPlayer.play()
-	
+	$AudioStreamPlayer.stop()
+	$AudioStreamPlayer.stream = track_00
+	$AudioStreamPlayer.play()
+
+
+func play_intro():
+	$AudioStreamPlayer.stop()
+	$AudioStreamPlayer.stream = intro
+	$AudioStreamPlayer.play()
+
+
 func stop_music():
 	$AudioStreamPlayer.stop()
 	
