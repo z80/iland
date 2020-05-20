@@ -25,5 +25,6 @@ func _on_ExitBtn_pressed():
 func _on_BackToGame_pressed():
 	var stri: String = Game.next_level()
 	print( "Set level: ", stri )
+	Game.set_score( 0 )
 	Game.reset_enemy_qty()
 	Game.change_state( stri, true )
