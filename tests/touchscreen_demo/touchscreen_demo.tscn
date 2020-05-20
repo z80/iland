@@ -1,0 +1,875 @@
+[gd_scene load_steps=17 format=1]
+
+[ext_resource path="res://controls/analog_stick_bg_1.png" type="Texture" id=1]
+[ext_resource path="res://controls/analog_stick.png" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Spatial
+
+var moveObj=\"/root/World/Body\"
+var increment=2
+var forceFactorV = 80
+var forceFactorH = 40
+
+var vControl
+var hControl
+var body
+
+func _ready():
+	set_fixed_process(true)
+	vControl = get_node(\"gui/VertControl\")
+	hControl = get_node(\"gui/HorControl\")
+	body = get_node(moveObj)
+	
+func _fixed_process(delta):
+	if abs(vControl.val)>0.01:
+		body.apply_impulse(Vector3(),body.get_transform().basis.z*forceFactorV*vControl.val*-1)
+	if abs(hControl.val)>0.01:
+		body.apply_impulse(Vector3(0,0,-1),Vector3(forceFactorH*hControl.val*-1,0,0))
+		body.apply_impulse(Vector3(0,0,1),Vector3(forceFactorH*hControl.val,0,0))
+
+
+"
+
+[sub_resource type="BoxShape" id=2]
+
+extents = Vector3( 30, 1, 30 )
+
+[sub_resource type="BoxShape" id=3]
+
+extents = Vector3( 1, 1, 30 )
+
+[sub_resource type="BoxShape" id=4]
+
+extents = Vector3( 6, 1, 6 )
+
+[sub_resource type="BoxShape" id=5]
+
+extents = Vector3( 28, 1, 1 )
+
+[sub_resource type="FixedMaterial" id=6]
+
+flags/visible = true
+flags/double_sided = false
+flags/invert_faces = false
+flags/unshaded = false
+flags/on_top = false
+flags/lightmap_on_uv2 = true
+flags/colarray_is_srgb = true
+params/blend_mode = 0
+params/depth_draw = 1
+params/line_width = 2.83776e+20
+fixed_flags/use_alpha = false
+fixed_flags/use_color_array = false
+fixed_flags/use_point_size = false
+fixed_flags/discard_alpha = false
+fixed_flags/use_xy_normalmap = false
+params/diffuse = Color( 0.105294, 0.296875, 0.0718994, 0.333333 )
+params/specular = Color( 0, 0, 0, 1 )
+params/emission = Color( 0, 0, 0, 1 )
+params/specular_exp = 50.0
+params/detail_mix = 1.0
+params/normal_depth = 1
+params/shader = 0
+params/shader_param = 0.5
+params/glow = 0
+params/point_size = 1.0
+uv_xform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+textures/diffuse_tc = 0
+textures/detail_tc = 0
+textures/specular_tc = 0
+textures/emission_tc = 0
+textures/specular_exp_tc = 0
+textures/glow_tc = 0
+textures/normal_tc = 0
+textures/shade_param_tc = 0
+
+[sub_resource type="FixedMaterial" id=7]
+
+flags/visible = true
+flags/double_sided = false
+flags/invert_faces = false
+flags/unshaded = false
+flags/on_top = false
+flags/lightmap_on_uv2 = true
+flags/colarray_is_srgb = true
+params/blend_mode = 0
+params/depth_draw = 1
+params/line_width = 0.0
+fixed_flags/use_alpha = false
+fixed_flags/use_color_array = false
+fixed_flags/use_point_size = false
+fixed_flags/discard_alpha = false
+fixed_flags/use_xy_normalmap = false
+params/diffuse = Color( 0.191406, 0.137597, 0.0448608, 1 )
+params/specular = Color( 0, 0, 0, 1 )
+params/emission = Color( 0, 0, 0, 1 )
+params/specular_exp = 40
+params/detail_mix = 1.0
+params/normal_depth = 1
+params/shader = 0
+params/shader_param = 0.5
+params/glow = 0
+params/point_size = 1.0
+uv_xform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+textures/diffuse_tc = 0
+textures/detail_tc = 0
+textures/specular_tc = 0
+textures/emission_tc = 0
+textures/specular_exp_tc = 0
+textures/glow_tc = 0
+textures/normal_tc = 0
+textures/shade_param_tc = 0
+
+[sub_resource type="FixedMaterial" id=8]
+
+flags/visible = true
+flags/double_sided = false
+flags/invert_faces = false
+flags/unshaded = false
+flags/on_top = false
+flags/lightmap_on_uv2 = true
+flags/colarray_is_srgb = true
+params/blend_mode = 0
+params/depth_draw = 1
+params/line_width = 0.0
+fixed_flags/use_alpha = false
+fixed_flags/use_color_array = false
+fixed_flags/use_point_size = false
+fixed_flags/discard_alpha = false
+fixed_flags/use_xy_normalmap = false
+params/diffuse = Color( 0.0340729, 0.21875, 0.00769043, 1 )
+params/specular = Color( 0, 0, 0, 1 )
+params/emission = Color( 0, 0, 0, 1 )
+params/specular_exp = 40
+params/detail_mix = 1.0
+params/normal_depth = 1
+params/shader = 0
+params/shader_param = 0.5
+params/glow = 0
+params/point_size = 1.0
+uv_xform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+textures/diffuse_tc = 0
+textures/detail_tc = 0
+textures/specular_tc = 0
+textures/emission_tc = 0
+textures/specular_exp_tc = 0
+textures/glow_tc = 0
+textures/normal_tc = 0
+textures/shade_param_tc = 0
+
+[sub_resource type="BoxShape" id=9]
+
+extents = Vector3( 1, 1, 1 )
+
+[sub_resource type="GDScript" id=10]
+
+script/source = "extends RigidBody
+
+var bodyLength = 2
+var bodyWidth = 2
+var bodyHeight = 2
+var waterY = 3
+var initialWait = 0.1
+
+var yeh
+
+func _ready():
+	yeh = get_node(\"../gui/Yeh\")
+	set_fixed_process(true)
+	set_sleeping(false)
+	
+func _fixed_process(delta):
+	if initialWait>0:
+		initialWait=initialWait-delta
+		return
+
+	if abs(get_transform().origin.x)>30 or abs(get_transform().origin.z)>30:
+		if !yeh.is_visible():
+			yeh.show()
+
+	#buoyancy on 4 corners
+	apply_buoyancy(get_transform().basis.z * (bodyLength/2) + 
+					get_transform().basis.x * (bodyWidth/2), delta)
+	apply_buoyancy(get_transform().basis.z * (bodyLength/2) + 
+					get_transform().basis.x * (bodyWidth/-2), delta)
+	apply_buoyancy(get_transform().basis.z * (bodyLength/-2) + 
+					get_transform().basis.x * (bodyWidth/2), delta)
+	apply_buoyancy(get_transform().basis.z * (bodyLength/-2) + 
+					get_transform().basis.x * (bodyWidth/-2), delta)
+
+
+func apply_buoyancy(relPos,delta):
+	var localPos = get_transform().basis.xform_inv(relPos)
+	var glbPos = get_global_transform().origin+relPos
+	var relAreaV = abs(localPos.x * localPos.z)
+	#var waveY = 0
+	var avgDepth = (glbPos.y+((get_global_transform().origin.y-glbPos.y)/2)-waterY+(bodyHeight/2))*-1
+	#print(str(avgDepth))
+	if avgDepth>0: #only buoyancy when under water
+		if avgDepth>1.5: #limit force
+			avgDepth=1.5
+
+		var vel = get_linear_velocity()
+		var avel = get_angular_velocity().cross(relPos)+get_linear_velocity()
+		var bounceDamp = 1500
+		
+		var buoy = Vector3(0,relAreaV * avgDepth * 1000 * 9.8 - (avel.y*bounceDamp),0)*delta
+		
+		apply_impulse(relPos, buoy)
+"
+
+[sub_resource type="FixedMaterial" id=11]
+
+flags/visible = true
+flags/double_sided = false
+flags/invert_faces = false
+flags/unshaded = false
+flags/on_top = false
+flags/lightmap_on_uv2 = true
+flags/colarray_is_srgb = true
+params/blend_mode = 0
+params/depth_draw = 1
+params/line_width = 0.0
+fixed_flags/use_alpha = false
+fixed_flags/use_color_array = false
+fixed_flags/use_point_size = false
+fixed_flags/discard_alpha = false
+fixed_flags/use_xy_normalmap = false
+params/diffuse = Color( 0.254578, 0.191406, 1, 1 )
+params/specular = Color( 0, 0, 0, 1 )
+params/emission = Color( 0, 0, 0, 1 )
+params/specular_exp = 40
+params/detail_mix = 1.0
+params/normal_depth = 1
+params/shader = 0
+params/shader_param = 0.5
+params/glow = 0
+params/point_size = 1.0
+uv_xform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+textures/diffuse_tc = 0
+textures/detail_tc = 0
+textures/specular_tc = 0
+textures/emission_tc = 0
+textures/specular_exp_tc = 0
+textures/glow_tc = 0
+textures/normal_tc = 0
+textures/shade_param_tc = 0
+
+[sub_resource type="FixedMaterial" id=12]
+
+flags/visible = true
+flags/double_sided = false
+flags/invert_faces = false
+flags/unshaded = false
+flags/on_top = false
+flags/lightmap_on_uv2 = true
+flags/colarray_is_srgb = true
+params/blend_mode = 0
+params/depth_draw = 1
+params/line_width = 1.0
+fixed_flags/use_alpha = false
+fixed_flags/use_color_array = false
+fixed_flags/use_point_size = false
+fixed_flags/discard_alpha = false
+fixed_flags/use_xy_normalmap = false
+params/diffuse = Color( 0.949219, 0.189102, 0.189102, 1 )
+params/specular = Color( 0, 0, 0, 1 )
+params/emission = Color( 0, 0, 0, 1 )
+params/specular_exp = 40
+params/detail_mix = 1.0
+params/normal_depth = 1
+params/shader = 0
+params/shader_param = 0.5
+params/glow = 0
+params/point_size = 1.0
+uv_xform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+textures/diffuse_tc = 0
+textures/detail_tc = 0
+textures/specular_tc = 0
+textures/emission_tc = 0
+textures/specular_exp_tc = 0
+textures/glow_tc = 0
+textures/normal_tc = 0
+textures/shade_param_tc = 0
+
+[sub_resource type="GDScript" id=13]
+
+script/source = "extends Camera
+
+var body
+
+const CAMDIST = 20
+
+func _ready():
+	body=get_node(\"../Body\")
+	set_fixed_process(true)
+	
+func _fixed_process(delta):
+	var bt=body.get_transform()
+	var ct=get_transform()
+	var camXZ=bt.basis.z*CAMDIST+bt.origin
+	ct.origin=Vector3(camXZ.x,ct.origin.y,camXZ.z)
+	ct = ct.looking_at(bt.origin,Vector3(0,1,0))
+	set_transform(ct)"
+
+[sub_resource type="GDScript" id=14]
+
+script/source = "extends TextureFrame
+
+var val=0
+
+var touch_index = -1
+var minXY
+var maxXY
+var isVertical
+
+var joystick
+var valOut
+
+
+func _ready():
+	set_process_input(true)
+	joystick=get_node(\"Joystick\")
+	isVertical=(get_name().left(1)==\"V\")
+	
+	if isVertical: #vertical joystick?
+		minXY=Vector2(floor((float(get_size().x))/2.0),0)
+		maxXY=Vector2(floor((float(get_size().x))/2.0),get_size().y-1)
+		valOut=get_node(\"../valV\")
+	else: #horizontal joystick
+		minXY=Vector2(0,floor((float(get_size().y))/2.0))
+		maxXY=Vector2(get_size().x-1,floor((float(get_size().y))/2.0))
+		valOut=get_node(\"../valH\")
+	
+			
+func _input(ev):
+	if is_visible() and \\
+		((ev.type==InputEvent.SCREEN_TOUCH) or (ev.type==InputEvent.SCREEN_DRAG)):
+			
+		if ev.type==InputEvent.SCREEN_TOUCH:
+			if ev.pressed:
+				var p = get_pos()
+				var sz = get_size()
+				#check if touch was inside control
+				if (ev.pos.x>=p.x) and (ev.pos.x<p.x+sz.x) and (ev.pos.y>=p.y) and (ev.pos.y<p.y+sz.y):
+					#save touch index to track \"DRAG\" events
+					touch_index = ev.index
+					ev.pos.x=clamp(ev.pos.x-p.x,minXY.x,maxXY.x)
+					ev.pos.y=clamp(ev.pos.y-p.y,minXY.y,maxXY.y)
+					set_val(ev)
+			else: #release
+				if touch_index == ev.index:
+					touch_index=-1
+					reset_val(ev)
+						
+		if ev.type==InputEvent.SCREEN_DRAG:
+			var p = get_pos()
+			var sz = get_size()
+			if (ev.index == touch_index): #allow drag outside of control
+				ev.pos.x=clamp(ev.pos.x-p.x,minXY.x,maxXY.x)
+				ev.pos.y=clamp(ev.pos.y-p.y,minXY.y,maxXY.y)
+				set_val(ev)
+				
+#reset joystick to center (on touch release)
+func reset_val(ev):
+	ev.pos.x=(maxXY.x-minXY.x+1)/2+minXY.x
+	ev.pos.y=(maxXY.y-minXY.y+1)/2+minXY.y
+	set_val(ev)
+
+#set value based on control-relative event coordinates (also suitable for mouse coords)
+func set_val(ev):
+	if isVertical:
+		val = clamp((ev.pos.y-(get_size().y/2.0))/(get_size().y/-2.0),-1,1)
+	else:
+		val = clamp((ev.pos.x-(get_size().x/2.0))/(get_size().x/-2.0),-1,1)
+	#move joystick control
+	joystick.set_pos(Vector2(ev.pos.x-(joystick.get_size().x/2),ev.pos.y-(joystick.get_size().y/2)))
+	valOut.set_text(str(val))"
+
+[node name="World" type="Spatial"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+script/script = SubResource( 1 )
+
+[node name="Floor" type="StaticBody" parent="."]
+
+editor/display_folded = true
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+input/ray_pickable = true
+input/capture_on_drag = false
+shape_count = 6
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 3 )
+shapes/1/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 2, 0 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 4 )
+shapes/2/transform = Transform( 0.988706, -0.148243, 0.0220132, 0.149868, 0.977982, -0.145225, 0, 0.146884, 0.989154, 0.426702, 0.631435, -7.74755 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 3 )
+shapes/3/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 2, 0 )
+shapes/3/trigger = false
+shapes/4/shape = SubResource( 5 )
+shapes/4/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -29 )
+shapes/4/trigger = false
+shapes/5/shape = SubResource( 5 )
+shapes/5/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 29 )
+shapes/5/trigger = false
+collision/layers = 1
+collision/mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="FloorMesh" type="TestCube" parent="Floor"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 30, 0, 0, 0, 1, 0, 0, 0, 30, 0, 0, 0 )
+layers = 1
+geometry/visible = true
+geometry/material_override = SubResource( 6 )
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Frame1" type="CollisionShape" parent="Floor"]
+
+editor/display_folded = true
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 2, 0 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 1
+
+[node name="TestCube" type="TestCube" parent="Floor/Frame1"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 30, 0, 0, 0 )
+layers = 1
+geometry/visible = true
+geometry/material_override = SubResource( 7 )
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+
+[node name="Obstacle" type="CollisionShape" parent="Floor"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 0.988706, -0.148243, 0.0220132, 0.149868, 0.977982, -0.145225, 0, 0.146884, 0.989154, 0.426702, 0.631435, -7.74755 )
+shape = SubResource( 4 )
+trigger = false
+_update_shape_index = 2
+
+[node name="TestCube" type="TestCube" parent="Floor/Obstacle"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 6, 0, 0, 0, 1, 0, 0, 0, 6, 0, 0, 0 )
+layers = 1
+geometry/visible = true
+geometry/material_override = SubResource( 8 )
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+
+[node name="Frame2" type="CollisionShape" parent="Floor"]
+
+editor/display_folded = true
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 2, 0 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 3
+
+[node name="TestCube" type="TestCube" parent="Floor/Frame2"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 30, 0, 0, 0 )
+layers = 1
+geometry/visible = true
+geometry/material_override = SubResource( 7 )
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+
+[node name="Frame3" type="CollisionShape" parent="Floor"]
+
+editor/display_folded = true
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -29 )
+shape = SubResource( 5 )
+trigger = false
+_update_shape_index = 4
+
+[node name="TestCube" type="TestCube" parent="Floor/Frame3"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 28, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+layers = 1
+geometry/visible = true
+geometry/material_override = SubResource( 7 )
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+
+[node name="Frame4" type="CollisionShape" parent="Floor"]
+
+editor/display_folded = true
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 29 )
+shape = SubResource( 5 )
+trigger = false
+_update_shape_index = 5
+
+[node name="TestCube" type="TestCube" parent="Floor/Frame4"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 28, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+layers = 1
+geometry/visible = true
+geometry/material_override = SubResource( 7 )
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+
+[node name="Body" type="RigidBody" parent="."]
+
+editor/display_folded = true
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 0.990091, 0.140429, 0, -0.140429, 0.990091, 0, 0, 0, 1, 0, 2.98452, 0 )
+input/ray_pickable = true
+input/capture_on_drag = false
+shape_count = 1
+shapes/0/shape = SubResource( 9 )
+shapes/0/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 500.0
+friction = 0.2
+bounce = 0.3
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+axis_lock = 0
+velocity/linear = Vector3( 0, 0, 0 )
+velocity/angular = Vector3( 0, 0, 0 )
+damp_override/linear = 0.2
+damp_override/angular = 4.0
+script/script = SubResource( 10 )
+
+[node name="Mesh1" type="TestCube" parent="Body"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+layers = 1
+geometry/visible = true
+geometry/material_override = SubResource( 11 )
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="Body"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 9 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Arrow" type="Spatial" parent="Body"]
+
+editor/display_folded = true
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0 )
+
+[node name="Mesh2" type="TestCube" parent="Body/Arrow"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 0.092388, 0, 0.382683, 0, 0.1, 0, -0.0382683, 0, 0.92388, 0.5, 0, 0 )
+layers = 1
+geometry/visible = true
+geometry/material_override = SubResource( 12 )
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+
+[node name="Mesh3" type="TestCube" parent="Body/Arrow"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 0.092388, 0, -0.382683, 0, 0.1, 0, 0.0382683, 0, 0.92388, -0.5, 0, 0 )
+layers = 1
+geometry/visible = true
+geometry/material_override = SubResource( 12 )
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+
+[node name="Camera" type="Camera" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 0.984097, -0.0420704, 0.172578, -0.0479894, 0.872453, 0.486338, -0.171026, -0.486885, 0.856559, 2.91445, 21.5759, 33.4255 )
+projection = 0
+fov = 60.0
+near = 0.1
+far = 100.0
+keep_aspect = 1
+current = false
+visible_layers = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+script/script = SubResource( 13 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 0.157297, 0.751291, -0.640952, -0.240113, 0.658651, 0.713109, 0.957916, 0.0417315, 0.283999, -3.69665, 18.1678, 0 )
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 0
+params/energy = 2.5
+colors/diffuse = Color( 1, 1, 1, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = true
+shadow/darkening = 0.0
+shadow/z_offset = 0.05
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+shadow/mode = 0
+shadow/max_distance = 50.0
+shadow/split_weight = 0.5
+shadow/zoffset_scale = 2.0
+
+[node name="gui" type="Control" parent="."]
+
+editor/display_folded = true
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = -2.0
+margin/right = 0.0
+margin/bottom = 2.0
+
+[node name="SceneInfo" type="Label" parent="gui"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 37.0
+margin/top = 41.0
+margin/right = 667.0
+margin/bottom = 55.0
+text = "Touchscreen demo. Use touch screen controls to move the cube."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="VertControl" type="TextureFrame" parent="gui"]
+
+editor/display_folded = true
+anchor/top = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 31.0
+margin/top = 267.0
+margin/right = 266.0
+margin/bottom = 36.0
+texture = ExtResource( 1 )
+stretch_mode = 0
+script/script = SubResource( 14 )
+
+[node name="Joystick" type="TextureFrame" parent="gui/VertControl"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 43.0
+margin/top = 43.0
+margin/right = 193.0
+margin/bottom = 193.0
+texture = ExtResource( 2 )
+stretch_mode = 0
+
+[node name="valV" type="Label" parent="gui"]
+
+anchor/top = 1
+anchor/bottom = 1
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 11.0
+margin/top = 34.0
+margin/right = 51.0
+margin/bottom = 20.0
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="HorControl" type="TextureFrame" parent="gui"]
+
+anchor/left = 1
+anchor/top = 1
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 266.0
+margin/top = 267.0
+margin/right = 31.0
+margin/bottom = 36.0
+texture = ExtResource( 1 )
+stretch_mode = 0
+script/script = SubResource( 14 )
+
+[node name="Joystick" type="TextureFrame" parent="gui/HorControl"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 43.0
+margin/top = 43.0
+margin/right = 193.0
+margin/bottom = 193.0
+texture = ExtResource( 2 )
+stretch_mode = 0
+
+[node name="valH" type="Label" parent="gui"]
+
+anchor/left = 1
+anchor/top = 1
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 59.0
+margin/top = 34.0
+margin/right = 19.0
+margin/bottom = 20.0
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Yeh" type="RichTextLabel" parent="gui"]
+
+visibility/visible = false
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 446.0
+margin/top = 248.0
+margin/right = 473.0
+margin/bottom = 263.0
+custom_colors/default_color = Color( 1, 0.0117188, 0.0117188, 1 )
+bbcode/enabled = false
+bbcode/bbcode = "Yeh!"
+visible_characters = -1
+
+

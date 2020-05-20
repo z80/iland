@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://addons/joystick_control/assets/joystick.gd" type="Script" id=1]
+[ext_resource path="res://addons/joystick_control/assets/background.png" type="Texture" id=2]
+[ext_resource path="res://addons/joystick_control/assets/ball.png" type="Texture" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JoystickMove" type="Control" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 103.579
+margin_top = -99.5789
+margin_right = 151.579
+margin_bottom = -71.5789
+script = ExtResource( 1 )
+radius = 64.0
+deadzone = 8.0
+proximity = 96.0
+background_texture = ExtResource( 2 )
+ball_texture = ExtResource( 3 )
+action_left = "ui_left"
+action_right = "ui_right"
+action_up = "ui_up"
+action_down = "ui_down"
+
+[node name="JoystickAim" type="Control" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -102.737
+margin_top = -102.737
+margin_right = -54.7367
+margin_bottom = -74.7368
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+radius = 64.0
+deadzone = 8.0
+proximity = 96.0
+background_texture = ExtResource( 2 )
+ball_texture = ExtResource( 3 )
+action_left = "aim_left"
+action_right = "aim_right"
+action_up = "aim_up"
+action_down = "aim_down"
+
+[node name="FireBtn" type="TouchScreenButton" parent="."]
+position = Vector2( 706.316, 472.632 )

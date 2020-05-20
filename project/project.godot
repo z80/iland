@@ -36,6 +36,10 @@ config/windows_native_icon="res://icon.ico"
 
 Game="*res://game/game.tscn"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "joystick_control" )
+
 [input]
 
 ui_left={
