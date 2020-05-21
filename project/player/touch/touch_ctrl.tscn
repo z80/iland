@@ -1,12 +1,13 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://addons/joystick_control/assets/joystick.gd" type="Script" id=1]
-[ext_resource path="res://addons/joystick_control/assets/background.png" type="Texture" id=2]
-[ext_resource path="res://addons/joystick_control/assets/ball.png" type="Texture" id=3]
+[ext_resource path="res://player/touch/fire_btn.png" type="Texture" id=2]
+[ext_resource path="res://player/touch/touch_ctrl.gd" type="Script" id=3]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -19,15 +20,6 @@ margin_top = -99.5789
 margin_right = 151.579
 margin_bottom = -71.5789
 script = ExtResource( 1 )
-radius = 64.0
-deadzone = 8.0
-proximity = 96.0
-background_texture = ExtResource( 2 )
-ball_texture = ExtResource( 3 )
-action_left = "ui_left"
-action_right = "ui_right"
-action_up = "ui_up"
-action_down = "ui_down"
 
 [node name="JoystickAim" type="Control" parent="."]
 anchor_left = 1.0
@@ -42,15 +34,14 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-radius = 64.0
-deadzone = 8.0
-proximity = 96.0
-background_texture = ExtResource( 2 )
-ball_texture = ExtResource( 3 )
 action_left = "aim_left"
 action_right = "aim_right"
 action_up = "aim_up"
 action_down = "aim_down"
 
 [node name="FireBtn" type="TouchScreenButton" parent="."]
-position = Vector2( 706.316, 472.632 )
+position = Vector2( 687.944, 437.558 )
+scale = Vector2( 0.217102, 0.226888 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 2 )
+[connection signal="pressed" from="FireBtn" to="." method="_on_FireBtn_pressed"]

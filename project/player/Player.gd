@@ -52,6 +52,7 @@ func _ready():
 	crosshair = Crosshair.instance()
 	#vp.add_child( crosshair )
 	p.add_child( crosshair )
+	crosshair.player = self
 	crosshair.visible = true
 	
 	_create_guns()
