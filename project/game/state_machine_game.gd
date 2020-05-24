@@ -136,7 +136,13 @@ func use_touch_controls():
 	return true
 	
 
-
+func set_mouse_visible( en: bool ):
+	var touch: bool = Game.use_touch_controls()
+	if not touch:
+		if en:
+			Input.set_mouse_mode( Input.MOUSE_MODE_VISIBLE )
+		else:
+			Input.set_mouse_mode( Input.MOUSE_MODE_HIDDEN )
 
 
 

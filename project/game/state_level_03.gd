@@ -8,9 +8,8 @@ func enter( new_state ):
 	if (not created) or new_state:
 		get_tree().change_scene( "res://levels/level_03.tscn" )
 		created = true
-		
-	Input.set_mouse_mode( Input.MOUSE_MODE_HIDDEN )
 	
+	Game.set_mouse_visible( false )
 	# Here it is also #3 as it is the last one at the moment.
 	Game.set_next_level( "level_03" )
 

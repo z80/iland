@@ -15,7 +15,7 @@ func enter( new_state ):
 	dead_menu.state = self
 	dead_menu.visible = true
 	
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	Game.set_mouse_visible( true )
 
 	var tree = get_tree()
 	tree.paused = true

@@ -15,11 +15,16 @@ __meta__ = {
 [node name="JoystickMove" type="Control" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 103.579
-margin_top = -99.5789
-margin_right = 151.579
-margin_bottom = -71.5789
+margin_left = 104.404
+margin_top = -103.596
+margin_right = 232.404
+margin_bottom = 24.4036
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+radius = 128.0
+proximity = 120.0
 
 [node name="JoystickAim" type="Control" parent="."]
 anchor_left = 1.0
@@ -27,13 +32,15 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -102.737
-margin_top = -102.737
-margin_right = -54.7367
-margin_bottom = -74.7368
+margin_top = -107.748
+margin_right = 25.2629
+margin_bottom = 20.2524
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+radius = 128.0
+proximity = 120.0
 action_left = "aim_left"
 action_right = "aim_right"
 action_up = "aim_up"

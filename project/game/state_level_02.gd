@@ -9,7 +9,7 @@ func enter( new_state ):
 		get_tree().change_scene( "res://levels/level_02.tscn" )
 		created = true
 		
-	Input.set_mouse_mode( Input.MOUSE_MODE_HIDDEN )
+	Game.set_mouse_visible( false )
 	Game.set_next_level( "level_02" )
 
 

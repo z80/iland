@@ -9,9 +9,11 @@ var fire_en: bool = false
 
 func _ready():
 	var touch: bool = Game.use_touch_controls()
+	# 1) Make touch controlls visible/invisible.
 	visible = touch
+	# 2) Block mouse "fire".
 	if touch:
-		InputMap.action_erase_events( "ui_fire" )
+		InputMap.action_erase_events( ACTION_FIRE )
 
 
 
