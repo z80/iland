@@ -133,7 +133,7 @@ func music_playing() -> bool:
 
 # Should be returning whether on mobile platform or not.
 func use_touch_controls():
-	return false
+	return true
 	
 
 func set_mouse_visible( en: bool ):

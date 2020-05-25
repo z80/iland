@@ -25,3 +25,11 @@ func _on_FireBtn_pressed():
 	else:
 		Input.action_release( ACTION_FIRE )
 
+
+
+func _on_MenuBtn_pressed():
+	Game.change_state( "pause_menu" )
+
+
+
+
