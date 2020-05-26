@@ -15,7 +15,7 @@ func enter( new_state ):
 	done_menu.state = self
 	done_menu.visible = true
 	
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	Game.set_mouse_visible( true )
 
 
 

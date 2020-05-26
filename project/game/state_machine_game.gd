@@ -12,6 +12,11 @@ var score_: int = 0
 var intro    = preload( "res://game/sounds/intro.ogg" )
 var track_00 = preload( "res://game/sounds/track_00.ogg" )
 
+
+func _ready():
+	._ready()
+
+
 func _init_states_map( sm ):
 	._init_states_map( sm )
 	sm["main_menu"]  = $StateMainMenu
@@ -125,6 +130,19 @@ func music_playing() -> bool:
 	var en: bool = $AudioStreamPlayer.playing
 	return en
 
+
+# Should be returning whether on mobile platform or not.
+func use_touch_controls():
+	return false
+	
+
+func set_mouse_visible( en: bool ):
+	var touch: bool = Game.use_touch_controls()
+	if not touch:
+		if en:
+			Input.set_mouse_mode( Input.MOUSE_MODE_VISIBLE )
+		else:
+			Input.set_mouse_mode( Input.MOUSE_MODE_HIDDEN )
 
 
 
