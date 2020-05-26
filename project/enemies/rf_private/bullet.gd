@@ -5,7 +5,7 @@ var initialized: bool = false
 
 var damage: int = 10
 var instant: bool = false
-var speed: float = 2000.0
+var speed: float = 600.0
 
 var velocity: Vector2 = Vector2()
 var max_distance: float = 1000.0
@@ -24,7 +24,7 @@ func initialize( origin, start: Vector2, to: Vector2 ):
 	var d = to - start
 	d = d.normalized()
 	# Bullet initial position
-	position = start + d * 350.0
+	position = start + d * 300.0
 	
 	# Sprite orientation.
 	var angle = atan2( d.y, d.x )

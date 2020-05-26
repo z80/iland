@@ -3,10 +3,10 @@ extends KinematicBody2D
 const SCORE_: int = 3
 const PICKUP_PROB: float = 0.1
 
-export(int)   var move_speed = 400
+export(int)   var move_speed = 200
 export(float) var fire_period   = 2.0
-export(float) var fire_distance = 1300.0
-export(float) var sight_distance = 3000.0
+export(float) var fire_distance = 700.0
+export(float) var sight_distance = 1500.0
 export(int)   var health = 100
 # Declare member variables here. Examples:
 # var a = 2

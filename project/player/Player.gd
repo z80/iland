@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 const HEALTH: int = 100
 
-export(int) var move_speed = 500
+export(int) var move_speed = 250
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -31,7 +31,7 @@ var gun_animation_speed: float = 1.0
 
 var health setget set_health, get_health
 
-var zoom: float = 3.0
+var zoom: float = 1.5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -234,12 +234,12 @@ func _process_firing():
 func _process_zoom( event ):
 	if event is InputEventMouseButton:
 		# zoom in
-		if (event.button_index == BUTTON_WHEEL_UP) and (zoom > 2.5):
+		if (event.button_index == BUTTON_WHEEL_UP) and (zoom > 1.0):
 			# call the zoom function
 			zoom -= 0.1
 			$Camera2D.zoom = Vector2( zoom, zoom )
 		# zoom out
-		if (event.button_index == BUTTON_WHEEL_DOWN) and (zoom < 4.5):
+		if (event.button_index == BUTTON_WHEEL_DOWN) and (zoom < 2.25):
 			# call the zoom function
 			zoom += 0.1
 			$Camera2D.zoom = Vector2( zoom, zoom )

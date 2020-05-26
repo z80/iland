@@ -11,8 +11,8 @@ var RfPrivate   = preload( "res://enemies/rf_private/rf_private.tscn" )
 
 var player = null
 
-const MIN_DIST: float = 1000.0
-const MAX_DIST: float = 3000.0
+const MIN_DIST: float = 500.0
+const MAX_DIST: float = 1500.0
 var   rnd = RandomNumberGenerator.new()
 const ENEMY_PROB_MIN = 1.0/300.0
 const ENEMY_PROB_MAX = 1.0/100.0
