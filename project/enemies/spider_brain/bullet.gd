@@ -5,7 +5,7 @@ var initialized: bool = false
 
 var damage: int = 10
 var instant: bool = false
-var speed: float = 600.0
+var speed: float = 1200.0
 
 var velocity: Vector2 = Vector2()
 var max_distance: float = 1000.0
