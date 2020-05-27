@@ -2,7 +2,9 @@
 extends Control
 
 
-const ACTION_FIRE: String = "ui_fire"
+const ACTION_FIRE: String     = "ui_fire"
+const ACTION_ZOOM_IN: String  = "ui_zoom_in"
+const ACTION_ZOOM_OUT: String = "ui_zoom_out"
 
 var fire_en: bool = false
 
@@ -30,6 +32,17 @@ func _on_FireBtn_pressed():
 func _on_MenuBtn_pressed():
 	Game.change_state( "pause_menu" )
 
+
+
+
+
+
+func _on_ZoomOutBtn_pressed():
+	Input.action_press( ACTION_ZOOM_OUT )
+
+
+func _on_ZoomInBtn_pressed():
+	Input.action_press( ACTION_ZOOM_IN )
 
 
 

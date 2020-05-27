@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://addons/joystick_control/assets/joystick.gd" type="Script" id=1]
 [ext_resource path="res://player/touch/fire_btn.png" type="Texture" id=2]
 [ext_resource path="res://player/touch/touch_ctrl.gd" type="Script" id=3]
 [ext_resource path="res://player/touch/menu_btn.png" type="Texture" id=4]
+[ext_resource path="res://player/touch/zoom_in.png" type="Texture" id=5]
+[ext_resource path="res://player/touch/zoom_out.png" type="Texture" id=6]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -32,10 +34,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -480.433
-margin_top = -259.833
-margin_right = -0.432983
-margin_bottom = -1.83337
+margin_left = -480.0
+margin_top = -605.0
+margin_bottom = -2.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -61,10 +62,20 @@ action_up = "aim_up"
 action_down = "aim_down"
 
 [node name="FireBtn" type="TouchScreenButton" parent="RightControl"]
-position = Vector2( 89.1847, 70.5103 )
+position = Vector2( 89.5332, 427.657 )
 scale = Vector2( 0.217102, 0.226888 )
 normal = ExtResource( 2 )
 pressed = ExtResource( 2 )
+
+[node name="ZoomOutBtn" type="TouchScreenButton" parent="RightControl"]
+position = Vector2( 342.84, 16.1523 )
+normal = ExtResource( 6 )
+pressed = ExtResource( 6 )
+
+[node name="ZoomInBtn" type="TouchScreenButton" parent="RightControl"]
+position = Vector2( 341.082, 175.664 )
+normal = ExtResource( 5 )
+pressed = ExtResource( 5 )
 
 [node name="TopControl" type="Control" parent="."]
 anchor_left = 1.0
@@ -73,11 +84,15 @@ margin_left = -226.0
 margin_top = 6.0
 margin_right = -5.0
 margin_bottom = 163.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MenuBtn" type="TouchScreenButton" parent="TopControl"]
-position = Vector2( 137.387, 8.20221 )
-scale = Vector2( 0.3, 0.3 )
+position = Vector2( 89.9186, 2.92792 )
 normal = ExtResource( 4 )
 pressed = ExtResource( 4 )
 [connection signal="pressed" from="RightControl/FireBtn" to="." method="_on_FireBtn_pressed"]
+[connection signal="pressed" from="RightControl/ZoomOutBtn" to="." method="_on_ZoomOutBtn_pressed"]
+[connection signal="pressed" from="RightControl/ZoomInBtn" to="." method="_on_ZoomInBtn_pressed"]
 [connection signal="pressed" from="TopControl/MenuBtn" to="." method="_on_MenuBtn_pressed"]

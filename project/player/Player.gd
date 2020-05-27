@@ -243,7 +243,13 @@ func _process_zoom( event ):
 			# call the zoom function
 			zoom += 0.1
 			$Camera2D.zoom = Vector2( zoom, zoom )
-	
+			
+	elif Input.is_action_just_pressed( "ui_zoom_in" ) and (zoom > 1.0):
+			zoom -= 0.1
+			$Camera2D.zoom = Vector2( zoom, zoom )
+	elif Input.is_action_just_pressed( "ui_zoom_out" ) and (zoom < 2.25):
+			zoom += 0.1
+			$Camera2D.zoom = Vector2( zoom, zoom )
 	
 #func _on_gun_animation_stop():
 #	anim = ANIM_FIRE
