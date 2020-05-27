@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const SCORE_: int = 3
+const SCORE_: int = 1
 const PICKUP_PROB: float = 0.1
 
 export(int)   var move_speed = 200

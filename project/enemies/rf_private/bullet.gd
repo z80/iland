@@ -5,7 +5,7 @@ var initialized: bool = false
 
 var damage: int = 10
 var instant: bool = false
-var speed: float = 600.0
+var speed: float = 900.0
 
 var velocity: Vector2 = Vector2()
 var max_distance: float = 1000.0
@@ -24,7 +24,7 @@ func initialize( origin, start: Vector2, to: Vector2 ):
 	var d = to - start
 	d = d.normalized()
 	# Bullet initial position
-	position = start + d * 300.0
+	position = start + d * 128.0
 	
 	# Sprite orientation.
 	var angle = atan2( d.y, d.x )
@@ -86,7 +86,7 @@ func _physics_process( delta ):
 	var has_hit: bool   = owner.has_method( "hit" )
 	var is_player: bool = owner.has_method( "is_player" )
 	var has_set_target: bool = owner.has_method( "set_target" )
-	if has_hit:
+	if has_hit and (owner != character ):
 		owner.hit( damage, hit_sound )
 		if has_set_target:
 			owner.set_target( character )

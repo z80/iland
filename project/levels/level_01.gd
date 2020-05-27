@@ -6,7 +6,7 @@ extends Node2D
 # var b = "text"
 var Player      = preload( "res://player/Player.tscn" )
 var Zhlob       = preload( "res://enemies/zhlob/Zhlob.tscn" )
-var SpiderBrain = preload( "res://enemies/spider_brain/spider_brain.tscn" )
+#var SpiderBrain = preload( "res://enemies/spider_brain/spider_brain.tscn" )
 var RfPrivate   = preload( "res://enemies/rf_private/rf_private.tscn" )
 
 var player = null
@@ -101,20 +101,6 @@ func create_enemy_rf_private():
 	
 	var at: Vector2 = enemy_position()
 	rf_private.position = at
-
-
-
-func create_enemy_spider_brain():
-	var walls = get_node( "/root/Level00/TileMapWalls" )
-	var enemy = SpiderBrain.instance()
-	walls.add_child( enemy )
-	enemy.set_position( Vector2( 1500, 100 ) )
-	enemy.visible = true
-	# Make player visible for the zhlob instance.
-	enemy.target = player
-	
-	var at: Vector2 = enemy_position()
-	enemy.position = at
 
 
 func enemy_position() -> Vector2:

@@ -75,7 +75,7 @@ func player():
 
 func set_score( v: int = 0 ):
 	score_ = v
-	if player_:
+	if player_ and (player_ != null):
 		player_.set_score( score_ )
 
 
