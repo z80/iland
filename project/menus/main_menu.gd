@@ -73,3 +73,7 @@ func _show_version():
 func _on_InchGet_pressed():
 	OS.shell_open("https://dr_livsey.itch.io/sturmgewher")
 	
+
+
+func _on_MainMenu_resized():
+	_adjust_animation_dims()

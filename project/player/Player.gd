@@ -297,6 +297,8 @@ func set_score( v: int ):
 	$CanvasLayer/Health.set_score( v )
 
 
-
+func _demo_version_visibility():
+	var d: bool = Globals.demo()
+	$CanvasLayer/ItchDemo.visible = d
 
 

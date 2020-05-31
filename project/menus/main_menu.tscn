@@ -93,7 +93,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Control"]
 z_index = -1
 frames = SubResource( 1 )
-frame = 11
+frame = 1
 playing = true
 
 [node name="ItchDemo" type="Label" parent="."]
@@ -132,9 +132,11 @@ margin_left = -347.45
 margin_top = -211.171
 margin_right = 317.55
 margin_bottom = -170.171
+shortcut_in_tooltip = false
 shortcut = SubResource( 3 )
-text = "https:dr_livsey.itch.io/sturmgewehr"
+text = "https://dr_livsey.itch.io/sturmgewehr"
 underline = 1
+[connection signal="resized" from="." to="." method="_on_MainMenu_resized"]
 [connection signal="pressed" from="ExitBtn" to="." method="_on_ExitBtn_pressed"]
 [connection signal="pressed" from="StartBtn" to="." method="_on_StartBtn_pressed"]
 [connection signal="pressed" from="ItchGet" to="." method="_on_InchGet_pressed"]
