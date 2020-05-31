@@ -18,19 +18,16 @@ func physics_update(_delta):
 
 	var v: Vector2 = Vector2( 0, 0 )
 	var keep_walking: bool = false
-	if Input.is_action_pressed( "ui_left" ):
-		keep_walking = true
-		v.x -= 1
-	if Input.is_action_pressed( "ui_right" ):
-		keep_walking = true
-		v.x += 1
-	if Input.is_action_pressed( "ui_up" ):
-		keep_walking = true
-		v.y -= 1
-	if Input.is_action_pressed( "ui_down" ):
-		keep_walking = true
-		v.y += 1
+	
+	var up:    float = Input.get_action_strength( "ui_down" )
+	var down:  float = Input.get_action_strength( "ui_up" )
+	var left:  float = Input.get_action_strength( "ui_left" )
+	var right: float = Input.get_action_strength( "ui_right" )
+	v.x = right - left
+	v.y = up - down
 	v.y *= 0.707107
+	keep_walking = (v != Vector2.ZERO)
+
 	v *= character.move_speed
 	var actual_v = character.move_and_slide( v )
 	

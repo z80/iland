@@ -18,16 +18,16 @@ __meta__ = {
 [node name="JoystickMove" type="Control" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 125.404
-margin_top = -132.607
-margin_right = 253.404
-margin_bottom = -4.60651
+margin_left = 384.0
+margin_top = -370.0
+margin_right = 512.0
+margin_bottom = -241.999
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-radius = 128.0
-proximity = 120.0
+radius = 384.0
+proximity = 350.0
 
 [node name="RightControl" type="Control" parent="."]
 anchor_left = 1.0
@@ -46,34 +46,34 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -118.727
-margin_top = -128.644
-margin_right = 9.27264
-margin_bottom = -0.643677
+margin_left = -391.0
+margin_top = -373.0
+margin_right = -263.0
+margin_bottom = -245.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-radius = 128.0
-proximity = 120.0
+radius = 384.0
+proximity = 350.0
 action_left = "aim_left"
 action_right = "aim_right"
 action_up = "aim_up"
 action_down = "aim_down"
 
 [node name="FireBtn" type="TouchScreenButton" parent="RightControl"]
-position = Vector2( 89.5332, 427.657 )
+position = Vector2( -256, 170 )
 scale = Vector2( 0.217102, 0.226888 )
 normal = ExtResource( 2 )
 pressed = ExtResource( 2 )
 
 [node name="ZoomOutBtn" type="TouchScreenButton" parent="RightControl"]
-position = Vector2( 342.84, 16.1523 )
+position = Vector2( 342.84, -200 )
 normal = ExtResource( 6 )
 pressed = ExtResource( 6 )
 
 [node name="ZoomInBtn" type="TouchScreenButton" parent="RightControl"]
-position = Vector2( 341.082, 175.664 )
+position = Vector2( 341.082, 0 )
 normal = ExtResource( 5 )
 pressed = ExtResource( 5 )
 

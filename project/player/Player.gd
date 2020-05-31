@@ -244,7 +244,7 @@ func _process_zoom( event ):
 			zoom += 0.1
 			$Camera2D.zoom = Vector2( zoom, zoom )
 			
-	elif Input.is_action_just_pressed( "ui_zoom_in" ) and (zoom > 1.0):
+	elif Input.is_action_just_pressed( "ui_zoom_in" ) and (zoom > 0.5):
 			zoom -= 0.1
 			$Camera2D.zoom = Vector2( zoom, zoom )
 	elif Input.is_action_just_pressed( "ui_zoom_out" ) and (zoom < 2.25):
