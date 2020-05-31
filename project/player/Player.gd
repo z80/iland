@@ -35,6 +35,8 @@ var zoom: float = 1.5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	_demo_version_visibility()
+	
 	health = HEALTH
 	# Make camera 2d current.
 	$Camera2D.make_current()

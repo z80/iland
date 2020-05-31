@@ -3,7 +3,7 @@ extends Node
 
 const _VERSION: String = "0.9.0"
 const _TABLET: bool = false
-const _DEMO: bool   = true
+const _DEMO: bool   = false
 
 
 func demo() -> bool:
