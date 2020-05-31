@@ -15,6 +15,7 @@ func _ready():
 	_adjust_animation_dims()
 	_show_demo()
 	_show_version()
+	OS.window_fullscreen = true
 	Game.play_intro()
 
 
@@ -77,3 +78,7 @@ func _on_InchGet_pressed():
 
 func _on_MainMenu_resized():
 	_adjust_animation_dims()
+
+
+func _on_FullscreenBtn_pressed():
+	OS.window_fullscreen = not OS.window_fullscreen
