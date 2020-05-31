@@ -3,7 +3,7 @@ extends Node2D
 
 var initialized: bool = false
 
-var damage: int = 10
+var damage: int = 30
 var instant: bool = false
 var speed: float = 1200.0
 

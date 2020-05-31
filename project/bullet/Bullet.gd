@@ -1,6 +1,8 @@
 
 extends Node2D
 
+const BULLET_ERROR: float = 0.02
+
 var initialized: bool = false
 
 var damage: int = 10
@@ -22,17 +24,22 @@ func initialize( start: Vector2, to: Vector2 ):
 	var d = to - start
 	d = d.normalized()
 	# Bullet initial position
-	position = start + d * 150.0
+	position = start + d * 96.0
 	
 	# Sprite orientation.
 	var angle = atan2( d.y, d.x )
 	$Sprite.rotation = angle
 	
+	var rnd = Game.random_generator()
+	d.x += rnd.randf_range( -BULLET_ERROR, BULLET_ERROR )
+	d.y += rnd.randf_range( -BULLET_ERROR, BULLET_ERROR )
+	d = d.normalized()
+	
 	# Initiate velocity.
 	if not instant:
-		velocity = d.normalized() * speed
+		velocity = d * speed
 	else:
-		velocity = d.normalized() * max_distance
+		velocity = d * max_distance
 		
 	initialized = true
 
@@ -81,6 +88,9 @@ func _physics_process( delta ):
 	var owner = obj.owner
 	if not owner:
 		queue_free()
+		return
+	# Ignore collisitons with player.
+	if owner == player:
 		return
 	var has_hit: bool = owner.has_method( "hit" )
 	var has_is_player: bool = owner.has_method( "is_player" )

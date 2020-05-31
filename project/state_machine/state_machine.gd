@@ -113,7 +113,10 @@ func change_state( new_state_name=null, purge=false ):
 		else:
 			states_stack.push_back( { "name": new_state_name, "state": new_state } )
 
-	current_state = states_stack.back()["state"]
+	if not states_stack.empty():
+		current_state = states_stack.back()["state"]
+	else:
+		current_state = states_map[start_state_name]
 	emit_signal( "state_changed", current_state )
 
 	current_state.enter( not to_previous )
