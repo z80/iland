@@ -13,6 +13,8 @@ const ANIM_H: float = 192.0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_adjust_animation_dims()
+	_show_demo()
+	_show_version()
 	Game.play_intro()
 
 
@@ -51,3 +53,23 @@ func _adjust_animation_dims():
 		s = sh
 	$Control/AnimatedSprite.scale = Vector2(s, s)
 
+
+func _show_demo():
+	var d: bool = Globals.demo()
+	$ItchDemo.visible = d
+	$ItchGet.visible  = d
+
+
+
+func _show_version():
+	var v: String = Globals.version()
+	v = "version: {s}".format( {"s": v} )
+	$Version.text = v
+
+
+
+
+
+func _on_InchGet_pressed():
+	OS.shell_open("https://dr_livsey.itch.io/sturmgewher")
+	

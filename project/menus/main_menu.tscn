@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://menus/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://menus/main_menu.tres" type="Theme" id=2]
@@ -31,6 +31,11 @@ animations = [ {
 "name": "default",
 "speed": 2.0
 } ]
+
+[sub_resource type="InputEventAction" id=2]
+
+[sub_resource type="ShortCut" id=3]
+shortcut = SubResource( 2 )
 
 [node name="MainMenu" type="Control"]
 pause_mode = 2
@@ -88,20 +93,48 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Control"]
 z_index = -1
 frames = SubResource( 1 )
-frame = 7
+frame = 11
 playing = true
 
-[node name="Label" type="Label" parent="."]
+[node name="ItchDemo" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -397.806
-margin_top = 137.387
-margin_right = 438.194
-margin_bottom = 218.387
-text = "Demo version"
+margin_left = -371.0
+margin_top = -295.5
+margin_right = 332.0
+margin_bottom = -210.5
+text = "Demo version
+consider getting a full version at"
 align = 1
 valign = 1
+
+[node name="Version" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -328.455
+margin_top = -55.2278
+margin_right = -11.4554
+margin_bottom = -14.2278
+text = "version: 0.0.0"
+align = 2
+valign = 2
+
+[node name="ItchGet" type="LinkButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -347.45
+margin_top = -211.171
+margin_right = 317.55
+margin_bottom = -170.171
+shortcut = SubResource( 3 )
+text = "https:dr_livsey.itch.io/sturmgewehr"
+underline = 1
 [connection signal="pressed" from="ExitBtn" to="." method="_on_ExitBtn_pressed"]
 [connection signal="pressed" from="StartBtn" to="." method="_on_StartBtn_pressed"]
+[connection signal="pressed" from="ItchGet" to="." method="_on_InchGet_pressed"]

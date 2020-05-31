@@ -34,6 +34,7 @@ config/windows_native_icon="res://icon.ico"
 
 [autoload]
 
+Globals="*res://game/globals.gd"
 Game="*res://game/game.tscn"
 
 [editor_plugins]

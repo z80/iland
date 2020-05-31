@@ -54,7 +54,13 @@ func _process( delta ):
 		
 	var done: bool = check_for_success()
 	if done:
-		Game.set_next_level( "level_02" )
+		var next_level: String
+		var demo: bool = Globals.demo()
+		if demo:
+			next_level = "level_01"
+		else:
+			next_level = "level_02"
+		Game.set_next_level( next_level )
 		Game.change_state( "done_menu" )
 
 
