@@ -94,7 +94,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Control"]
 z_index = -1
 frames = SubResource( 1 )
-frame = 16
+frame = 3
 playing = true
 
 [node name="ItchDemo" type="Label" parent="."]
@@ -135,8 +135,11 @@ margin_right = 317.55
 margin_bottom = -170.171
 shortcut_in_tooltip = false
 shortcut = SubResource( 3 )
-text = "https://dr_livsey.itch.io/sturmgewehr"
+text = "https://litedictteam.itch.io/sturmgewehr"
 underline = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="FullscreenBtn" type="Button" parent="."]
 anchor_left = 1.0

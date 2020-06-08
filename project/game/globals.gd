@@ -1,7 +1,7 @@
 
 extends Node
 
-const _VERSION: String = "0.9.0"
+const _VERSION: String = "0.9.1"
 const _TABLET: bool = false
 const _DEMO: bool   = false
 
